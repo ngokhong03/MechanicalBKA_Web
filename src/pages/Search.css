@@ -1,0 +1,173 @@
+.search-header-box {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.results-count-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+}
+
+.results-count-title span {
+  color: var(--primary);
+}
+
+.results-groups-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.result-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.group-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-left: 3px solid var(--primary);
+  padding-left: 10px;
+}
+
+/* Category Results (Specialties / Software) */
+.category-results-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px;
+}
+
+.category-result-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  transition: var(--transition);
+}
+
+.category-result-item:hover {
+  border-color: var(--primary);
+  background-color: var(--glow-orange);
+}
+
+.cat-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 2px 4px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.specialty-type {
+  background-color: rgba(249, 115, 22, 0.15);
+  color: var(--primary);
+}
+
+.software-type {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: var(--info);
+}
+
+.cat-name {
+  font-size: 0.8rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Videos Inline Search Results */
+.videos-inline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.video-search-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: var(--border-radius);
+  font-size: 0.85rem;
+  gap: 16px;
+}
+
+.video-row-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.video-time {
+  color: var(--primary);
+  font-weight: 700;
+  background-color: var(--glow-orange);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+}
+
+.video-title-txt {
+  color: var(--text);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.video-row-action {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--success);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.video-row-action:hover {
+  color: var(--text);
+}
+
+.youtube-color {
+  color: #ef4444;
+}
+
+/* Welcome Search layout */
+.search-welcome-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.search-welcome-icon {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.welcome-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.welcome-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
