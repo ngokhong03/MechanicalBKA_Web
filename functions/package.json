@@ -1,0 +1,16 @@
+{
+  "name": "mechanicalbka-functions",
+  "description": "MechanicalBKA Cloud Functions for Secure Download & Backend APIs",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.1.0",
+    "firebase-functions": "^6.3.2"
+  }
+}

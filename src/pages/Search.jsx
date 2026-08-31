@@ -150,7 +150,7 @@ const Search = () => {
               {/* Products Matched */}
               {searchResults.products.length > 0 && (
                 <div className="result-group">
-                  <h3 className="group-title font-mono"><FileText size={16} /> HỌC LIỆU & FILE CAD ({searchResults.products.length})</h3>
+                  <h3 className="group-title font-mono"><FileText size={16} /> FILE KỸ THUẬT & SẢN PHẨM ({searchResults.products.length})</h3>
                   <div className="grid-cols-2">
                     {searchResults.products.map(prod => (
                       <ProductCard key={prod.id} product={prod} />

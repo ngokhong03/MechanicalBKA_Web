@@ -1,0 +1,16 @@
+# Engineering Workspace — Python Dependencies
+# Phase 14B Foundation
+# Python 3.14.x
+# Generated: 2026-08-30
+
+# --- Core Dependencies ---
+pint==0.25.3              # Unit system (engineering unit conversion)
+numpy==2.5.2              # Numerical computation
+scipy==1.18.1             # Scientific computation, optimization
+openpyxl==3.1.5           # Excel workbook generation (.xlsx)
+pydantic==2.13.5          # Data validation and contracts
+jinja2==3.1.6             # Template engine (LaTeX, reports)
+mcp==2.1.1                # Model Context Protocol SDK
+
+# --- Development / Testing ---
+pytest==9.1.1             # Test runner

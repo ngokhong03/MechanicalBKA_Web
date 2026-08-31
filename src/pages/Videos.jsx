@@ -77,9 +77,10 @@ const Videos = () => {
             <div key={vid.id} className="video-page-card glass">
               <div className="video-thumb-wrapper">
                 <img 
-                  src={`https://img.youtube.com/vi/${vid.youtubeVideoId}/hqdefault.jpg`} 
+                  src={vid.thumbnailUrl || `https://img.youtube.com/vi/${vid.youtubeVideoId}/hqdefault.jpg`} 
                   alt={vid.title} 
                   className="video-thumb-img"
+                  onError={(e) => { e.target.src = `https://img.youtube.com/vi/${vid.youtubeVideoId}/hqdefault.jpg`; }}
                 />
                 <div className="video-card-play-overlay">
                   <PlayCircle size={36} className="play-icon-glow" />

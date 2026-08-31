@@ -8,9 +8,28 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "youtube:sync": "node scripts/syncYoutubeVideos.js"
+    "youtube:sync": "node scripts/syncYoutubeVideos.js",
+    "firestore:seed": "node scripts/seedFirestore.js",
+    "validate:phase3": "node scripts/validatePhase3.js",
+    "admin:set-claim": "node scripts/setAdminClaim.js",
+    "validate:phase4": "node scripts/validatePhase4.js",
+    "validate:phase5": "node scripts/validatePhase5.js",
+    "validate:phase6": "node scripts/validatePhase6.js",
+    "validate:phase7": "node scripts/validatePhase7.js",
+    "validate:phase8": "node scripts/validatePhase8.js",
+    "validate:phase9": "node scripts/validatePhase9.js",
+    "validate:phase10": "node scripts/validatePhase10.js",
+    "validate:phase14b": "node scripts/validatePhase14B.cjs",
+    "validate:phase15a": "node scripts/validatePhase15A.cjs",
+    "validate:phase15b": "node scripts/validatePhase15B.cjs",
+    "validate:phase15c": "node scripts/validatePhase15C.cjs",
+    "validate:phase16a": "node scripts/validatePhase16A.cjs",
+    "validate:phase16b": "node scripts/validatePhase16B.cjs",
+    "validate:phase17a": "node scripts/validatePhase17A.cjs",
+    "validate:phase18a": "node scripts/validatePhase18A.cjs"
   },
   "dependencies": {
+    "firebase": "^12.18.0",
     "lucide-react": "^1.34.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
@@ -20,6 +39,7 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",
+    "firebase-admin": "^14.3.0",
     "oxlint": "^1.79.0",
     "vite": "^8.2.2"
   }

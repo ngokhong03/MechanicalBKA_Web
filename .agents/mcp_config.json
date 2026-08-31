@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "engineering-workspace": {
+      "command": "d:\\01_Projects_HocTap\\05_MechanicalBKA_Web\\.venv\\Scripts\\python.exe",
+      "args": [
+        "d:\\01_Projects_HocTap\\05_MechanicalBKA_Web\\engineering-workspace\\server.py"
+      ],
+      "env": {
+        "WORKSPACE_ROOT": "d:\\01_Projects_HocTap\\05_MechanicalBKA_Web"
+      }
+    }
+  }
+}

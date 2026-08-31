@@ -1,0 +1,114 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      // BẢO MẬT: Chỉ sử dụng Auth Custom Claims { admin: true }
+      // Tuyệt đối không dùng trường role của bảng users làm cơ chế bảo mật
+      return isAuthenticated() && request.auth.token.admin == true;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // 1. Users Collection
+    match /users/{userId} {
+      // Người dùng chỉ được đọc hồ sơ của chính mình hoặc Admin đọc toàn bộ
+      allow read: if isOwner(userId) || isAdmin();
+      
+      // Người dùng tạo hồ sơ ban đầu khi đăng ký
+      allow create: if isOwner(userId)
+                    && request.resource.data.uid == userId
+                    && request.resource.data.role == 'student'; // Mặc định role là student
+      
+      // Người dùng cập nhật thông tin cá nhân nhưng KHÔNG ĐƯỢC tự đổi role
+      allow update: if isOwner(userId)
+                    && request.resource.data.role == resource.data.role // Chặn tự leo thang role
+                    || isAdmin();
+      
+      // Chỉ Admin được xóa user
+      allow delete: if isAdmin();
+    }
+
+    // 2. Specialties Collection (Public Read, Admin Write)
+    match /specialties/{specialtyId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // 3. Software Collection (Public Read, Admin Write)
+    match /software/{softwareId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // 4. Courses Collection (Public Read for published, Admin Write)
+    match /courses/{courseId} {
+      allow read: if resource.data.isPublished == true || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // 5. Lessons Collection (Public Read, Admin Write)
+    match /lessons/{lessonId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // 6. Products Collection & Files Subcollection
+    match /products/{productId} {
+      allow read: if resource.data.isPublished == true || isAdmin();
+      allow write: if isAdmin();
+
+      // Subcollection files
+      match /files/{fileId} {
+        // Chỉ cho phép đọc metadata nếu product cha là public hoặc user là Admin
+        allow read: if get(/databases/$(database)/documents/products/$(productId)).data.isPublished == true || isAdmin();
+        allow write: if isAdmin();
+      }
+    }
+
+    // 7. Orders Collection
+    match /orders/{orderId} {
+      // Học viên chỉ đọc đơn hàng của mình; Admin đọc tất cả đơn
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      
+      // Học viên chỉ được tạo đơn hàng cho chính mình ở trạng thái pending/unpaid
+      allow create: if isAuthenticated() 
+                    && request.resource.data.userId == request.auth.uid
+                    && request.resource.data.orderStatus == 'pending'
+                    && request.resource.data.paymentStatus == 'unpaid';
+      
+      // Chỉ Admin mới có quyền cập nhật trạng thái đơn (duyệt thanh toán) hoặc hủy đơn
+      allow update, delete: if isAdmin();
+    }
+
+    // 8. Entitlements Collection
+    match /entitlements/{entitlementId} {
+      // Học viên chỉ được đọc quyền sở hữu của chính mình
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      
+      // Tuyệt đối KHÔNG cho phép học viên tự tạo hoặc sửa entitlement
+      // Chỉ có Admin (hoặc Cloud Function xác thực) mới được cấp quyền
+      allow write: if isAdmin();
+    }
+
+    // 9. Download Logs Collection
+    match /downloadLogs/{logId} {
+      // Chỉ Admin được xem lịch sử tải file
+      allow read, write: if isAdmin();
+    }
+
+    // 10. Admin Audit Logs Collection
+    match /adminAuditLogs/{logId} {
+      // Chỉ Admin được đọc và ghi audit log
+      allow read, write: if isAdmin();
+    }
+  }
+}
+

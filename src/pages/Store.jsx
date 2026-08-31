@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Filter, RotateCcw } from 'lucide-react';
-import { specialties, software, products } from '../mock/data';
+import { dataProvider } from '../services/dataProvider';
 import ProductCard from '../components/cards/ProductCard';
 import SearchBar from '../components/common/SearchBar';
 import EmptyState from '../components/common/EmptyState';
@@ -10,20 +10,56 @@ import './Store.css';
 const Store = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
+  // Data states from dataProvider
+  const [productsList, setProductsList] = useState([]);
+  const [specialtiesList, setSpecialtiesList] = useState([]);
+  const [softwareList, setSoftwareList] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   // State for search and filters
   const [searchVal, setSearchVal] = useState('');
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
   const [selectedSoftware, setSelectedSoftware] = useState('');
   const [selectedProductType, setSelectedProductType] = useState('');
   const [selectedAccessType, setSelectedAccessType] = useState('');
+  const [isFeaturedOnly, setIsFeaturedOnly] = useState(false);
   const [sortBy, setSortBy] = useState('newest');
+
+  // Load data from dataProvider
+  useEffect(() => {
+    let isMounted = true;
+    async function loadStoreData() {
+      setLoading(true);
+      try {
+        const [prods, specs, softs] = await Promise.all([
+          dataProvider.getProducts(),
+          dataProvider.getSpecialties(),
+          dataProvider.getSoftware()
+        ]);
+        if (isMounted) {
+          setProductsList(prods || []);
+          setSpecialtiesList(specs || []);
+          setSoftwareList(softs || []);
+        }
+      } catch (err) {
+        console.error('[Store] Lỗi tải sản phẩm từ dataProvider:', err);
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    }
+
+    loadStoreData();
+    return () => { isMounted = false; };
+  }, []);
 
   // Sync state with URL search params (e.g. from footer or home link)
   useEffect(() => {
     const spec = searchParams.get('specialty');
     const priceParam = searchParams.get('price'); // 'free'
+    const typeParam = searchParams.get('type');
     if (spec) setSelectedSpecialty(spec);
     if (priceParam === 'free') setSelectedAccessType('FREE');
+    if (typeParam) setSelectedProductType(typeParam);
   }, [searchParams]);
 
   // Handle resets
@@ -33,12 +69,13 @@ const Store = () => {
     setSelectedSoftware('');
     setSelectedProductType('');
     setSelectedAccessType('');
+    setIsFeaturedOnly(false);
     setSortBy('newest');
     setSearchParams({});
   };
 
   // Filtered and Sorted products
-  const filteredProducts = products
+  const filteredProducts = productsList
     .filter(p => p.isPublished)
     .filter(p => {
       // Search match
@@ -52,12 +89,12 @@ const Store = () => {
     .filter(p => {
       // Specialty match
       if (!selectedSpecialty) return true;
-      return p.specialtyIds.includes(selectedSpecialty);
+      return (p.specialtyIds || []).includes(selectedSpecialty);
     })
     .filter(p => {
       // Software match
       if (!selectedSoftware) return true;
-      return p.softwareIds.includes(selectedSoftware);
+      return (p.softwareIds || []).includes(selectedSoftware);
     })
     .filter(p => {
       // Product Type match
@@ -69,25 +106,34 @@ const Store = () => {
       if (!selectedAccessType) return true;
       return p.accessType === selectedAccessType;
     })
+    .filter(p => {
+      // Featured filter
+      if (!isFeaturedOnly) return true;
+      return p.isFeatured === true;
+    })
     .sort((a, b) => {
       // Sort logic
       if (sortBy === 'price-low') {
-        return a.price - b.price;
+        return (a.price || 0) - (b.price || 0);
       }
       if (sortBy === 'price-high') {
-        return b.price - a.price;
+        return (b.price || 0) - (a.price || 0);
       }
       // 'newest' default
-      return new Date(b.createdAt) - new Date(a.createdAt);
+      return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
     });
 
   return (
     <div className="container store-page" style={{ padding: '40px 24px' }}>
       {/* Page Header */}
       <div className="section-header">
-        <span className="technical-label" style={{ color: 'var(--primary)' }}>Mechanical Parts Store</span>
-        <h1 className="section-title">Cửa Hàng Học Liệu</h1>
-        <p className="section-subtitle">Tải các cụm chi tiết lắp ráp khuôn ép nhựa 3D CAD, bản vẽ 2D PDF và slide bài giảng kỹ thuật.</p>
+        <span className="technical-label font-mono" style={{ color: 'var(--primary)' }}>
+          DIGITAL ENGINEERING FILE STORE
+        </span>
+        <h1 className="section-title">Kho File Kỹ Thuật</h1>
+        <p className="section-subtitle">
+          Đồ án Chi tiết máy, CAD, bản vẽ, tính toán và công cụ kỹ thuật cho thiết kế cơ khí.
+        </p>
       </div>
 
       <div className="store-grid-layout">
@@ -109,7 +155,7 @@ const Store = () => {
               className="filter-select"
             >
               <option value="">Tất cả chuyên ngành</option>
-              {specialties.map(spec => (
+              {specialtiesList.map(spec => (
                 <option key={spec.id} value={spec.id}>{spec.name}</option>
               ))}
             </select>
@@ -124,7 +170,7 @@ const Store = () => {
               className="filter-select"
             >
               <option value="">Tất cả phần mềm</option>
-              {software.map(soft => (
+              {softwareList.map(soft => (
                 <option key={soft.id} value={soft.id}>{soft.name}</option>
               ))}
             </select>
@@ -132,17 +178,25 @@ const Store = () => {
 
           {/* Product Type Filter */}
           <div className="filter-group">
-            <label className="filter-label font-mono">LOẠI TÀI LIỆU</label>
+            <label className="filter-label font-mono">LOẠI SẢN PHẨM</label>
             <select 
               value={selectedProductType} 
               onChange={(e) => setSelectedProductType(e.target.value)} 
               className="filter-select"
             >
-              <option value="">Tất cả tài liệu</option>
-              <option value="CAD">Mẫu 3D CAD</option>
-              <option value="PDF">Giáo trình PDF</option>
-              <option value="ZIP">Tệp tin nén (ZIP)</option>
-              <option value="MULTIPLE">Tổng hợp nhiều file</option>
+              <option value="">Tất cả loại</option>
+              <option value="EPXYZ_FILE">Engineering Paper XYZ</option>
+              <option value="PROJECT">Đồ Án Chi Tiết Máy</option>
+              <option value="CAD_PROJECT">Bộ File CAD 3D</option>
+              <option value="CAD_PACKAGE">Bộ File CAD 3D Tham Số Hóa</option>
+              <option value="DRAWING">Bản Vẽ Kỹ Thuật</option>
+              <option value="CALCULATION">Bảng Tính Toán</option>
+              <option value="PYTHON_TOOL">Tool Tự Động Hóa Python</option>
+              <option value="EXCEL_TOOL">Bảng Tính Tự Động Hóa Excel</option>
+              <option value="TOOL">Tool Kỹ Thuật</option>
+              <option value="TEMPLATE">Template Đồ Án</option>
+              <option value="DOCUMENT">Tài Liệu Kỹ Thuật</option>
+              <option value="OTHER">Khác</option>
             </select>
           </div>
 
@@ -175,7 +229,7 @@ const Store = () => {
                   checked={selectedAccessType === 'PAID'} 
                   onChange={() => setSelectedAccessType('PAID')} 
                 />
-                <span>Mua lẻ lẻ (Paid)</span>
+                <span>Mua lẻ (Paid)</span>
               </label>
               <label className="filter-radio-label">
                 <input 
@@ -187,6 +241,15 @@ const Store = () => {
                 <span>Chỉ kèm khóa học</span>
               </label>
             </div>
+          </div>
+
+          {/* Featured Toggle */}
+          <div className="filter-group">
+            <label className="filter-label font-mono">NỔI BẬT</label>
+            <label className="filter-radio-label" style={{ cursor: 'pointer' }}>
+              <input type="checkbox" checked={isFeaturedOnly} onChange={(e) => setIsFeaturedOnly(e.target.checked)} />
+              <span>Chỉ hiện sản phẩm nổi bật</span>
+            </label>
           </div>
 
           {/* Sort Filter */}
@@ -210,18 +273,22 @@ const Store = () => {
           <SearchBar 
             value={searchVal} 
             onChange={setSearchVal} 
-            placeholder="Tìm theo tên học liệu, bản vẽ CAD..." 
+            placeholder="Tìm đồ án, CAD, bản vẽ, tính toán..." 
             onClear={() => setSearchVal('')}
             className="store-search-bar"
           />
 
           {/* Results count */}
           <div className="store-results-info font-mono">
-            Kết quả: <span>{filteredProducts.length}</span> học liệu phù hợp
+            Kết quả: <span>{filteredProducts.length}</span> sản phẩm kỹ thuật phù hợp
           </div>
 
           {/* Grid list of products */}
-          {filteredProducts.length > 0 ? (
+          {loading ? (
+            <div className="font-mono" style={{ padding: '40px 0', textAlign: 'center', color: 'var(--primary)' }}>
+              ĐANG TẢI DANH MỤC SẢN PHẨM KỸ THUẬT...
+            </div>
+          ) : filteredProducts.length > 0 ? (
             <div className="grid-cols-2">
               {filteredProducts.map(prod => (
                 <ProductCard key={prod.id} product={prod} />
@@ -229,8 +296,8 @@ const Store = () => {
             </div>
           ) : (
             <EmptyState 
-              message="Không tìm thấy học liệu nào phù hợp."
-              description="Vui lòng thử bỏ bớt các bộ lọc hoặc kiểm tra lại từ khóa tìm kiếm."
+              message="Không tìm thấy sản phẩm kỹ thuật nào phù hợp."
+              description="Thử điều chỉnh bộ lọc hoặc tìm kiếm bằng từ khóa khác."
             />
           )}
         </div>
@@ -240,4 +307,3 @@ const Store = () => {
 };
 
 export default Store;
-export const demo = true;

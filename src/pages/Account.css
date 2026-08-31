@@ -1,0 +1,150 @@
+/* Account Page Styling */
+.account-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.account-card {
+  padding: 28px;
+  border-radius: 12px;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.account-user-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.account-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), #D97706);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+  flex-shrink: 0;
+}
+
+.account-user-meta {
+  flex: 1;
+}
+
+.account-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.account-display-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.account-email {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 4px 0 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.role-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.role-badge-student {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60A5FA;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.role-badge-admin {
+  background: rgba(239, 68, 68, 0.15);
+  color: #F87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.account-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 24px 0;
+}
+
+/* Details list */
+.account-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.account-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(11, 15, 25, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.detail-label {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.detail-value {
+  color: var(--text-main);
+  font-weight: 500;
+  max-width: 55%;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-footer-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.card-subheading {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .account-grid {
+    grid-template-columns: 1fr;
+  }
+}

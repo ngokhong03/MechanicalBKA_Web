@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, Search, Settings } from 'lucide-react';
+import { Menu, X, Search, User, LogIn, Shield, ShoppingBag } from 'lucide-react';
 import Navigation from './Navigation';
+import { useAuth } from '../../context/AuthContext';
+import { useCart } from '../../context/CartContext';
 import './Header.css';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchVal, setSearchVal] = useState('');
+  const { user, isAuthenticated, isAdmin } = useAuth();
+  const { cartCount } = useCart();
   const navigate = useNavigate();
 
   const handleSearchSubmit = (e) => {
@@ -21,12 +25,14 @@ const Header = () => {
     <header className="site-header glass">
       <div className="container header-container">
         {/* Brand Logo */}
-        <Link to="/" className="brand-logo" onClick={() => setIsMobileMenuOpen(false)}>
-          <span className="brand-accent">Mechanical</span>BKA
-        </Link>
+        <div className="header-logo-wrap">
+          <Link to="/" className="brand-logo" onClick={() => setIsMobileMenuOpen(false)}>
+            <span className="brand-accent">Mechanical</span>BKA
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
-        <div className="desktop-only">
+        <div className="desktop-only header-navigation">
           <Navigation />
         </div>
 
@@ -51,10 +57,49 @@ const Header = () => {
             <Search size={20} />
           </Link>
 
-          {/* Admin CMS Trigger (Link placeholder for CMS) */}
-          <Link to="/search" className="action-icon" aria-label="Search" title="Tìm kiếm">
-            <Settings size={20} />
+          {/* Cart Icon Button */}
+          <Link 
+            to="/cart" 
+            className="action-icon cart-action-link" 
+            aria-label="Giỏ hàng" 
+            title="Giỏ Hàng File Kỹ Thuật"
+          >
+            <ShoppingBag size={20} />
+            {cartCount > 0 && (
+              <span className="cart-badge-count font-mono">
+                {cartCount}
+              </span>
+            )}
           </Link>
+
+          {/* Account / Auth Button */}
+          {isAuthenticated ? (
+            <Link
+              to="/account"
+              className="action-icon"
+              aria-label="Tài khoản"
+              title={isAdmin ? 'Tài khoản Quản trị viên' : 'Tài khoản cá nhân'}
+              style={{ display: 'flex', alignItems: 'center', gap: '6px', color: isAdmin ? '#F87171' : 'var(--primary)' }}
+            >
+              {isAdmin ? <Shield size={18} /> : <User size={18} />}
+              <span className="desktop-only font-mono" style={{ fontSize: '12px', fontWeight: 'bold' }}>
+                {user.displayName ? user.displayName.split(' ').pop() : 'Tài khoản'}
+              </span>
+            </Link>
+          ) : (
+            <Link
+              to="/auth"
+              className="action-icon"
+              aria-label="Đăng nhập"
+              title="Đăng nhập / Đăng ký"
+              style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <LogIn size={18} />
+              <span className="desktop-only font-mono" style={{ fontSize: '12px' }}>
+                Đăng nhập
+              </span>
+            </Link>
+          )}
 
           {/* Mobile Menu Toggle Button */}
           <button 
@@ -79,6 +124,41 @@ const Header = () => {
           </div>
           <div className="mobile-drawer-body">
             <Navigation vertical onItemClick={() => setIsMobileMenuOpen(false)} />
+            
+            <div style={{ marginTop: '20px', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              <Link
+                to="/cart"
+                onClick={() => setIsMobileMenuOpen(false)}
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', color: 'var(--text-main)', textDecoration: 'none' }}
+              >
+                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <ShoppingBag size={18} style={{ color: 'var(--primary)' }} /> Giỏ Hàng File Kỹ Thuật
+                </span>
+                {cartCount > 0 && (
+                  <span className="cart-badge-count font-mono" style={{ position: 'static' }}>
+                    {cartCount}
+                  </span>
+                )}
+              </Link>
+
+              {isAuthenticated ? (
+                <Link
+                  to="/account"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--primary)', textDecoration: 'none', fontWeight: 'bold' }}
+                >
+                  <User size={18} /> Hồ Sơ ({user.displayName || user.email})
+                </Link>
+              ) : (
+                <Link
+                  to="/auth"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--primary)', textDecoration: 'none', fontWeight: 'bold' }}
+                >
+                  <LogIn size={18} /> Đăng Nhập / Đăng Ký
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       )}

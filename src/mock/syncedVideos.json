@@ -1,152 +1,765 @@
 [
   {
-    "id": "vid_001",
-    "title": "Hướng dẫn tách khuôn ép nhựa cơ bản trên Autodesk Inventor",
-    "slug": "huong-dan-tach-khuon-ep-nhua-inventor",
-    "description": "Quy trình thiết kế lòng khuôn và lõi khuôn ép phun cho chi tiết nắp nhựa tròn.",
-    "youtubeVideoId": "dQw4w9WgXcQ",
-    "category": "Tutorial",
-    "softwareIds": ["soft_inventor"],
-    "specialtyIds": ["spec_mold_design"],
-    "lessonId": "les_mold_basics_l1",
-    "courseId": "course_inventor_mold_basics",
-    "duration": "15:20",
+    "id": "vid_011",
+    "title": "2.2 Theory of Metal Forming",
+    "slug": "22-theory-of-metal-forming",
+    "description": "Knowledge of the laws, basic principles of deformation forming; Methods of determining force and work deformation; Stress and strain analysis; Calculation of basic technological parameters for upsetting, extrusion, impression-die forging, punching, bending, deep drawing, dimpling, nosing, etc.\nhttps://drive.google.com/drive/folders/1CY0zSKgec-A-IFjHrx-1SUls00Xf1tB0?usp=sharing\nKiến thức về các định luật, nguyên tắc cơ bản của gia công áp lực; Các phương pháp xác định lực và công biến dạng; Phân tích ứng suất, biến dạng; Tính toán các thông số công nghệ cơ bản cho các nguyên công chồn, rèn vuốt, ép chảy, dập khối trong khuôn hở, khuôn kín, đột lỗ, uốn, dập vuốt, lên vành và tóp miệng.",
+    "youtubeVideoId": "kXwo9FqaEGY",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=kXwo9FqaEGY",
+    "thumbnailUrl": "https://i.ytimg.com/vi/kXwo9FqaEGY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBNgPl6T9ZEYhfx39DlM1Zu6w405A",
+    "duration": "8:13",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_manufacturing",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_solidworks"
+    ],
+    "courseId": "course_metal_forming",
+    "lessonId": "les_forming_02",
     "isPublished": true,
-    "createdAt": "2026-08-20T08:00:00Z"
+    "publishedAt": "2026-08-19T07:26:55+00:00",
+    "createdAt": "2026-08-19T07:26:55+00:00"
   },
   {
-    "id": "vid_002",
-    "title": "Thiết kế cơ cấu rút lõi Slider trong khuôn ép nhựa",
-    "slug": "thiet-ke-co-cau-slider-khuon-ep-nhua",
-    "description": "Phân tích nguyên lý làm việc của Slider và thiết kế chốt dẫn hướng xiên hông khuôn.",
-    "youtubeVideoId": "dQw4w9WgXcQ",
+    "id": "vid_012",
+    "title": "2.1 Equipment for Metal Forming",
+    "slug": "21-equipment-for-metal-forming",
+    "description": "Principles, selection, design calculation, and structural simulation of forming machines (sheet/bulk forming, bending, rolling...).\nhttps://drive.google.com/drive/folders/1NIB5ittJmlXOpeuylEpRTIyWz7yT5OzB?usp=sharing\nTrang bị nguyên lý, cách lựa chọn, tính toán và mô phỏng các thiết bị dập tạo hình (dập tấm, dập khối, uốn lốc...).",
+    "youtubeVideoId": "hPP477VSGis",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=hPP477VSGis",
+    "thumbnailUrl": "https://i.ytimg.com/vi/hPP477VSGis/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAmAVDnP571UzsYaBSP_nxOGOQKpg",
+    "duration": "8:31",
     "category": "Tutorial",
-    "softwareIds": ["soft_inventor", "soft_mold_design"],
-    "specialtyIds": ["spec_mold_design"],
-    "lessonId": "les_mold_adv_l1",
-    "courseId": "course_inventor_mold_adv",
-    "duration": "22:45",
+    "specialtyIds": [
+      "spec_manufacturing",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_solidworks"
+    ],
+    "courseId": "course_metal_forming",
+    "lessonId": "les_forming_01",
     "isPublished": true,
-    "createdAt": "2026-08-22T08:00:00Z"
+    "publishedAt": "2026-08-19T07:04:35+00:00",
+    "createdAt": "2026-08-19T07:04:35+00:00"
   },
   {
-    "id": "vid_003",
-    "title": "Mô phỏng CAE quá trình điền đầy nhựa trên phần mềm X-TIMON",
-    "slug": "mo-phong-cae-dien-day-nhua-xtimon",
-    "description": "Phân tích các vùng thiếu liệu và tối ưu áp suất điền đầy nhựa nóng chảy.",
-    "youtubeVideoId": "dQw4w9WgXcQ",
+    "id": "vid_013",
+    "title": "1.6 Project in Cutting Tool",
+    "slug": "16-project-in-cutting-tool",
+    "description": "Cutting Tool Design covers the design of standard and non-standard cutting tools, 2D/3D CAD design, and essential engineering skills.\nhttps://drive.google.com/drive/folders/1cmu1vueDW_Va0oz-CpqQxhbrW14gI5Yc?usp=sharing\nHọc phần Thiết kế dụng cụ cắt tập trung vào thiết kế dao cắt tiêu chuẩn và phi tiêu chuẩn, kết hợp thiết kế 2D/3D trên CAD và các kỹ năng kỹ thuật.",
+    "youtubeVideoId": "8GAm-l7FwtE",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=8GAm-l7FwtE",
+    "thumbnailUrl": "https://i.ytimg.com/vi/8GAm-l7FwtE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBLfQ60kfG-kUiMhGAyL98etinfGg",
+    "duration": "9:02",
+    "category": "CNC Machining",
+    "specialtyIds": [
+      "spec_manufacturing",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_solidworks"
+    ],
+    "courseId": "course_cnc_machining_tools",
+    "lessonId": "les_cnc_06",
+    "isPublished": true,
+    "publishedAt": "2026-08-15T10:27:50+00:00",
+    "createdAt": "2026-08-15T10:27:50+00:00"
+  },
+  {
+    "id": "vid_014",
+    "title": "1.5 CNC Technology",
+    "slug": "15-cnc-technology",
+    "description": "CNC Technology: CNC programming, machine operation, Fanuc control, and CAD/CAM applications.\nhttps://drive.google.com/drive/folders/1AITgsbVIYeHv9NiiwQStP56s6dyX9nGq?usp=sharing\nCông nghệ CNC: Lập trình, vận hành máy CNC, Fanuc và ứng dụng CAD/CAM trong gia công cơ khí.",
+    "youtubeVideoId": "FtPAG1zJDTs",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=FtPAG1zJDTs",
+    "thumbnailUrl": "https://i.ytimg.com/vi/FtPAG1zJDTs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACiF_LSp85eqOmS1lYGB16aisnHA",
+    "duration": "6:50",
+    "category": "CNC Machining",
+    "specialtyIds": [
+      "spec_manufacturing",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_solidworks"
+    ],
+    "courseId": "course_cnc_machining_tools",
+    "lessonId": "les_cnc_05",
+    "isPublished": true,
+    "publishedAt": "2026-08-15T10:11:03+00:00",
+    "createdAt": "2026-08-15T10:11:03+00:00"
+  },
+  {
+    "id": "vid_015",
+    "title": "1.4 Design of machine tools",
+    "slug": "14-design-of-machine-tools",
+    "description": "Explore machine tool structures, transmission, control, and dynamics; calculate and design machine systems, structures, and technical drawings.\nhttps://drive.google.com/drive/folders/1CDB53xf0dN5YJnUbh6pLVJ_0vf5jGvoL?usp=sharing\nTìm hiểu cấu trúc, truyền động, điều khiển và động lực học máy công cụ; tính toán và thiết kế các hệ thống, kết cấu máy và bản vẽ kỹ thuật.",
+    "youtubeVideoId": "lsCe6feRGAI",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=lsCe6feRGAI",
+    "thumbnailUrl": "https://i.ytimg.com/vi/lsCe6feRGAI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAPtnqC_vw3a5SGJjCVMa_JMhqhwQ",
+    "duration": "7:39",
+    "category": "Tutorial",
+    "specialtyIds": [
+      "spec_manufacturing",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_solidworks"
+    ],
+    "courseId": "course_cnc_machining_tools",
+    "lessonId": "les_cnc_04",
+    "isPublished": true,
+    "publishedAt": "2026-08-15T09:51:23+00:00",
+    "createdAt": "2026-08-15T09:51:23+00:00"
+  },
+  {
+    "id": "vid_016",
+    "title": "1.3 CNC machine tools and Industrial Robot",
+    "slug": "13-cnc-machine-tools-and-industrial-robot",
+    "description": "Learn CNC control systems, machine structures, drives, CNC programming, and KUKA robots through practical applications in modern manufacturing.\nhttps://drive.google.com/drive/folders/1Du8DHJZ3LuevLSLDxgTWOzLTdRK9SHGm?usp=sharing\nTìm hiểu hệ điều khiển CNC, cấu trúc máy, truyền động, lập trình CNC và robot KUKA, kết hợp thực hành và ứng dụng tự động hóa trong sản xuất hiện đại.",
+    "youtubeVideoId": "GULpysm14DE",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=GULpysm14DE",
+    "thumbnailUrl": "https://i.ytimg.com/vi/GULpysm14DE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQP4h8ZDGVhbUAKvktJ9XYr9di-A",
+    "duration": "7:55",
+    "category": "CNC Machining",
+    "specialtyIds": [
+      "spec_manufacturing",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_solidworks"
+    ],
+    "courseId": "course_cnc_machining_tools",
+    "lessonId": "les_cnc_03",
+    "isPublished": true,
+    "publishedAt": "2026-08-15T09:30:46+00:00",
+    "createdAt": "2026-08-15T09:30:46+00:00"
+  },
+  {
+    "id": "vid_017",
+    "title": "1.2 Design of Cutting Tools",
+    "slug": "12-design-of-cutting-tools",
+    "description": "Calculation and design of cutting tools, including turning, milling, broaching, and gear-cutting tools.\nhttps://drive.google.com/drive/folders/1REou91hR-ypG45MaGXd7tiDRaPywIx-U?usp=sharing\nTính toán và thiết kế dụng cụ cắt, từ dao tiện, dao phay, dao chuốt đến dụng cụ gia công răng.",
+    "youtubeVideoId": "XJsPETKOkJc",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=XJsPETKOkJc",
+    "thumbnailUrl": "https://i.ytimg.com/vi/XJsPETKOkJc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAqAC2aMsLaZL10Ykn7__3Fd1aP-Q",
+    "duration": "9:47",
+    "category": "CNC Machining",
+    "specialtyIds": [
+      "spec_manufacturing",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_solidworks"
+    ],
+    "courseId": "course_cnc_machining_tools",
+    "lessonId": "les_cnc_02",
+    "isPublished": true,
+    "publishedAt": "2026-08-11T08:31:46+00:00",
+    "createdAt": "2026-08-11T08:31:46+00:00"
+  },
+  {
+    "id": "vid_018",
+    "title": "1.1 Mechanical Practicum",
+    "slug": "11-mechanical-practicum",
+    "description": "Provides practical knowledge and skills in machining, manufacturing, assembly, and mechanical equipment operation.\nhttps://drive.google.com/drive/folders/1LqLWTrz70NwU__QFDlcenjTwagi_Jx8M?usp=sharing\nCung cấp kiến thức và kỹ năng thực hành về gia công, chế tạo, lắp ráp và vận hành thiết bị cơ khí.",
+    "youtubeVideoId": "bu_c-3gGm08",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=bu_c-3gGm08",
+    "thumbnailUrl": "https://i.ytimg.com/vi/bu_c-3gGm08/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDKqfyTiVa-pE2K_KMoQpIK_KjHEw",
+    "duration": "7:24",
+    "category": "Tutorial",
+    "specialtyIds": [
+      "spec_manufacturing",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_solidworks"
+    ],
+    "courseId": "course_cnc_machining_tools",
+    "lessonId": "les_cnc_01",
+    "isPublished": true,
+    "publishedAt": "2026-08-11T07:49:56+00:00",
+    "createdAt": "2026-08-11T07:49:56+00:00"
+  },
+  {
+    "id": "vid_019",
+    "title": "Injection Mold Design",
+    "slug": "injection-mold-design",
+    "description": "This course covers plastic injection mold design, including key calculations, specialized software, and complete mold design for manufacturing and practical applications.\nhttps://drive.google.com/drive/folders/1pWcUtE9qUC-9doCwpDr1RhqtSucOCidQ?usp=sharing\nHọc phần cung cấp kiến thức và kỹ năng tính toán, thiết kế khuôn nhựa, sử dụng phần mềm chuyên dụng và thiết kế hoàn chỉnh khuôn ép phun sẵn sàng cho gia công, sản xuất.",
+    "youtubeVideoId": "YJeSSmujOGY",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=YJeSSmujOGY",
+    "thumbnailUrl": "https://i.ytimg.com/vi/YJeSSmujOGY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDFedijTwH7Xhxc-ovxkGIXbSB9dw",
+    "duration": "8:56",
+    "category": "Mold Design",
+    "specialtyIds": [
+      "spec_mold_design",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_mold_design",
+      "soft_xtimon"
+    ],
+    "courseId": "course_injection_mold_technology",
+    "lessonId": "les_mold_01",
+    "isPublished": true,
+    "publishedAt": "2026-08-11T07:18:12+00:00",
+    "createdAt": "2026-08-11T07:18:12+00:00"
+  },
+  {
+    "id": "vid_020",
+    "title": "CLO3 | 5.7 Anisotropic Composite Design: Analysis, Simulation & Structural Performance",
+    "slug": "clo3-57-anisotropic-composite-design-analysis-simulation-structural-performance",
+    "description": "Evaluate, design, and simulate anisotropic composite materials and structures based on strength and stiffness criteria.\nhttps://drive.google.com/drive/folders/1S5OqL0FBAui6yt2w90IYrPg0IEzwcRvG?usp=sharing\nĐánh giá, thiết kế, mô phỏng vật liệu và kết cấu composite dị hướng theo các tiêu chuẩn bền và tiêu chuẩn cứng.",
+    "youtubeVideoId": "Puw9Di7saLM",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=Puw9Di7saLM",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Puw9Di7saLM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDSQi3tt4cembn6WfynBp_VFTNe-Q",
+    "duration": "7:53",
     "category": "Simulation",
-    "softwareIds": ["soft_xtimon"],
-    "specialtyIds": ["spec_polymer_composite", "spec_cad_cae"],
-    "lessonId": "les_poly_l1",
-    "courseId": "course_polymer_mechanics",
-    "duration": "18:10",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_solidworks"
+    ],
+    "courseId": "course_composite_mechanics_design",
+    "lessonId": "les_comp_09",
     "isPublished": true,
-    "createdAt": "2026-08-25T08:00:00Z"
+    "publishedAt": "2026-08-09T15:56:14+00:00",
+    "createdAt": "2026-08-09T15:56:14+00:00"
   },
   {
-    "id": "vid_004",
-    "title": "Lập trình tiện CNC cơ bản sử dụng mã G-Code",
-    "slug": "lap-trinh-tien-cnc-gcode",
-    "description": "Hướng dẫn viết mã lệnh G01, G02, G03 cho quy trình tiện ngoài trục máy.",
-    "youtubeVideoId": "dQw4w9WgXcQ",
+    "id": "vid_021",
+    "title": "CLO2 | 5.7 Composite Mechanics: Properties, Analysis & Mechanical Design",
+    "slug": "clo2-57-composite-mechanics-properties-analysis-mechanical-design",
+    "description": "Analyze and evaluate the mechanical properties of composite materials for the calculation and design of mechanical components and structures in the field of Mechanical Engineering.\nhttps://drive.google.com/drive/folders/1PgQBqMwoMXg7IleQAvQKDWzZvw_FT9xG?usp=sharing\nPhân tích và đánh giá các thuộc tính cơ học vật liệu composite để tính toán, thiết kế các chi tiết máy, kết cấu trong lĩnh vực Cơ khí.",
+    "youtubeVideoId": "mLmkcn-waoM",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=mLmkcn-waoM",
+    "thumbnailUrl": "https://i.ytimg.com/vi/mLmkcn-waoM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCksbf26aB590cM5SYddu6kpeRFJA",
+    "duration": "5:02",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_solidworks"
+    ],
+    "courseId": "course_composite_mechanics_design",
+    "lessonId": "les_comp_08",
+    "isPublished": true,
+    "publishedAt": "2026-08-09T15:21:47+00:00",
+    "createdAt": "2026-08-09T15:21:47+00:00"
+  },
+  {
+    "id": "vid_022",
+    "title": "CLO1 | 5.7 Polymer Material Mechanics: Fundamentals & Mechanical Design",
+    "slug": "clo1-57-polymer-material-mechanics-fundamentals-mechanical-design",
+    "description": "Understand the fundamentals of polymer material mechanics in order to analyze and design mechanical components in the field of Mechanical Engineering.\nhttps://drive.google.com/drive/folders/1rkoPP32PAJkf8_V4p2U2rYinsjtCKopr?usp=sharing\nThông hiểu bản chất của cơ học vật liệu chất dẻo để tính toán, thiết kế các chi tiết máy trong lĩnh vực Cơ khí.",
+    "youtubeVideoId": "Kc37YbiAKvQ",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=Kc37YbiAKvQ",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Kc37YbiAKvQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnta9jKH7RISl-rbepk5uLXwnyxQ",
+    "duration": "8:46",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_solidworks"
+    ],
+    "courseId": "course_composite_mechanics_design",
+    "lessonId": "les_comp_07",
+    "isPublished": true,
+    "publishedAt": "2026-08-09T14:51:52+00:00",
+    "createdAt": "2026-08-09T14:51:52+00:00"
+  },
+  {
+    "id": "vid_023",
+    "title": "CLO4 | 5.5 Injection Molding: Defect Analysis & Troubleshooting",
+    "slug": "clo4-55-injection-molding-defect-analysis-troubleshooting",
+    "description": "Analyzing troubleshooting that occurs during the injection molding process and knowing how to fix it.\nhttps://drive.google.com/drive/folders/1RobZMyVEaQnVMDhy7mFFZGh5HmxYbs3t?usp=sharing\nPhân tích các lỗi xảy ra trong quá trình đúc phun và biết cách khắc phục.",
+    "youtubeVideoId": "lDS3825vnic",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=lDS3825vnic",
+    "thumbnailUrl": "https://i.ytimg.com/vi/lDS3825vnic/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDf7rgFUWs7bxOWS1w-EoqP1W0UNQ",
+    "duration": "8:56",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_mold_design",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_mold_design",
+      "soft_xtimon"
+    ],
+    "courseId": "course_injection_mold_technology",
+    "lessonId": "les_mold_05",
+    "isPublished": true,
+    "publishedAt": "2026-08-08T06:49:28+00:00",
+    "createdAt": "2026-08-08T06:49:28+00:00"
+  },
+  {
+    "id": "vid_024",
+    "title": "CLO3 | 5.5 Injection Molding: Process, Equipment & Mold Setup",
+    "slug": "clo3-55-injection-molding-process-equipment-mold-setup",
+    "description": "Setting up technological processes, equipment, and molds to process injection molded products.\nhttps://drive.google.com/drive/folders/1T8frt64e4CW2hUXxrt5Cp7iJ95GAuwyE?usp=sharing\nThiết lập quy trình công nghệ, thiết bị và khuôn mẫu để gia công sản phẩm đúc phun.",
+    "youtubeVideoId": "HJEoiQbwapQ",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=HJEoiQbwapQ",
+    "thumbnailUrl": "https://i.ytimg.com/vi/HJEoiQbwapQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQVa52D_m6JkLj2Z5kjpPi1gvXHg",
+    "duration": "7:50",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_mold_design",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_mold_design",
+      "soft_xtimon"
+    ],
+    "courseId": "course_injection_mold_technology",
+    "lessonId": "les_mold_04",
+    "isPublished": true,
+    "publishedAt": "2026-08-08T06:00:34+00:00",
+    "createdAt": "2026-08-08T06:00:34+00:00"
+  },
+  {
+    "id": "vid_025",
+    "title": "CLO2 | 5.5 Injection Molding: Materials, Parameters & Simulation",
+    "slug": "clo2-55-injection-molding-materials-parameters-simulation",
+    "description": "Knowing how to select suitable materials, analyze, and calculate parameters in the injection molding process. Applying simulation to optimize the parameters of the injection molding process.\nhttps://drive.google.com/drive/folders/1yRgRl1OBOr48JmRTJHFkJkVgOxZpaVwI?usp=sharing\nBiết lựa chọn vật liệu phù hợp, phân tích và tính toán các thông số trong quá trình đúc phun. Ứng dụng mô phỏng trong tối ưu hóa các thông số của quá trình đúc phun.",
+    "youtubeVideoId": "2XbNjLTSNzQ",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=2XbNjLTSNzQ",
+    "thumbnailUrl": "https://i.ytimg.com/vi/2XbNjLTSNzQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAdZYUWl1Vpi0F01Vg0XiZFtiJMWA",
+    "duration": "9:38",
+    "category": "Simulation",
+    "specialtyIds": [
+      "spec_mold_design",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_mold_design",
+      "soft_xtimon"
+    ],
+    "courseId": "course_injection_mold_technology",
+    "lessonId": "les_mold_03",
+    "isPublished": true,
+    "publishedAt": "2026-08-08T02:44:08+00:00",
+    "createdAt": "2026-08-08T02:44:08+00:00"
+  },
+  {
+    "id": "vid_026",
+    "title": "CLO1 | 5.5 Plastic Materials: Properties & Applications in Injection Molding",
+    "slug": "clo1-55-plastic-materials-properties-applications-in-injection-molding",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "EYSsiwiHWxg",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=EYSsiwiHWxg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/EYSsiwiHWxg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCczY7_Qs_GbuTYS51XpPujExjI4g",
+    "duration": "8:13",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_mold_design",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_inventor",
+      "soft_mold_design",
+      "soft_xtimon"
+    ],
+    "courseId": "course_injection_mold_technology",
+    "lessonId": "les_mold_02",
+    "isPublished": true,
+    "publishedAt": "2026-07-28T15:55:50.423Z",
+    "createdAt": "2026-07-28T11:45:25.500Z"
+  },
+  {
+    "id": "vid_027",
+    "title": "M4 | 5.4 Extrusion Process Setup: Equipment, Dies & Troubleshooting",
+    "slug": "m4-54-extrusion-process-setup-equipment-dies-troubleshooting",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "ScmSIeK0z_s",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=ScmSIeK0z_s",
+    "thumbnailUrl": "https://i.ytimg.com/vi/ScmSIeK0z_s/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBLIFh1ICL8D_R7sueaAZcKF7YHGg",
+    "duration": "8:13",
     "category": "Manufacturing",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_manufacturing"
+    ],
+    "softwareIds": [
+      "soft_inventor"
+    ],
+    "courseId": "course_extrusion_technology",
+    "lessonId": "les_ext_04",
+    "isPublished": true,
+    "publishedAt": "2026-07-26T15:55:50.423Z",
+    "createdAt": "2026-07-26T11:45:25.500Z"
+  },
+  {
+    "id": "vid_028",
+    "title": "M3 | 5.4 Extrusion Line Management & Process Layout",
+    "slug": "m3-54-extrusion-line-management-process-layout",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "oHWe5R4nQog",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=oHWe5R4nQog",
+    "thumbnailUrl": "https://i.ytimg.com/vi/oHWe5R4nQog/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDixlSYQV19APW2tMVJlMkr50fphw",
+    "duration": "6:32",
+    "category": "Manufacturing",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_manufacturing"
+    ],
+    "softwareIds": [
+      "soft_inventor"
+    ],
+    "courseId": "course_extrusion_technology",
+    "lessonId": "les_ext_03",
+    "isPublished": true,
+    "publishedAt": "2026-07-24T15:55:50.423Z",
+    "createdAt": "2026-07-24T11:45:25.500Z"
+  },
+  {
+    "id": "vid_029",
+    "title": "M2 | 5.4 Extrusion Processing: Materials, Equipment & Parameters",
+    "slug": "m2-54-extrusion-processing-materials-equipment-parameters",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "N96D2N4oz78",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=N96D2N4oz78",
+    "thumbnailUrl": "https://i.ytimg.com/vi/N96D2N4oz78/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBv4DVxndApaB6hq2i9FONzopl54Q",
+    "duration": "8:32",
+    "category": "Manufacturing",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_manufacturing"
+    ],
+    "softwareIds": [
+      "soft_inventor"
+    ],
+    "courseId": "course_extrusion_technology",
+    "lessonId": "les_ext_02",
+    "isPublished": true,
+    "publishedAt": "2026-07-22T15:55:50.423Z",
+    "createdAt": "2026-07-22T11:45:25.500Z"
+  },
+  {
+    "id": "vid_030",
+    "title": "M1 | 5.4 Plastics Properties & Applications in Extrusion",
+    "slug": "m1-54-plastics-properties-applications-in-extrusion",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "WwEmH691eY4",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=WwEmH691eY4",
+    "thumbnailUrl": "https://i.ytimg.com/vi/WwEmH691eY4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCIgxcsUlwR9yN7d0wcOgA3oTJMPw",
+    "duration": "7:58",
+    "category": "Manufacturing",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_manufacturing"
+    ],
+    "softwareIds": [
+      "soft_inventor"
+    ],
+    "courseId": "course_extrusion_technology",
+    "lessonId": "les_ext_01",
+    "isPublished": true,
+    "publishedAt": "2026-07-20T15:55:50.423Z",
+    "createdAt": "2026-07-20T11:45:25.500Z"
+  },
+  {
+    "id": "vid_031",
+    "title": "CLO3 | 5.3 CFD for Polymer Design & Manufacturing",
+    "slug": "clo3-53-cfd-for-polymer-design-manufacturing",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "a4MamDsQjNk",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=a4MamDsQjNk",
+    "thumbnailUrl": "https://i.ytimg.com/vi/a4MamDsQjNk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAyYaN14tblJvJ91wx2fA3rknucUw",
+    "duration": "10:04",
+    "category": "Simulation",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_xtimon"
+    ],
+    "courseId": "course_polymer_flow_cfd",
+    "lessonId": "les_cfd_03",
+    "isPublished": true,
+    "publishedAt": "2026-07-18T15:55:50.423Z",
+    "createdAt": "2026-07-18T11:45:25.500Z"
+  },
+  {
+    "id": "vid_032",
+    "title": "CLO2 | 5.3 Polymer Flow Behavior: Properties & Influencing Factors",
+    "slug": "clo2-53-polymer-flow-behavior-properties-influencing-factors",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "LeRf2FHzIWA",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=LeRf2FHzIWA",
+    "thumbnailUrl": "https://i.ytimg.com/vi/LeRf2FHzIWA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA9yQhZ9rcsOTj0wZtBUeCMugaXxQ",
+    "duration": "7:42",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_xtimon"
+    ],
+    "courseId": "course_polymer_flow_cfd",
+    "lessonId": "les_cfd_02",
+    "isPublished": true,
+    "publishedAt": "2026-07-16T15:55:50.423Z",
+    "createdAt": "2026-07-16T11:45:25.500Z"
+  },
+  {
+    "id": "vid_033",
+    "title": "CLO1 | 5.3 Polymer Flow: Solutions & Molten Polymers",
+    "slug": "clo1-53-polymer-flow-solutions-molten-polymers",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "JwCF8pWXwdQ",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=JwCF8pWXwdQ",
+    "thumbnailUrl": "https://i.ytimg.com/vi/JwCF8pWXwdQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC1M-CEBdf5p0fjHSHSHqEkispdOQ",
+    "duration": "9:56",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_xtimon"
+    ],
+    "courseId": "course_polymer_flow_cfd",
+    "lessonId": "les_cfd_01",
+    "isPublished": true,
+    "publishedAt": "2026-07-14T15:55:50.423Z",
+    "createdAt": "2026-07-14T11:45:25.500Z"
+  },
+  {
+    "id": "vid_034",
+    "title": "CLO3 | 5.2 Design for Manufacturability & Composite Recycling",
+    "slug": "clo3-52-design-for-manufacturability-composite-recycling",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "AjMcYh2borw",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=AjMcYh2borw",
+    "thumbnailUrl": "https://i.ytimg.com/vi/AjMcYh2borw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD-vtX-IqgZTUiqxD0D7XuXmny_zA",
+    "duration": "9:58",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_solidworks"
+    ],
+    "courseId": "course_composite_mechanics_design",
+    "lessonId": "les_comp_06",
+    "isPublished": true,
+    "publishedAt": "2026-07-12T15:55:50.423Z",
+    "createdAt": "2026-07-12T11:45:25.500Z"
+  },
+  {
+    "id": "vid_035",
+    "title": "CLO2 | 5.2 Composite Processing: Methods & Parameters",
+    "slug": "clo2-52-composite-processing-methods-parameters",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "JYuArDynQaA",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=JYuArDynQaA",
+    "thumbnailUrl": "https://i.ytimg.com/vi/JYuArDynQaA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCcMnqxCKKEqE9mhNUzdHVQa3Vhew",
+    "duration": "8:09",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_solidworks"
+    ],
+    "courseId": "course_composite_mechanics_design",
+    "lessonId": "les_comp_05",
+    "isPublished": true,
+    "publishedAt": "2026-07-10T15:55:50.423Z",
+    "createdAt": "2026-07-10T11:45:25.500Z"
+  },
+  {
+    "id": "vid_036",
+    "title": "CLO1 | 5.2 Composite Materials: Properties & Applications",
+    "slug": "clo1-52-composite-materials-properties-applications",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "iO0O-HzfPw4",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=iO0O-HzfPw4",
+    "thumbnailUrl": "https://i.ytimg.com/vi/iO0O-HzfPw4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD8gPC3QI8QDPPTuw_AlORUlURUFA",
+    "duration": "8:00",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_solidworks"
+    ],
+    "courseId": "course_composite_mechanics_design",
+    "lessonId": "les_comp_04",
+    "isPublished": true,
+    "publishedAt": "2026-07-08T15:55:50.423Z",
+    "createdAt": "2026-07-08T11:45:25.500Z"
+  },
+  {
+    "id": "vid_037",
+    "title": "Introduction",
+    "slug": "introduction",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "FT6BynGwpM8",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=FT6BynGwpM8",
+    "thumbnailUrl": "https://i.ytimg.com/vi/FT6BynGwpM8/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhTIGEoZTAP&rs=AOn4CLCShoKJAvMCT7b28XjRxQNB9igbTw",
+    "duration": "0:11",
+    "category": "Tutorial",
+    "specialtyIds": [],
     "softwareIds": [],
-    "specialtyIds": ["spec_manufacturing"],
-    "lessonId": "les_cnc_l2",
-    "courseId": "course_cnc_machining",
-    "duration": "12:15",
-    "isPublished": true,
-    "createdAt": "2026-08-26T08:00:00Z"
-  },
-  {
-    "id": "vid_005",
-    "title": "Quy trình thiết kế khuôn dập nguội tấm kim loại",
-    "slug": "quy-trinh-thiet-ke-khuon-dap-nguoi",
-    "description": "Tìm hiểu khe hở cắt dập, nguyên lý chày cối trong khuôn dập cơ khí.",
-    "youtubeVideoId": "dQw4w9WgXcQ",
-    "category": "Manufacturing",
-    "softwareIds": ["soft_solidworks"],
-    "specialtyIds": ["spec_manufacturing", "spec_mold_design"],
-    "lessonId": null,
     "courseId": null,
-    "duration": "14:50",
+    "lessonId": null,
     "isPublished": true,
-    "createdAt": "2026-08-27T08:00:00Z"
+    "publishedAt": "2026-07-06T15:55:50.423Z",
+    "createdAt": "2026-07-06T11:45:25.500Z"
   },
   {
-    "id": "vid_006",
-    "title": "Cơ chất lỏng Polymer - Phần 1: Các mô hình lưu biến học",
-    "slug": "co-chat-long-polymer-mo-hinh-luu-bien",
-    "description": "Bài giảng lý thuyết về mô hình số mũ Power-law và Herschel-Bulkley ứng dụng cho dòng nhựa.",
-    "youtubeVideoId": "dQw4w9WgXcQ",
-    "category": "Theory",
-    "softwareIds": [],
-    "specialtyIds": ["spec_polymer_composite"],
-    "lessonId": "les_poly_l2",
-    "courseId": "course_polymer_mechanics",
-    "duration": "25:30",
+    "id": "vid_038",
+    "title": "CLO3 | 5.1 Selecting Plastics & Composites for Specific Applications",
+    "slug": "clo3-51-selecting-plastics-composites-for-specific-applications",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "UBbA1pGpmeI",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=UBbA1pGpmeI",
+    "thumbnailUrl": "https://i.ytimg.com/vi/UBbA1pGpmeI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBw7P5c1e5E1VLJprLBrJqCUJ8Lqw",
+    "duration": "6:51",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_solidworks"
+    ],
+    "courseId": "course_composite_mechanics_design",
+    "lessonId": "les_comp_03",
     "isPublished": true,
-    "createdAt": "2026-08-25T09:00:00Z"
+    "publishedAt": "2026-07-04T15:55:50.423Z",
+    "createdAt": "2026-07-04T11:45:25.500Z"
   },
   {
-    "id": "vid_007",
-    "title": "Thiết kế hệ thống làm mát Cooling Channels trong Inventor",
-    "slug": "thiet-ke-he-thong-lam-mat-inventor",
-    "description": "Thực hành khoan kênh dẫn nước làm mát, bố trí vòi phun nước và đầu nối nhanh.",
-    "youtubeVideoId": "dQw4w9WgXcQ",
-    "category": "Tutorial",
-    "softwareIds": ["soft_inventor"],
-    "specialtyIds": ["spec_mold_design"],
-    "lessonId": "les_mold_basics_l4",
-    "courseId": "course_inventor_mold_basics",
-    "duration": "19:05",
+    "id": "vid_039",
+    "title": "CLO2 | 5.1 Polymer Matrix Composites: Properties & Applications",
+    "slug": "clo2-51-polymer-matrix-composites-properties-applications",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "2wADEzNsVic",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=2wADEzNsVic",
+    "thumbnailUrl": "https://i.ytimg.com/vi/2wADEzNsVic/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAgbt7jfofd8m8NQXsdaYnDaOfuvw",
+    "duration": "7:49",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_solidworks"
+    ],
+    "courseId": "course_composite_mechanics_design",
+    "lessonId": "les_comp_02",
     "isPublished": true,
-    "createdAt": "2026-08-27T09:00:00Z"
+    "publishedAt": "2026-07-02T15:55:50.423Z",
+    "createdAt": "2026-07-02T11:45:25.500Z"
   },
   {
-    "id": "vid_008",
-    "title": "SOLIDWORKS Mate nâng cao cho cụm bánh răng hộp tốc độ",
-    "slug": "solidworks-mate-banh-rang-hop-toc-do",
-    "description": "Ràng buộc khớp bánh răng quay đồng bộ và xử lý tự do xoay trong SOLIDWORKS Assembly.",
-    "youtubeVideoId": "dQw4w9WgXcQ",
-    "category": "Tutorial",
-    "softwareIds": ["soft_solidworks"],
-    "specialtyIds": ["spec_cad_cae"],
-    "lessonId": "les_sw_l4",
-    "courseId": "course_solidworks_machine",
-    "duration": "17:40",
+    "id": "vid_040",
+    "title": "CLO1 | 5.1 Polymer Synthesis, Properties & Applications of Plastics",
+    "slug": "clo1-51-polymer-synthesis-properties-applications-of-plastics",
+    "description": "Video bài giảng kỹ thuật cơ khí MechanicalBKA.",
+    "youtubeVideoId": "hTWSI0pvE8o",
+    "channelTitle": "MechanicalBKA",
+    "channelUrl": "https://youtube.com/@trongbka",
+    "youtubeUrl": "https://www.youtube.com/watch?v=hTWSI0pvE8o",
+    "thumbnailUrl": "https://i.ytimg.com/vi/hTWSI0pvE8o/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCAd7Hx7M4BvmfASC4M6tb2h4QHkg",
+    "duration": "7:41",
+    "category": "Lecture",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_solidworks"
+    ],
+    "courseId": "course_composite_mechanics_design",
+    "lessonId": "les_comp_01",
     "isPublished": true,
-    "createdAt": "2026-08-24T09:00:00Z"
-  },
-  {
-    "id": "vid_009",
-    "title": "Quy trình chia lưới phần tử hữu hạn CAE Mold Flow",
-    "slug": "quy-trinh-chia-luoi-mesh-cae",
-    "description": "Tầm quan trọng của chất lượng lưới Mesh đến kết quả tính toán áp suất điền đầy nhựa.",
-    "youtubeVideoId": "dQw4w9WgXcQ",
-    "category": "Simulation",
-    "softwareIds": ["soft_xtimon"],
-    "specialtyIds": ["spec_cad_cae"],
-    "lessonId": "les_xtimon_l1",
-    "courseId": "course_xtimon_flow",
-    "duration": "14:15",
-    "isPublished": true,
-    "createdAt": "2026-08-26T09:00:00Z"
-  },
-  {
-    "id": "vid_010",
-    "title": "Set dao và hiệu chỉnh G54 gốc phôi trên máy CNC thực tế",
-    "slug": "set-dao-g54-may-cnc-thuc-te",
-    "description": "Bài giảng quay tại xưởng cơ khí chế tạo máy hướng dẫn sét dao tiện ngoài phôi thép.",
-    "youtubeVideoId": "dQw4w9WgXcQ",
-    "category": "Manufacturing",
-    "softwareIds": [],
-    "specialtyIds": ["spec_manufacturing"],
-    "lessonId": "les_cnc_l3",
-    "courseId": "course_cnc_machining",
-    "duration": "11:30",
-    "isPublished": true,
-    "createdAt": "2026-08-27T09:30:00Z"
+    "publishedAt": "2026-06-30T15:55:50.423Z",
+    "createdAt": "2026-06-30T11:45:25.500Z"
   }
 ]

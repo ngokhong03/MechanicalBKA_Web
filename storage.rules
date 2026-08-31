@@ -1,0 +1,28 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      // BẢO MẬT: Chỉ sử dụng Auth Custom Claims { admin: true }
+      return isAuthenticated() && request.auth.token.admin == true;
+    }
+
+    // 1. Public Assets (Images, Thumbnails, Banners)
+    match /public/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // 2. Private Product & Course CAD Files
+    // BẢO MẬT TUYỆT ĐỐI: Khách & Học viên KHÔNG ĐƯỢC đọc trực tiếp từ Storage
+    // Mọi yêu cầu tải file bắt buộc phải đi qua Download API (Cloud Functions)
+    match /private/{allPaths=**} {
+      allow read, write: if isAdmin();
+    }
+  }
+}

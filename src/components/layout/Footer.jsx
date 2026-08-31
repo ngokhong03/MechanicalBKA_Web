@@ -29,7 +29,7 @@ const Footer = () => {
         <div className="footer-col brand-col">
           <span className="brand-logo"><span className="brand-accent">Mechanical</span>BKA</span>
           <p className="brand-slogan">
-            Cổng thông tin và học liệu cơ khí chuyên sâu tại Việt Nam. Đồng hành cùng kỹ sư và sinh viên cơ khí chế tạo máy, thiết kế khuôn mẫu.
+            Kho file kỹ thuật và công cụ cơ khí chuyên sâu tại Việt Nam. Đồng hành cùng kỹ sư và sinh viên cơ khí chế tạo máy, thiết kế khuôn mẫu.
           </p>
           <div className="social-links">
             <a href="https://youtube.com/@trongbka" target="_blank" rel="noopener noreferrer" className="social-icon" title="YouTube Channel">
@@ -46,23 +46,23 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div className="footer-col">
-          <h4 className="footer-col-title font-mono">ĐƯỜNG DẪN NHANH</h4>
+          <h4 className="footer-col-title font-mono">ĐƯỜNG DẪN CHÍNH</h4>
           <ul className="footer-links">
             <li><Link to="/">Trang Chủ</Link></li>
-            <li><Link to="/courses">Tất Cả Khóa Học</Link></li>
-            <li><Link to="/store">Cửa Hàng Học Liệu</Link></li>
-            <li><Link to="/videos">Thư Viện Videos</Link></li>
+            <li><Link to="/store">Kho Tài Liệu</Link></li>
+            <li><Link to="/store?type=EPXYZ_FILE">Engineering Paper XYZ</Link></li>
+            <li><Link to="/account">Tài Khoản</Link></li>
           </ul>
         </div>
 
-        {/* Specialties Links */}
+        {/* Resources & Support Links */}
         <div className="footer-col">
-          <h4 className="footer-col-title font-mono">CHUYÊN NGÀNH CHÍNH</h4>
+          <h4 className="footer-col-title font-mono">DỰ ÁN & ĐỒNG HÀNH</h4>
           <ul className="footer-links">
-            <li><Link to="/courses?specialty=spec_polymer_composite">Polymer & Composite</Link></li>
-            <li><Link to="/courses?specialty=spec_mold_design">Mold Design (Thiết Kế Khuôn)</Link></li>
-            <li><Link to="/courses?specialty=spec_manufacturing">Mechanical Manufacturing</Link></li>
-            <li><Link to="/courses?specialty=spec_cad_cae">CAD / CAE Mechanics</Link></li>
+            <li><Link to="/projects">Đồ Án Chi Tiết Máy</Link></li>
+            <li><Link to="/courses">Khóa Học & Video</Link></li>
+            <li><a href="/#support-coffee">Ủng Hộ Một Ly Cà Phê ☕</a></li>
+            <li><a href="https://youtube.com/@trongbka" target="_blank" rel="noopener noreferrer">Kênh YouTube</a></li>
           </ul>
         </div>
       </div>

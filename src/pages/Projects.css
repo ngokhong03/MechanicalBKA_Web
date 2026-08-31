@@ -1,0 +1,57 @@
+/* ===== Projects Page — Phase 12 Styles ===== */
+
+.projects-page .section-header {
+  margin-bottom: 32px;
+}
+
+/* Stats bar under heading */
+.projects-stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 14px 20px;
+  background: rgba(56, 189, 248, 0.04);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 10px;
+}
+
+.projects-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.projects-stat-item .stat-value {
+  color: var(--primary);
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+}
+
+.projects-stat-item .stat-label {
+  font-size: 12px;
+}
+
+/* Divider between stats */
+.projects-stat-item + .projects-stat-item::before {
+  content: '';
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .projects-stats-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+  
+  .projects-stat-item + .projects-stat-item::before {
+    display: none;
+  }
+}
