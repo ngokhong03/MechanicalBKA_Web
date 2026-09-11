@@ -975,6 +975,382 @@
 }
 
 /* ============================================================
+   4.5 HERO YOUTUBE CTA BUTTON
+   ============================================================ */
+.btn-hero-youtube {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(255, 0, 0, 0.2);
+}
+
+.btn-hero-youtube:hover {
+  background: linear-gradient(135deg, #FF2222 0%, #EE0000 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 0, 0, 0.35);
+}
+
+.spec-val-yt {
+  color: #FF4444 !important;
+}
+
+/* ============================================================
+   NEW: YOUTUBE CHANNEL SHOWCASE SECTION
+   ============================================================ */
+.youtube-section {
+  margin-top: 100px;
+  position: relative;
+}
+
+.yt-pre-tag {
+  display: inline-flex;
+  align-items: center;
+  color: #FF4444 !important;
+}
+
+/* Channel Banner */
+.yt-channel-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.08) 0%, rgba(15, 23, 42, 0.95) 60%);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.yt-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.yt-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(255, 0, 0, 0.3);
+}
+
+.yt-banner-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.yt-channel-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #F8FAFC;
+  line-height: 1.3;
+}
+
+.yt-channel-handle {
+  color: #FF6B6B;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.yt-video-count {
+  color: #94A3B8;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.btn-yt-subscribe {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #FF0000;
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.btn-yt-subscribe:hover {
+  background: #CC0000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+}
+
+/* Playlists Grid */
+.yt-playlists-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.yt-playlist-card {
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.yt-playlist-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 0, 0, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.yt-playlist-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.yt-playlist-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.yt-playlist-card:hover .yt-playlist-thumb img {
+  transform: scale(1.08);
+}
+
+.yt-playlist-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.yt-playlist-card:hover .yt-playlist-overlay {
+  opacity: 1;
+}
+
+.yt-playlist-count {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #FFFFFF;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.yt-playlist-body {
+  padding: 14px 16px;
+}
+
+.yt-playlist-tag {
+  color: #FF6B6B;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.yt-playlist-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #F1F5F9;
+  line-height: 1.35;
+}
+
+/* Featured Videos */
+.yt-featured-videos {
+  margin-bottom: 32px;
+}
+
+.yt-featured-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94A3B8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+}
+
+.yt-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.yt-featured-card {
+  background: #0F172A;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.yt-featured-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 0, 0, 0.3);
+}
+
+.yt-featured-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.yt-featured-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.yt-featured-card:hover .yt-featured-thumb img {
+  transform: scale(1.05);
+}
+
+.yt-featured-play {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.yt-featured-card:hover .yt-featured-play {
+  opacity: 1;
+}
+
+.yt-featured-duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #FFFFFF;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.yt-featured-body {
+  padding: 14px 16px 16px;
+}
+
+.yt-featured-cat {
+  color: #FF6B6B;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.yt-featured-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #F1F5F9;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* YouTube CTA Row */
+.yt-cta-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-yt-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 0, 0, 0.12);
+  border: 1px solid rgba(255, 0, 0, 0.35);
+  color: #FF6B6B;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-yt-view-all:hover {
+  background: rgba(255, 0, 0, 0.2);
+  border-color: #FF0000;
+  transform: translateY(-2px);
+}
+
+.btn-yt-library {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #E2E8F0;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-yt-library:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
    7. STORE CTA BANNER
    ============================================================ */
 .store-cta-section {
@@ -1070,6 +1446,25 @@
   .store-cta-subheading {
     margin: 0 auto;
   }
+
+  .yt-playlists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .yt-featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .yt-channel-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .btn-yt-subscribe {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1157,6 +1552,10 @@
     width: 100%;
   }
 
+  .btn-hero-youtube {
+    justify-content: center;
+  }
+
   .store-cta-btn-wrap {
     width: 100%;
   }
@@ -1165,4 +1564,24 @@
   .store-cta-btn-wrap a {
     width: 100%;
   }
+
+  .yt-playlists-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yt-featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yt-cta-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-yt-view-all,
+  .btn-yt-library {
+    width: 100%;
+    justify-content: center;
+  }
 }
+

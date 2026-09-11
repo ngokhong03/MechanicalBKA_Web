@@ -1,30 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { PlayCircle, ExternalLink, Video } from 'lucide-react';
+import { PlayCircle, ExternalLink, Video, X } from 'lucide-react';
 import { videos, courses, lessons, software } from '../mock/data';
+import YoutubeIcon from '../components/common/YoutubeIcon';
 import Badge from '../components/common/Badge';
 import './Videos.css';
 
-const YoutubeIcon = ({ size = 18, ...props }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-    <polygon points="10 15 15 12 10 9" />
-  </svg>
-);
+const YOUTUBE_CHANNEL_URL = 'https://youtube.com/@trongbka';
+const YOUTUBE_SUBSCRIBE_URL = 'https://youtube.com/@trongbka?sub_confirmation=1';
 
 const Videos = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [activeVideoId, setActiveVideoId] = useState(null);
 
   // Extract categories for filter
   const categories = Array.from(new Set(videos.map(v => v.category)));
@@ -35,8 +22,49 @@ const Videos = () => {
     return vid.category === selectedCategory;
   });
 
+  const handlePlayVideo = (youtubeVideoId) => {
+    setActiveVideoId(youtubeVideoId);
+  };
+
+  const closeModal = () => {
+    setActiveVideoId(null);
+  };
+
   return (
     <div className="container videos-page" style={{ padding: '40px 24px' }}>
+      {/* YouTube Channel Banner */}
+      <div className="videos-channel-banner">
+        <div className="vcb-left">
+          <div className="vcb-avatar">
+            <YoutubeIcon size={24} />
+          </div>
+          <div className="vcb-info">
+            <h2 className="vcb-name">MechanicalBKA</h2>
+            <span className="vcb-handle font-mono">@trongbka</span>
+          </div>
+        </div>
+        <div className="vcb-actions">
+          <a 
+            href={YOUTUBE_SUBSCRIBE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="vcb-subscribe-btn"
+          >
+            <YoutubeIcon size={14} />
+            <span>ĐĂNG KÝ KÊNH</span>
+          </a>
+          <a 
+            href={YOUTUBE_CHANNEL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="vcb-channel-link font-mono"
+          >
+            <span>XEM KÊNH YOUTUBE</span>
+            <ExternalLink size={12} />
+          </a>
+        </div>
+      </div>
+
       {/* Page Header */}
       <div className="section-header">
         <span className="technical-label" style={{ color: 'var(--primary)' }}>Video Tutorials</span>
@@ -65,6 +93,11 @@ const Videos = () => {
         ))}
       </div>
 
+      {/* Results count */}
+      <div className="videos-result-count font-mono">
+        {filteredVideos.length} video{filteredVideos.length !== 1 ? 's' : ''}
+      </div>
+
       {/* Grid listing */}
       <div className="grid-cols-3">
         {filteredVideos.map(vid => {
@@ -75,7 +108,15 @@ const Videos = () => {
 
           return (
             <div key={vid.id} className="video-page-card glass">
-              <div className="video-thumb-wrapper">
+              <div 
+                className="video-thumb-wrapper"
+                onClick={() => handlePlayVideo(vid.youtubeVideoId)}
+                style={{ cursor: 'pointer' }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Phát video: ${vid.title}`}
+                onKeyDown={(e) => e.key === 'Enter' && handlePlayVideo(vid.youtubeVideoId)}
+              >
                 <img 
                   src={vid.thumbnailUrl || `https://img.youtube.com/vi/${vid.youtubeVideoId}/hqdefault.jpg`} 
                   alt={vid.title} 
@@ -100,12 +141,18 @@ const Videos = () => {
                 <p className="video-page-card-desc">{vid.description}</p>
 
                 <div className="video-page-card-footer">
+                  <button 
+                    onClick={() => handlePlayVideo(vid.youtubeVideoId)}
+                    className="video-nav-btn font-mono video-play-btn"
+                  >
+                    <PlayCircle size={12} style={{ marginRight: '6px' }} /> PHÁT VIDEO
+                  </button>
                   {associatedCourse && associatedLesson ? (
                     <Link 
                       to={`/courses/${associatedCourse.slug}/lessons/${associatedLesson.slug}`}
                       className="video-nav-btn font-mono"
                     >
-                      <Video size={12} style={{ marginRight: '6px' }} /> HỌC TRONG BÀI GIẢNG →
+                      <Video size={12} style={{ marginRight: '6px' }} /> BÀI GIẢNG →
                     </Link>
                   ) : (
                     <a 
@@ -114,7 +161,7 @@ const Videos = () => {
                       rel="noopener noreferrer" 
                       className="video-nav-btn font-mono youtube-link"
                     >
-                      <YoutubeIcon size={12} style={{ marginRight: '6px' }} /> XEM TRÊN YOUTUBE <ExternalLink size={10} style={{ marginLeft: '4px' }} />
+                      <YoutubeIcon size={12} style={{ marginRight: '6px' }} /> YOUTUBE <ExternalLink size={10} style={{ marginLeft: '4px' }} />
                     </a>
                   )}
                 </div>
@@ -123,6 +170,43 @@ const Videos = () => {
           );
         })}
       </div>
+
+      {/* View All on YouTube CTA */}
+      <div className="videos-yt-cta">
+        <a 
+          href={YOUTUBE_CHANNEL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="videos-yt-btn"
+        >
+          <YoutubeIcon size={18} />
+          <span>XEM TẤT CẢ TRÊN YOUTUBE</span>
+          <ExternalLink size={14} />
+        </a>
+      </div>
+
+      {/* YouTube Video Player Modal */}
+      {activeVideoId && (
+        <div className="video-modal-backdrop" onClick={closeModal}>
+          <div className="video-modal-container" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="video-modal-close" 
+              onClick={closeModal}
+              aria-label="Đóng trình phát video"
+            >
+              <X size={24} />
+            </button>
+            <div className="video-modal-player">
+              <iframe
+                src={`https://www.youtube.com/embed/${activeVideoId}?autoplay=1&rel=0`}
+                title="YouTube Video Player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

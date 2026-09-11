@@ -18,17 +18,66 @@ import {
   ShieldAlert,
   GraduationCap,
   Share2,
-  Mail
+  Mail,
+  PlayCircle,
+  Phone,
+  Users,
+  Video
 } from 'lucide-react';
 import { dataProvider } from '../services/dataProvider';
+import { videos as allVideos } from '../mock/data';
 import Button from '../components/common/Button';
+import YoutubeIcon from '../components/common/YoutubeIcon';
 import './Home.css';
 
 // Contact configuration for Software Support / Educational License Inquiry
 const SUPPORT_CONTACT = {
-  email: 'contact@mechanicalbka.com',
+  email: 'trongme2bka@gmail.com',
   subject: 'MechanicalBKA — Software Support / Educational License Inquiry',
   body: 'Xin chào EngineeringPaper.pro Team,\n\nTôi là người sáng lập dự án MechanicalBKA tại Việt Nam. Tôi viết thư này để giới thiệu về dự án và xin được xem xét cấp một Educational / Project License nhằm phục vụ xây dựng tài liệu tính toán kỹ thuật cho cộng đồng sinh viên và kỹ sư cơ khí Việt Nam.\n\nThông tin dự án: https://mechanicalbka.web.app\n\nTrân trọng,\nNguyễn Ngọc Trong'
+};
+
+// YouTube Channel Configuration
+const YOUTUBE_CHANNEL = {
+  handle: '@trongbka',
+  name: 'MechanicalBKA',
+  url: 'https://youtube.com/@trongbka',
+  subscribeUrl: 'https://youtube.com/@trongbka?sub_confirmation=1',
+  description: 'Kênh YouTube chuyên về đào tạo kỹ thuật cơ khí: Polymer & Composite, Thiết kế Khuôn, CAD/CAE, Gia công cơ khí và Chế tạo máy.',
+  playlists: [
+    {
+      id: 'pl_01',
+      title: 'Chế tạo máy & CNC',
+      slug: 'che-tao-may',
+      videoCount: 6,
+      thumbnail: 'https://i.ytimg.com/vi/8GAm-l7FwtE/hq720.jpg',
+      tag: 'MODULE 1'
+    },
+    {
+      id: 'pl_02',
+      title: 'Công nghệ Dập tạo hình',
+      slug: 'dap-tao-hinh',
+      videoCount: 2,
+      thumbnail: 'https://i.ytimg.com/vi/kXwo9FqaEGY/hq720.jpg',
+      tag: 'MODULE 2'
+    },
+    {
+      id: 'pl_03',
+      title: 'Polymer & Composite Materials',
+      slug: 'polymer-composite',
+      videoCount: 8,
+      thumbnail: 'https://i.ytimg.com/vi/hPP477VSGis/hq720.jpg',
+      tag: 'MODULE 5'
+    },
+    {
+      id: 'pl_04',
+      title: 'Injection Molding & Mold Design',
+      slug: 'injection-molding',
+      videoCount: 5,
+      thumbnail: 'https://i.ytimg.com/vi/kXwo9FqaEGY/hq720.jpg',
+      tag: 'MODULE 5.5'
+    }
+  ]
 };
 
 const Home = () => {
@@ -59,6 +108,11 @@ const Home = () => {
   const publishedProducts = useMemo(() => products.filter(p => p.isPublished), [products]);
   const epxyzProducts = useMemo(() => publishedProducts.filter(p => p.productType === 'EPXYZ_FILE'), [publishedProducts]);
   const calculationProducts = useMemo(() => publishedProducts.filter(p => ['EPXYZ_FILE', 'CALCULATION'].includes(p.productType)), [publishedProducts]);
+
+  // Featured videos from synced data
+  const featuredVideos = useMemo(() => {
+    return allVideos.filter(v => v.isPublished).slice(0, 3);
+  }, []);
 
   // Account details for Coffee Support (Preserved strictly)
   const bankDetails = {
@@ -130,6 +184,16 @@ const Home = () => {
                 KHÁM PHÁ KHO TÀI LIỆU
               </Button>
             </Link>
+            <a 
+              href={YOUTUBE_CHANNEL.subscribeUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-hero-youtube"
+            >
+              <YoutubeIcon size={18} />
+              <span>KÊNH YOUTUBE</span>
+              <ExternalLink size={12} />
+            </a>
             <Button 
               variant="outline" 
               size="large" 
@@ -151,8 +215,8 @@ const Home = () => {
               <span className="spec-val">EPXYZ_FILE (.epxyz)</span>
             </div>
             <div className="spec-item">
-              <span className="spec-label">CALCULATION_TRACE:</span>
-              <span className="spec-val">TRANSPARENT_STEPS</span>
+              <span className="spec-label">YOUTUBE_CHANNEL:</span>
+              <span className="spec-val spec-val-yt">{YOUTUBE_CHANNEL.handle}</span>
             </div>
             <div className="spec-item">
               <span className="spec-label">ARTIFACTS_READY:</span>
@@ -307,7 +371,134 @@ const Home = () => {
       </section>
 
       {/* ============================================================ */}
-      {/* 4. NEW SECTION: SOFTWARE SUPPORT / ENGINEERINGPAPER          */}
+      {/* 4. YOUTUBE CHANNEL SHOWCASE — Drive Traffic & Subscribers     */}
+      {/* ============================================================ */}
+      <section id="youtube-channel" className="home-section youtube-section">
+        <div className="container">
+          {/* Section Header */}
+          <div className="section-header-minimal">
+            <span className="section-pre-tag font-mono yt-pre-tag">
+              <YoutubeIcon size={14} style={{ marginRight: '6px' }} />
+              YOUTUBE CHANNEL
+            </span>
+            <h2 className="section-title-minimal">Kênh YouTube MechanicalBKA</h2>
+            <p className="section-desc-minimal">
+              {YOUTUBE_CHANNEL.description}
+            </p>
+          </div>
+
+          {/* Channel Banner Card */}
+          <div className="yt-channel-banner">
+            <div className="yt-banner-left">
+              <div className="yt-avatar">
+                <YoutubeIcon size={28} />
+              </div>
+              <div className="yt-banner-info">
+                <h3 className="yt-channel-name">{YOUTUBE_CHANNEL.name}</h3>
+                <span className="yt-channel-handle font-mono">{YOUTUBE_CHANNEL.handle}</span>
+                <span className="yt-video-count font-mono">{allVideos.length} videos • {YOUTUBE_CHANNEL.playlists.length} playlists</span>
+              </div>
+            </div>
+            <a 
+              href={YOUTUBE_CHANNEL.subscribeUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-yt-subscribe"
+            >
+              <YoutubeIcon size={16} />
+              <span>ĐĂNG KÝ KÊNH</span>
+            </a>
+          </div>
+
+          {/* Featured Playlists */}
+          <div className="yt-playlists-grid">
+            {YOUTUBE_CHANNEL.playlists.map(pl => (
+              <a 
+                key={pl.id}
+                href={YOUTUBE_CHANNEL.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="yt-playlist-card glass"
+              >
+                <div className="yt-playlist-thumb">
+                  <img 
+                    src={pl.thumbnail} 
+                    alt={pl.title} 
+                    loading="lazy"
+                    onError={(e) => { e.target.src = 'https://img.youtube.com/vi/default/hqdefault.jpg'; }}
+                  />
+                  <div className="yt-playlist-overlay">
+                    <PlayCircle size={32} />
+                  </div>
+                  <span className="yt-playlist-count font-mono">{pl.videoCount} videos</span>
+                </div>
+                <div className="yt-playlist-body">
+                  <span className="yt-playlist-tag font-mono">{pl.tag}</span>
+                  <h4 className="yt-playlist-title">{pl.title}</h4>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* Featured Videos Row */}
+          {featuredVideos.length > 0 && (
+            <div className="yt-featured-videos">
+              <h3 className="yt-featured-heading font-mono">
+                <Video size={16} />
+                <span>VIDEO MỚI NHẤT</span>
+              </h3>
+              <div className="yt-featured-grid">
+                {featuredVideos.map(vid => (
+                  <a
+                    key={vid.id}
+                    href={vid.youtubeUrl || `https://www.youtube.com/watch?v=${vid.youtubeVideoId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="yt-featured-card"
+                  >
+                    <div className="yt-featured-thumb">
+                      <img 
+                        src={vid.thumbnailUrl || `https://img.youtube.com/vi/${vid.youtubeVideoId}/hqdefault.jpg`}
+                        alt={vid.title}
+                        loading="lazy"
+                      />
+                      <div className="yt-featured-play">
+                        <PlayCircle size={28} />
+                      </div>
+                      <span className="yt-featured-duration font-mono">{vid.duration}</span>
+                    </div>
+                    <div className="yt-featured-body">
+                      <span className="yt-featured-cat font-mono">{vid.category}</span>
+                      <h4 className="yt-featured-title">{vid.title}</h4>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* CTA: View All on YouTube */}
+          <div className="yt-cta-row">
+            <a 
+              href={YOUTUBE_CHANNEL.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-yt-view-all"
+            >
+              <YoutubeIcon size={16} />
+              <span>XEM TẤT CẢ TRÊN YOUTUBE</span>
+              <ExternalLink size={12} />
+            </a>
+            <Link to="/videos" className="btn-yt-library">
+              <span>THƯ VIỆN VIDEO TRÊN WEBSITE</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* 5. SOFTWARE SUPPORT / ENGINEERINGPAPER                       */}
       {/* ============================================================ */}
       <section id="software-support" className="home-section software-support-section">
         <div className="container">
@@ -434,7 +625,7 @@ const Home = () => {
       </section>
 
       {/* ============================================================ */}
-      {/* 5. COFFEE SUPPORT SECTION (PRESERVED)                        */}
+      {/* 6. COFFEE SUPPORT SECTION (PRESERVED)                        */}
       {/* ============================================================ */}
       <section id="support-coffee" className="home-section coffee-support-section">
         <div className="container">
@@ -546,7 +737,7 @@ const Home = () => {
       </section>
 
       {/* ============================================================ */}
-      {/* 6. CURRENT PROJECTS — Categories Being Built                 */}
+      {/* 7. CURRENT PROJECTS — Categories Being Built                 */}
       {/* ============================================================ */}
       <section className="home-section current-projects-section">
         <div className="container">
@@ -619,7 +810,7 @@ const Home = () => {
       </section>
 
       {/* ============================================================ */}
-      {/* 7. STORE CTA BANNER                                          */}
+      {/* 8. STORE CTA BANNER                                          */}
       {/* ============================================================ */}
       <section className="home-section store-cta-section">
         <div className="container">

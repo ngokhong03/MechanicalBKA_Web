@@ -1,17 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { ExternalLink } from 'lucide-react';
 import './Navigation.css';
 
 const Navigation = ({ vertical = false, onItemClick }) => {
   const navItems = [
-    { name: 'Trang Chủ', path: '/' },
+    { name: 'Trang Chủ', path: '/', end: true },
     { name: 'Đồ Án Chi Tiết Máy', path: '/projects', isHighlight: true, badge: 'HOT' },
     { name: 'Kho File', path: '/store' },
-    { name: 'CAD', path: '/store?type=CAD_PROJECT' },
-    { name: 'Bản Vẽ', path: '/store?type=DRAWING' },
-    { name: 'Tính Toán', path: '/store?type=CALCULATION' },
-    { name: 'Video', path: '/videos' },
-    { name: 'Khóa Học', path: '/courses' }
+    { name: 'Khóa Học', path: '/courses' },
+    { name: 'Video', path: '/videos' }
   ];
 
   return (
@@ -24,12 +22,22 @@ const Navigation = ({ vertical = false, onItemClick }) => {
           className={({ isActive }) => 
             `nav-link font-mono ${item.isHighlight ? 'nav-link-highlight' : ''} ${isActive ? 'nav-link-active' : ''}`
           }
-          end={item.path === '/'}
+          end={item.end || false}
         >
           {item.name}
           {item.badge && <span className="nav-item-badge">{item.badge}</span>}
         </NavLink>
       ))}
+      <a 
+        href="https://youtube.com/@trongbka" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        onClick={onItemClick}
+        className="nav-link nav-link-youtube font-mono"
+      >
+        YouTube
+        <ExternalLink size={11} style={{ marginLeft: '4px', opacity: 0.6 }} />
+      </a>
     </nav>
   );
 };

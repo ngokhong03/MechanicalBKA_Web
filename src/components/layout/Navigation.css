@@ -89,3 +89,14 @@
   box-shadow: 0 0 6px rgba(249, 115, 22, 0.5);
 }
 
+.nav-link-youtube {
+  color: #FF4444 !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-link-youtube:hover {
+  color: #FF0000 !important;
+  border-bottom-color: #FF0000;
+}
+
