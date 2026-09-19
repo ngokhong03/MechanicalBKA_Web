@@ -219,8 +219,6 @@ const Store = () => {
               className="filter-select"
             >
               <option value="newest">Mới nhất</option>
-              <option value="price-low">Giá: Thấp đến Cao</option>
-              <option value="price-high">Giá: Cao đến Thấp</option>
             </select>
           </div>
         </aside>

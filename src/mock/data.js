@@ -354,6 +354,71 @@ export const courses = [
 
 export const lessons = [
   {
+    "id": "less_auto_01",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 1: Giới thiệu vật liệu Nhựa, Composite & Phác thảo ý tưởng",
+    "slug": "gioi-thieu-vat-lieu-nhua-composite-phac-thao",
+    "description": "Tổng quan tính chất cơ lý hóa của nhựa và composite. Phác thảo ý tưởng cơ bản trên AutoCAD.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 45,
+    "order": 1,
+    "isFreePreview": true,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_02",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 2: Dựng hình chi tiết Nhựa 3D với Autodesk Inventor",
+    "slug": "dung-hinh-chi-tiet-nhua-3d-inventor",
+    "description": "Thực hành các công cụ thiết kế khối, bề mặt phức tạp, thiết kế gân gia cường, móc ngàm, boss ép nhựa.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 60,
+    "order": 2,
+    "isFreePreview": true,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_03",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 3: Phân tích kết cấu chịu lực bằng Nastran In-CAD",
+    "slug": "phan-tich-ket-cau-nastran-incad",
+    "description": "Khai báo thông số vật liệu nhựa/composite dị hướng, chia lưới FEA, phân tích ứng suất và tối ưu khối lượng.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 75,
+    "order": 3,
+    "isFreePreview": true,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_04",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 4: Thiết kế khuôn ép nhựa với Inventor Mold Design",
+    "slug": "thiet-ke-khuon-ep-nhua-mold-design",
+    "description": "Tách lõi/lòng khuôn, bố trí lay-out khuôn nhiều cavity, thiết kế kênh dẫn, cổng phun, hệ thống làm mát và pin đẩy.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 90,
+    "order": 4,
+    "isFreePreview": true,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_05",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 5: Mô phỏng dòng chảy và dự đoán khuyết tật bằng Moldflow",
+    "slug": "mo-phong-dong-chay-khuyet-tat-moldflow",
+    "description": "Sử dụng Moldflow Insight để dự đoán cong vênh (Warpage), rỗ khí (Air trap), đường nứt (Weld line) và chu kỳ ép khuôn.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 85,
+    "order": 5,
+    "isFreePreview": true,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
     "id": "less_auto_06",
     "courseId": "course_autodesk_plastic_composite",
     "title": "Bài 6: Phân tích đứt gãy Composite nâng cao với Helius PFA & Nastran",
@@ -428,72 +493,6 @@ export const lessons = [
     "duration": 40,
     "order": 11,
     "isFreePreview": false,
-    "materialIds": [],
-    "createdAt": "2026-08-21T08:00:00Z"
-  },
-
-  {
-    "id": "less_auto_01",
-    "courseId": "course_autodesk_plastic_composite",
-    "title": "Bài 1: Giới thiệu vật liệu Nhựa, Composite & Phác thảo ý tưởng",
-    "slug": "gioi-thieu-vat-lieu-nhua-composite-phac-thao",
-    "description": "Tổng quan tính chất cơ lý hóa của nhựa và composite. Phác thảo ý tưởng cơ bản trên AutoCAD.",
-    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
-    "duration": 45,
-    "order": 1,
-    "isFreePreview": true,
-    "materialIds": [],
-    "createdAt": "2026-08-21T08:00:00Z"
-  },
-  {
-    "id": "less_auto_02",
-    "courseId": "course_autodesk_plastic_composite",
-    "title": "Bài 2: Dựng hình chi tiết Nhựa 3D với Autodesk Inventor",
-    "slug": "dung-hinh-chi-tiet-nhua-3d-inventor",
-    "description": "Thực hành các công cụ thiết kế khối, bề mặt phức tạp, thiết kế gân gia cường, móc ngàm, boss ép nhựa.",
-    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
-    "duration": 60,
-    "order": 2,
-    "isFreePreview": true,
-    "materialIds": [],
-    "createdAt": "2026-08-21T08:00:00Z"
-  },
-  {
-    "id": "less_auto_03",
-    "courseId": "course_autodesk_plastic_composite",
-    "title": "Bài 3: Phân tích kết cấu chịu lực bằng Nastran In-CAD",
-    "slug": "phan-tich-ket-cau-nastran-incad",
-    "description": "Khai báo thông số vật liệu nhựa/composite dị hướng, chia lưới FEA, phân tích ứng suất và tối ưu khối lượng.",
-    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
-    "duration": 75,
-    "order": 3,
-    "isFreePreview": true,
-    "materialIds": [],
-    "createdAt": "2026-08-21T08:00:00Z"
-  },
-  {
-    "id": "less_auto_04",
-    "courseId": "course_autodesk_plastic_composite",
-    "title": "Bài 4: Thiết kế khuôn ép nhựa với Inventor Mold Design",
-    "slug": "thiet-ke-khuon-ep-nhua-mold-design",
-    "description": "Tách lõi/lòng khuôn, bố trí lay-out khuôn nhiều cavity, thiết kế kênh dẫn, cổng phun, hệ thống làm mát và pin đẩy.",
-    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
-    "duration": 90,
-    "order": 4,
-    "isFreePreview": true,
-    "materialIds": [],
-    "createdAt": "2026-08-21T08:00:00Z"
-  },
-  {
-    "id": "less_auto_05",
-    "courseId": "course_autodesk_plastic_composite",
-    "title": "Bài 5: Mô phỏng dòng chảy và dự đoán khuyết tật bằng Moldflow",
-    "slug": "mo-phong-dong-chay-khuyet-tat-moldflow",
-    "description": "Sử dụng Moldflow Insight để dự đoán cong vênh (Warpage), rỗ khí (Air trap), đường nứt (Weld line) và chu kỳ ép khuôn.",
-    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
-    "duration": 85,
-    "order": 5,
-    "isFreePreview": true,
     "materialIds": [],
     "createdAt": "2026-08-21T08:00:00Z"
   },
@@ -983,7 +982,6 @@ export const products = [
       }
     ]
   },
-,
   {
     "id": "prod_sach_giao_trinh",
     "title": "Sách giáo trình",

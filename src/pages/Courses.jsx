@@ -15,7 +15,6 @@ const Courses = () => {
   const [searchVal, setSearchVal] = useState('');
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
   const [selectedSoftware, setSelectedSoftware] = useState('');
-  const [selectedAccessType, setSelectedAccessType] = useState('');
   const [selectedLevel, setSelectedLevel] = useState('');
   const [sortBy, setSortBy] = useState('newest');
 
@@ -35,7 +34,6 @@ const Courses = () => {
     setSearchVal('');
     setSelectedSpecialty('');
     setSelectedSoftware('');
-    setSelectedAccessType('');
     setSelectedLevel('');
     setSortBy('newest');
     setSearchParams({});
@@ -69,24 +67,12 @@ const Courses = () => {
       return c.softwareIds.includes(selectedSoftware);
     })
     .filter(c => {
-      // Access Type match (FREE / PAID)
-      if (!selectedAccessType) return true;
-      return c.accessType === selectedAccessType;
-    })
-    .filter(c => {
       // Level match
       if (!selectedLevel) return true;
       return c.level === selectedLevel;
     })
     .sort((a, b) => {
-      // Sort logic
-      if (sortBy === 'price-low') {
-        return a.price - b.price;
-      }
-      if (sortBy === 'price-high') {
-        return b.price - a.price;
-      }
-      // 'newest' default
+      // newest default
       return new Date(b.createdAt) - new Date(a.createdAt);
     });
 
