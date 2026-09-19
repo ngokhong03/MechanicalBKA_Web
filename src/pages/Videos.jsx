@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { PlayCircle, ExternalLink, Video, X } from 'lucide-react';
+import { PlayCircle, ExternalLink, Video, X, Sparkles } from 'lucide-react';
 import { videos, courses, lessons, software } from '../mock/data';
+import { getFunctions, httpsCallable, connectFunctionsEmulator } from 'firebase/functions';
+import { initializeApp, getApps, getApp } from 'firebase/app';
 import YoutubeIcon from '../components/common/YoutubeIcon';
 import Badge from '../components/common/Badge';
 import './Videos.css';
@@ -12,6 +14,11 @@ const YOUTUBE_SUBSCRIBE_URL = 'https://youtube.com/@trongbka?sub_confirmation=1'
 const Videos = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [activeVideoId, setActiveVideoId] = useState(null);
+  
+  // AI Summary State
+  const [aiSummary, setAiSummary] = useState(null);
+  const [isSummarizing, setIsSummarizing] = useState(false);
+  const [aiError, setAiError] = useState(null);
 
   // Extract categories for filter
   const categories = Array.from(new Set(videos.map(v => v.category)));
@@ -24,10 +31,48 @@ const Videos = () => {
 
   const handlePlayVideo = (youtubeVideoId) => {
     setActiveVideoId(youtubeVideoId);
+    setAiSummary(null);
+    setAiError(null);
   };
 
   const closeModal = () => {
     setActiveVideoId(null);
+    setAiSummary(null);
+    setAiError(null);
+  };
+
+  const handleSummarize = async () => {
+    if (!activeVideoId) return;
+    setIsSummarizing(true);
+    setAiError(null);
+    try {
+      let app;
+      if (!getApps().length) {
+        app = initializeApp({ projectId: 'mechanicalbka-prod' });
+      } else {
+        app = getApp();
+      }
+      
+      const functions = getFunctions(app, 'asia-southeast1');
+      
+      // Tự động kết nối emulator khi test trên localhost
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        try {
+          connectFunctionsEmulator(functions, '127.0.0.1', 5001);
+        } catch(e) {
+          // ignore if already connected
+        }
+      }
+
+      const summarizeVideo = httpsCallable(functions, 'summarizeVideo');
+      const result = await summarizeVideo({ videoId: activeVideoId });
+      setAiSummary(result.data.summary);
+    } catch (err) {
+      console.error(err);
+      setAiError(err.message || 'Lỗi khi kết nối với AI. Vui lòng thử lại.');
+    } finally {
+      setIsSummarizing(false);
+    }
   };
 
   return (
@@ -203,6 +248,28 @@ const Videos = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
+            </div>
+            
+            <div className="ai-summary-container font-mono">
+              {!aiSummary && !isSummarizing && (
+                 <button className="ai-summarize-btn" onClick={handleSummarize}>
+                   <Sparkles size={16} className="ai-sparkles" /> TÓM TẮT VIDEO BẰNG AI
+                 </button>
+              )}
+              {isSummarizing && (
+                 <div className="ai-loading">
+                   <div className="ai-pulse"></div> Đang phân tích nội dung...
+                 </div>
+              )}
+              {aiError && (
+                 <div className="ai-error">❌ {aiError}</div>
+              )}
+              {aiSummary && (
+                 <div className="ai-summary-content">
+                    <h4 className="ai-title"><Sparkles size={16}/> TÓM TẮT TỪ GEMINI AI</h4>
+                    <div className="ai-text">{aiSummary}</div>
+                 </div>
+              )}
             </div>
           </div>
         </div>

@@ -87,17 +87,14 @@ const Projects = () => {
     const published = productsList.filter(p => p.isPublished);
     return {
       projects: published.filter(p => p.productType === 'PROJECT').length,
-      cad: published.filter(p => p.productType === 'CAD_PROJECT').length,
-      drawings: published.filter(p => p.productType === 'DRAWING').length,
-      calculations: published.filter(p => ['CALCULATION', 'EPXYZ_FILE'].includes(p.productType)).length,
-      total: published.filter(p => ['PROJECT', 'CAD_PROJECT', 'DRAWING', 'CALCULATION', 'EPXYZ_FILE'].includes(p.productType)).length,
+      total: published.filter(p => p.productType === 'PROJECT').length,
     };
   }, [productsList]);
 
   // Filter only project/engineering types for this page
   const projectProducts = productsList
     .filter(p => p.isPublished)
-    .filter(p => ['PROJECT', 'CAD_PROJECT', 'DRAWING', 'CALCULATION', 'EPXYZ_FILE'].includes(p.productType))
+    .filter(p => p.productType === 'PROJECT')
     .filter(p => {
       if (!searchVal.trim()) return true;
       const lowerSearch = searchVal.toLowerCase();
@@ -153,21 +150,6 @@ const Projects = () => {
             <Cpu size={16} style={{ color: 'var(--primary)' }} />
             <span className="stat-value">{catalogStats.projects}</span>
             <span className="stat-label">Đồ án</span>
-          </div>
-          <div className="projects-stat-item">
-            <FileCode size={16} style={{ color: '#A78BFA' }} />
-            <span className="stat-value">{catalogStats.cad}</span>
-            <span className="stat-label">Bộ CAD 3D</span>
-          </div>
-          <div className="projects-stat-item">
-            <Layers size={16} style={{ color: '#FBBF24' }} />
-            <span className="stat-value">{catalogStats.drawings}</span>
-            <span className="stat-label">Bản vẽ</span>
-          </div>
-          <div className="projects-stat-item">
-            <Calculator size={16} style={{ color: '#10B981' }} />
-            <span className="stat-value">{catalogStats.calculations}</span>
-            <span className="stat-label">Bảng tính</span>
           </div>
         </div>
       )}

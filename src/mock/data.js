@@ -44,6 +44,89 @@ export const specialties = [
 
 export const software = [
   {
+    "id": "soft_helius",
+    "name": "Autodesk Helius PFA",
+    "slug": "autodesk-helius-pfa",
+    "logoUrl": "https://images.unsplash.com/photo-1620023616238-d67b5e1329c2?w=100&auto=format&fit=crop&q=60",
+    "description": "Phân tích phá hủy vi mô vật liệu Composite (Progressive Failure Analysis).",
+    "createdAt": "2026-08-20T08:00:00Z",
+    "updatedAt": "2026-08-27T18:00:00Z"
+  },
+  {
+    "id": "soft_powershape",
+    "name": "Autodesk PowerShape",
+    "slug": "autodesk-powershape",
+    "logoUrl": "https://images.unsplash.com/photo-1620023616238-d67b5e1329c2?w=100&auto=format&fit=crop&q=60",
+    "description": "Xử lý, sửa chữa bề mặt CAD khuôn phức tạp chuẩn bị cho gia công CAM.",
+    "createdAt": "2026-08-20T08:00:00Z",
+    "updatedAt": "2026-08-27T18:00:00Z"
+  },
+  {
+    "id": "soft_powermill",
+    "name": "Autodesk PowerMill",
+    "slug": "autodesk-powermill",
+    "logoUrl": "https://images.unsplash.com/photo-1620023616238-d67b5e1329c2?w=100&auto=format&fit=crop&q=60",
+    "description": "Lập trình gia công khuôn CNC 3 trục, 5 trục tốc độ cao chuyên nghiệp.",
+    "createdAt": "2026-08-20T08:00:00Z",
+    "updatedAt": "2026-08-27T18:00:00Z"
+  },
+  {
+    "id": "soft_fusion",
+    "name": "Autodesk Fusion",
+    "slug": "autodesk-fusion",
+    "logoUrl": "https://images.unsplash.com/photo-1620023616238-d67b5e1329c2?w=100&auto=format&fit=crop&q=60",
+    "description": "Thiết kế tạo sinh (Generative Design), mô phỏng Injection Molding trên Cloud.",
+    "createdAt": "2026-08-20T08:00:00Z",
+    "updatedAt": "2026-08-27T18:00:00Z"
+  },
+  {
+    "id": "soft_netfabb",
+    "name": "Autodesk Netfabb",
+    "slug": "autodesk-netfabb",
+    "logoUrl": "https://images.unsplash.com/photo-1620023616238-d67b5e1329c2?w=100&auto=format&fit=crop&q=60",
+    "description": "Chuẩn bị dữ liệu và thiết kế cấu trúc mạng tinh thể (Lattice) cho In 3D.",
+    "createdAt": "2026-08-20T08:00:00Z",
+    "updatedAt": "2026-08-27T18:00:00Z"
+  },
+  {
+    "id": "soft_vault",
+    "name": "Autodesk Vault",
+    "slug": "autodesk-vault",
+    "logoUrl": "https://images.unsplash.com/photo-1620023616238-d67b5e1329c2?w=100&auto=format&fit=crop&q=60",
+    "description": "Quản lý dữ liệu sản phẩm (PDM) và kiểm soát phiên bản thiết kế cơ khí.",
+    "createdAt": "2026-08-20T08:00:00Z",
+    "updatedAt": "2026-08-27T18:00:00Z"
+  },
+
+  {
+    "id": "soft_autocad",
+    "name": "AutoCAD",
+    "slug": "autocad",
+    "logoUrl": "https://images.unsplash.com/photo-1620023616238-d67b5e1329c2?w=100&auto=format&fit=crop&q=60",
+    "description": "Lên bản vẽ 2D chi tiết nhựa và layout khuôn.",
+    "createdAt": "2026-08-20T08:00:00Z",
+    "updatedAt": "2026-08-27T18:00:00Z"
+  },
+  {
+    "id": "soft_nastran",
+    "name": "Autodesk Nastran",
+    "slug": "autodesk-nastran",
+    "logoUrl": "https://images.unsplash.com/photo-1620023616238-d67b5e1329c2?w=100&auto=format&fit=crop&q=60",
+    "description": "Phân tích cấu trúc và phần tử hữu hạn (FEA) cho chi tiết nhựa, composite.",
+    "createdAt": "2026-08-20T08:00:00Z",
+    "updatedAt": "2026-08-27T18:00:00Z"
+  },
+  {
+    "id": "soft_moldflow",
+    "name": "Autodesk Moldflow",
+    "slug": "autodesk-moldflow",
+    "logoUrl": "https://images.unsplash.com/photo-1620023616238-d67b5e1329c2?w=100&auto=format&fit=crop&q=60",
+    "description": "Mô phỏng dòng chảy nhựa, biến dạng cong vênh và làm mát khuôn nâng cao.",
+    "createdAt": "2026-08-20T08:00:00Z",
+    "updatedAt": "2026-08-27T18:00:00Z"
+  },
+
+  {
     "id": "soft_inventor",
     "name": "Autodesk Inventor",
     "slug": "autodesk-inventor",
@@ -82,6 +165,43 @@ export const software = [
 ];
 
 export const courses = [
+
+  {
+    "id": "course_autodesk_plastic_composite",
+    "title": "Masterclass: Nhựa & Composite cùng Hệ sinh thái Autodesk",
+    "slug": "masterclass-nhua-composite-autodesk",
+    "description": "Khóa học Masterclass toàn diện hướng dẫn chuyên sâu từ lý thuyết vật liệu, dựng hình thiết kế, phân tích kỹ thuật đến chế tạo khuôn mẫu. Áp dụng hoàn toàn hệ sinh thái phần mềm Autodesk: AutoCAD, Inventor, Mold Design, Nastran In-CAD, và Moldflow.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=600&auto=format&fit=crop&q=80",
+    "specialtyIds": [
+      "spec_polymer_composite",
+      "spec_mold_design",
+      "spec_cad_cae"
+    ],
+    "softwareIds": [
+      "soft_autocad",
+      "soft_inventor",
+      "soft_mold_design",
+      "soft_nastran",
+      "soft_moldflow",
+      "soft_helius",
+      "soft_powershape",
+      "soft_powermill",
+      "soft_fusion",
+      "soft_netfabb",
+      "soft_vault"
+    ],
+    "price": 0,
+    "accessType": "FREE",
+    "level": "Nâng cao",
+    "isPublished": true,
+    "isFeatured": true,
+    "metaTitle": "Khóa học Masterclass Nhựa & Composite bằng Autodesk",
+    "metaDescription": "Hướng dẫn thiết kế nhựa, khuôn mẫu, Nastran FEA và Moldflow CFD từ chuyên gia.",
+    "lastEditorUid": "usr_admin_001",
+    "createdAt": "2026-08-20T08:00:00Z",
+    "updatedAt": "2026-08-27T18:00:00Z"
+  },
+
   {
     "id": "course_metal_forming",
     "title": "Công nghệ Gia công Áp lực & Thiết bị Tạo hình Kim loại",
@@ -233,6 +353,151 @@ export const courses = [
 ];
 
 export const lessons = [
+  {
+    "id": "less_auto_06",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 6: Phân tích đứt gãy Composite nâng cao với Helius PFA & Nastran",
+    "slug": "phan-tich-dut-gay-composite-helius-nastran",
+    "description": "Tích hợp Helius PFA vào Nastran để mô phỏng hiện tượng tách lớp (delamination) và đứt gãy sợi của vật liệu composite.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 85,
+    "order": 6,
+    "isFreePreview": false,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_07",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 7: Xử lý bề mặt CAD khuôn phức tạp với PowerShape",
+    "slug": "xu-ly-be-mat-khuon-powershape",
+    "description": "Tiếp nhận file CAD từ các nguồn khác nhau, sửa lỗi hở mặt, tạo mặt phân khuôn (Parting Surface) cho các chi tiết nhựa phức tạp.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 60,
+    "order": 7,
+    "isFreePreview": false,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_08",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 8: Lập trình gia công khuôn CNC 3-5 trục với PowerMill",
+    "slug": "lap-trinh-gia-cong-khuon-powermill",
+    "description": "Tạo đường chạy dao thô (Roughing) và tinh (Finishing) tốc độ cao cho lồng khuôn, mô phỏng tránh va chạm trên máy phay 5 trục.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 110,
+    "order": 8,
+    "isFreePreview": false,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_09",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 9: Tối ưu khối lượng bằng Generative Design trên Fusion",
+    "slug": "toi-uu-generative-design-fusion",
+    "description": "Thiết lập điều kiện biên và tải trọng để Fusion tự động tạo ra hàng loạt phương án thiết kế khung vỏ bọc nhựa siêu nhẹ, siêu cứng.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 50,
+    "order": 9,
+    "isFreePreview": false,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_10",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 10: In 3D vật liệu Nhựa/Composite với Netfabb",
+    "slug": "in-3d-composite-netfabb",
+    "description": "Sửa lỗi STL, cắt ghép mẫu lớn, tạo cấu trúc Lattice bên trong để giảm lượng vật liệu và chuẩn bị dữ liệu xuất cho máy in 3D.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 65,
+    "order": 10,
+    "isFreePreview": false,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_11",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 11: Quản lý vòng đời sản phẩm & Cộng tác với Autodesk Vault",
+    "slug": "quan-ly-du-lieu-autodesk-vault",
+    "description": "Lưu trữ tập trung file CAD, quản lý sửa đổi (Revision Control) và phối hợp nhóm thiết kế - gia công - phân tích đồng bộ.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 40,
+    "order": 11,
+    "isFreePreview": false,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+
+  {
+    "id": "less_auto_01",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 1: Giới thiệu vật liệu Nhựa, Composite & Phác thảo ý tưởng",
+    "slug": "gioi-thieu-vat-lieu-nhua-composite-phac-thao",
+    "description": "Tổng quan tính chất cơ lý hóa của nhựa và composite. Phác thảo ý tưởng cơ bản trên AutoCAD.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 45,
+    "order": 1,
+    "isFreePreview": true,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_02",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 2: Dựng hình chi tiết Nhựa 3D với Autodesk Inventor",
+    "slug": "dung-hinh-chi-tiet-nhua-3d-inventor",
+    "description": "Thực hành các công cụ thiết kế khối, bề mặt phức tạp, thiết kế gân gia cường, móc ngàm, boss ép nhựa.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 60,
+    "order": 2,
+    "isFreePreview": true,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_03",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 3: Phân tích kết cấu chịu lực bằng Nastran In-CAD",
+    "slug": "phan-tich-ket-cau-nastran-incad",
+    "description": "Khai báo thông số vật liệu nhựa/composite dị hướng, chia lưới FEA, phân tích ứng suất và tối ưu khối lượng.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 75,
+    "order": 3,
+    "isFreePreview": true,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_04",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 4: Thiết kế khuôn ép nhựa với Inventor Mold Design",
+    "slug": "thiet-ke-khuon-ep-nhua-mold-design",
+    "description": "Tách lõi/lòng khuôn, bố trí lay-out khuôn nhiều cavity, thiết kế kênh dẫn, cổng phun, hệ thống làm mát và pin đẩy.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 90,
+    "order": 4,
+    "isFreePreview": true,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+  {
+    "id": "less_auto_05",
+    "courseId": "course_autodesk_plastic_composite",
+    "title": "Bài 5: Mô phỏng dòng chảy và dự đoán khuyết tật bằng Moldflow",
+    "slug": "mo-phong-dong-chay-khuyet-tat-moldflow",
+    "description": "Sử dụng Moldflow Insight để dự đoán cong vênh (Warpage), rỗ khí (Air trap), đường nứt (Weld line) và chu kỳ ép khuôn.",
+    "videoUrl": "https://www.youtube.com/embed/ScMzIvxBSi4",
+    "duration": 85,
+    "order": 5,
+    "isFreePreview": true,
+    "materialIds": [],
+    "createdAt": "2026-08-21T08:00:00Z"
+  },
+
   {
     "id": "les_forming_01",
     "courseId": "course_metal_forming",
@@ -672,15 +937,14 @@ export const lessons = [
 
 export const products = [
   {
-    "id": "prod_do_an_hop_giam_toc_2cap",
-    "title": "Đồ án Chi tiết máy — Thiết kế Hộp giảm tốc 2 cấp Đồng trục (Full Bộ CAD + Excel + Thuyết minh)",
-    "slug": "do-an-chi-tiet-may-hop-giam-toc-2-cap-dong-truc",
-    "description": "Bộ hồ sơ thiết kế đồ án Chi tiết máy hoàn chỉnh: Mô hình 3D tham số hóa cụm hộp giảm tốc 2 cấp đồng trục trên Autodesk Inventor & SolidWorks, bản vẽ lắp A0/A1, bản vẽ chế tạo chi tiết trục & bánh răng, bảng tính Excel tự động tính toán động học, độ bền tiếp xúc và uốn, kèm file thuyết minh chuẩn Bách Khoa.",
-    "shortDescription": "Trọn bộ đồ án HGT 2 cấp đồng trục — CAD 3D, Excel tính toán, bản vẽ và thuyết minh.",
-    "highlights": ["Mô hình 3D tham số hóa hoàn chỉnh Inventor & SolidWorks", "Bảng tính Excel tự động tính toán theo giáo trình Nguyễn Trọng Hiệp", "Bản vẽ lắp A0/A1 và bản vẽ chế tạo chi tiết tiêu chuẩn", "File thuyết minh Word chuẩn định dạng Bách Khoa"],
-    "includedFiles": ["File CAD 3D Autodesk Inventor (IAM, IPT)", "File CAD 3D SolidWorks (SLDASM, SLDPRT)", "Bản vẽ lắp cụm hộp giảm tốc (DWG)", "Bản vẽ chế tạo chi tiết trục, bánh răng (DWG)", "Bảng tính Excel tự động (XLSX)", "Thuyết minh đồ án (DOCX, PDF)"],
-    "price": 450000,
-    "accessType": "PAID",
+    "id": "prod_do_an_chi_tiet_may",
+    "title": "Đồ án Chi tiết máy chung",
+    "slug": "do-an-chi-tiet-may-chung",
+    "description": "Đồ án chi tiết máy. Công cụ tính toán là EngineeringPaper.xyz và file bản vẽ 3D/drawing lập trình bằng Inventor.",
+    "shortDescription": "Công cụ tính toán là EngineeringPaper.xyz và file bản vẽ 3D/drawing lập trình bằng Inventor.",
+    "highlights": ["Công cụ tính toán EngineeringPaper.xyz", "File 3D Inventor lập trình sẵn", "Xuất tự động sang bản vẽ Drawing"],
+    "includedFiles": ["EngineeringPaper.xyz", "3D inventor lập trình sẵn và xuất sang drawing"],
+    "accessType": "FREE",
     "productType": "PROJECT",
     "projectType": "Hộp giảm tốc",
     "specialtyIds": [
@@ -688,774 +952,83 @@ export const products = [
       "spec_cad_cae"
     ],
     "softwareIds": [
-      "soft_inventor",
-      "soft_solidworks"
+      "soft_inventor"
     ],
     "fileTypes": [
-      "ZIP",
+      "EPXYZ",
       "IAM",
       "IPT",
-      "DWG",
-      "PDF",
-      "XLSX",
-      "DOCX"
+      "DWG"
     ],
     "isPublished": true,
     "isFeatured": true,
-    "metaTitle": "Đồ án Chi tiết máy Hộp giảm tốc 2 cấp đồng trục Full CAD Excel Thuyết minh",
-    "metaDescription": "Tải trọn bộ đồ án Chi tiết máy hộp giảm tốc 2 cấp đồng trục: bản vẽ CAD 2D/3D, file tính toán Excel tự động và thuyết minh chuẩn.",
+    "metaTitle": "Đồ án Chi tiết máy chung",
+    "metaDescription": "Tải đồ án Chi tiết máy chung: công cụ tính toán EngineeringPaper.xyz và file bản vẽ 3D/drawing lập trình bằng Inventor.",
     "lastEditorUid": "usr_admin_001",
     "createdAt": "2026-08-25T08:00:00Z",
     "updatedAt": "2026-08-28T07:00:00Z",
     "files": [
       {
-        "id": "f_hgt_2cap_001",
-        "productId": "prod_do_an_hop_giam_toc_2cap",
-        "fileName": "DoAn_ChiTietMay_HopGiamToc_2Cap_DongTruc_Full.zip",
-        "storagePath": "private/products/prod_do_an_hop_giam_toc_2cap/f_hgt_2cap_001/DoAn_ChiTietMay_HopGiamToc_2Cap_DongTruc_Full.zip",
+        "id": "f_hgt_chung_001",
+        "productId": "prod_do_an_chi_tiet_may",
+        "fileName": "DoAn_ChiTietMay_Chung.zip",
+        "storagePath": "private/products/prod_do_an_chi_tiet_may/f_hgt_chung_001/DoAn_ChiTietMay_Chung.zip",
         "fileType": "ZIP",
         "fileSize": 44670000,
         "contentType": "application/zip",
-        "version": "2.0.0",
+        "version": "1.0.0",
         "checksum": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
         "createdAt": "2026-08-25T08:00:00Z",
         "updatedAt": "2026-08-28T07:00:00Z"
       }
     ]
   },
+,
   {
-    "id": "prod_do_an_hop_giam_toc_khai_trien",
-    "title": "Đồ án Chi tiết máy — Thiết kế Hộp giảm tốc 2 cấp Khai triển Bánh răng Trụ răng nghiêng",
-    "slug": "do-an-chi-tiet-may-hop-giam-toc-2-cap-khai-trien",
-    "description": "Bộ file đồ án Chi tiết máy hoàn chỉnh sơ đồ khai triển: Hệ dẫn động cơ khí băng tải, phân phối tỷ số truyền, tính toán thiết kế bộ truyền đai thang và 2 cặp bánh răng trụ răng nghiêng, tính toán then, ổ lăn và thiết kế vỏ hộp đúc.",
-    "shortDescription": "Đồ án HGT 2 cấp khai triển bánh răng trụ răng nghiêng — hệ dẫn động băng tải.",
-    "highlights": ["Sơ đồ khai triển hệ dẫn động băng tải hoàn chỉnh", "Tính toán bộ truyền đai thang và 2 cặp bánh răng trụ răng nghiêng", "Thiết kế trục, then, ổ lăn và vỏ hộp đúc", "File Inventor và SolidWorks song song"],
-    "includedFiles": ["File CAD 3D Inventor (IAM, IPT)", "File CAD 3D SolidWorks (SLDASM)", "Bản vẽ lắp hộp giảm tốc khai triển (DWG)", "Bản vẽ chế tạo chi tiết (DWG)", "Bảng tính Excel trục và ổ lăn (XLSX)", "Thuyết minh đồ án (DOCX, PDF)"],
-    "price": 450000,
-    "accessType": "PAID",
-    "productType": "PROJECT",
-    "projectType": "Hộp giảm tốc",
-    "specialtyIds": [
-      "spec_manufacturing",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [
-      "soft_inventor",
-      "soft_solidworks"
-    ],
-    "fileTypes": [
-      "ZIP",
-      "IAM",
-      "SLDASM",
-      "DWG",
-      "PDF",
-      "XLSX",
-      "DOCX"
-    ],
-    "isPublished": true,
-    "isFeatured": true,
-    "metaTitle": "Đồ án Chi tiết máy Hộp giảm tốc 2 cấp khai triển bánh răng trụ răng nghiêng",
-    "metaDescription": "Bộ file đồ án Chi tiết máy hộp giảm tốc khai triển: 3D CAD Inventor/SolidWorks, bảng tính Excel trục và ổ lăn.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-24T08:00:00Z",
-    "updatedAt": "2026-08-28T07:00:00Z",
-    "files": [
-      {
-        "id": "f_hgt_kt_001",
-        "productId": "prod_do_an_hop_giam_toc_khai_trien",
-        "fileName": "DoAn_ChiTietMay_HGT_KhaiTrien_Full_Package.zip",
-        "storagePath": "private/products/prod_do_an_hop_giam_toc_khai_trien/f_hgt_kt_001/DoAn_ChiTietMay_HGT_KhaiTrien_Full_Package.zip",
-        "fileType": "ZIP",
-        "fileSize": 52140000,
-        "contentType": "application/zip",
-        "version": "2.1.0",
-        "checksum": "b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2",
-        "createdAt": "2026-08-24T08:00:00Z",
-        "updatedAt": "2026-08-28T07:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_bo_ban_ve_chi_tiet_may",
-    "title": "Bộ Bản vẽ Kỹ thuật Chi tiết máy & Hộp giảm tốc Tiêu chuẩn (AutoCAD DWG & PDF)",
-    "slug": "bo-ban-ve-ky-thuat-chi-tiet-may-hop-giam-toc-dwg-pdf",
-    "description": "Tập hợp hơn 40 bản vẽ kỹ thuật 2D tiêu chuẩn TCVN / ISO bao gồm bản vẽ lắp cụm hộp giảm tốc 1 cấp, 2 cấp đồng trục, khai triển, trục vít bánh vít và các bản vẽ chế tạo chi tiết: trục I, trục II, trục III, bánh răng côn, bánh răng trụ, nắp ổ, vỏ hộp và khớp nối trục.",
-    "shortDescription": "40+ bản vẽ kỹ thuật 2D tiêu chuẩn — bản vẽ lắp HGT, bản vẽ chế tạo chi tiết.",
-    "highlights": ["Hơn 40 bản vẽ kỹ thuật tiêu chuẩn TCVN / ISO", "Bản vẽ lắp hộp giảm tốc 1 cấp, 2 cấp, trục vít", "Bản vẽ chế tạo chi tiết trục, bánh răng, vỏ hộp", "Định dạng AutoCAD DWG và PDF chất lượng cao"],
-    "includedFiles": ["Bản vẽ lắp cụm hộp giảm tốc (DWG)", "Bản vẽ chế tạo trục I, II, III (DWG)", "Bản vẽ chế tạo bánh răng côn, trụ (DWG)", "Bản vẽ nắp ổ, vỏ hộp, khớp nối (DWG)", "Bản in PDF chất lượng cao (PDF)"],
-    "price": 180000,
-    "accessType": "PAID",
+    "id": "prod_sach_giao_trinh",
+    "title": "Sách giáo trình",
+    "slug": "sach-giao-trinh",
+    "description": "Sách giáo trình chuyên ngành cơ khí.",
+    "shortDescription": "Sách giáo trình chuyên ngành cơ khí.",
+    "highlights": ["Đầy đủ kiến thức", "Định dạng PDF"],
+    "includedFiles": ["Sách giáo trình PDF"],
+    "accessType": "FREE",
     "productType": "DRAWING",
     "projectType": "Bản vẽ kỹ thuật",
-    "specialtyIds": [
-      "spec_manufacturing",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [
-      "soft_inventor",
-      "soft_solidworks"
-    ],
-    "fileTypes": [
-      "DWG",
-      "PDF",
-      "ZIP"
-    ],
+    "specialtyIds": ["spec_manufacturing"],
+    "softwareIds": [],
+    "fileTypes": ["PDF"],
     "isPublished": true,
     "isFeatured": true,
-    "metaTitle": "Bộ bản vẽ kỹ thuật Chi tiết máy và hộp giảm tốc DWG PDF tiêu chuẩn",
-    "metaDescription": "Tải 40+ bản vẽ kỹ thuật chi tiết máy: bản vẽ lắp hộp giảm tốc, bản vẽ chế tạo bánh răng, trục tiêu chuẩn.",
+    "metaTitle": "Sách giáo trình",
+    "metaDescription": "Sách giáo trình cơ khí",
     "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-23T08:00:00Z",
+    "createdAt": "2026-08-25T08:00:00Z",
     "updatedAt": "2026-08-28T07:00:00Z",
-    "files": [
-      {
-        "id": "f_bv_ctm_001",
-        "productId": "prod_bo_ban_ve_chi_tiet_may",
-        "fileName": "Bo_Ban_Ve_Ky_Thuat_Chi_Tiet_May_AutoCAD_DWG_PDF.zip",
-        "storagePath": "private/products/prod_bo_ban_ve_chi_tiet_may/f_bv_ctm_001/Bo_Ban_Ve_Ky_Thuat_Chi_Tiet_May_AutoCAD_DWG_PDF.zip",
-        "fileType": "ZIP",
-        "fileSize": 28400000,
-        "contentType": "application/zip",
-        "version": "1.5.0",
-        "checksum": "c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2",
-        "createdAt": "2026-08-23T08:00:00Z",
-        "updatedAt": "2026-08-28T07:00:00Z"
-      }
-    ]
+    "files": []
   },
   {
-    "id": "prod_tinh_toan_truc_o_lan",
-    "title": "Bộ File Excel Tự động Tính toán Thiết kế Trục, Ổ lăn, Then & Bộ truyền Bánh răng",
-    "slug": "bo-file-excel-tu-dong-tinh-toan-truc-o-lan-then-banh-rang",
-    "description": "Bảng tính kỹ thuật lập trình công thức chuẩn giáo trình Chi tiết máy Nguyễn Trọng Hiệp & Trịnh Chất: Tự động vẽ biểu đồ mô men uốn xoay (Mx, My, Mz), tính đường kính trục theo độ bền mỏi, kiểm nghiệm then bằng / then bán nguyệt, tra cứu và kiểm nghiệm tuổi thọ ổ lăn (L10h) và xuất báo cáo kết quả.",
-    "shortDescription": "Excel tự động tính toán trục, ổ lăn, then và bánh răng theo giáo trình CTM.",
-    "highlights": ["Công thức chuẩn giáo trình Nguyễn Trọng Hiệp & Trịnh Chất", "Tự động vẽ biểu đồ mô men uốn xoắn (Mx, My, Mz)", "Kiểm nghiệm then bằng, then bán nguyệt theo tiêu chuẩn", "Tra cứu và kiểm nghiệm tuổi thọ ổ lăn L10h"],
-    "includedFiles": ["File Excel tính toán trục (XLSX)", "File Excel tính toán ổ lăn (XLSX)", "File Excel tính toán bánh răng (XLSX)", "Hướng dẫn sử dụng (PDF)"],
-    "price": 120000,
-    "accessType": "PAID",
+    "id": "prod_tool_latex",
+    "title": "Tool trình bày Latex",
+    "slug": "tool-trinh-bay-latex",
+    "description": "Công cụ và template hỗ trợ trình bày báo cáo, đồ án bằng LaTeX chuẩn form.",
+    "shortDescription": "Template báo cáo, đồ án chuẩn LaTeX.",
+    "highlights": ["Template LaTeX chuẩn Bách Khoa", "Tích hợp sẵn package cần thiết", "Dễ dàng tùy chỉnh"],
+    "includedFiles": ["Template LaTeX", "Hướng dẫn sử dụng"],
+    "accessType": "FREE",
     "productType": "CALCULATION",
-    "projectType": "Tính toán kỹ thuật",
-    "specialtyIds": [
-      "spec_manufacturing",
-      "spec_cad_cae"
-    ],
+    "projectType": "Khác",
+    "specialtyIds": ["spec_manufacturing"],
     "softwareIds": [],
-    "fileTypes": [
-      "XLSX",
-      "PDF",
-      "ZIP"
-    ],
+    "fileTypes": ["ZIP", "TEX", "PDF"],
     "isPublished": true,
     "isFeatured": true,
-    "metaTitle": "Bộ file Excel tính toán thiết kế trục ổ lăn then và bánh răng đồ án chi tiết máy",
-    "metaDescription": "File Excel tính toán đồ án chi tiết máy tự động: tính mô men uốn xoắn, chọn ổ lăn, kiểm nghiệm then và bánh răng.",
+    "metaTitle": "Tool trình bày Latex",
+    "metaDescription": "Công cụ trình bày Latex",
     "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-22T08:00:00Z",
+    "createdAt": "2026-08-25T08:00:00Z",
     "updatedAt": "2026-08-28T07:00:00Z",
-    "files": [
-      {
-        "id": "f_calc_truc_001",
-        "productId": "prod_tinh_toan_truc_o_lan",
-        "fileName": "Excel_Auto_Calculation_Shafts_Bearings_Gears.zip",
-        "storagePath": "private/products/prod_tinh_toan_truc_o_lan/f_calc_truc_001/Excel_Auto_Calculation_Shafts_Bearings_Gears.zip",
-        "fileType": "ZIP",
-        "fileSize": 8650000,
-        "contentType": "application/zip",
-        "version": "3.0.0",
-        "checksum": "d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2",
-        "createdAt": "2026-08-22T08:00:00Z",
-        "updatedAt": "2026-08-28T07:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_cad_inventor_do_an",
-    "title": "Bộ Thư viện 3D CAD Inventor Cụm Hộp giảm tốc & Chi tiết máy Tham số hóa",
-    "slug": "bo-thu-vien-3d-cad-inventor-hop-giam-toc-chi-tiet-may",
-    "description": "Bộ mô hình 3D Autodesk Inventor (.IAM, .IPT) hoàn chỉnh có thể chỉnh sửa tham số (Parameters) dễ dàng: Hộp giảm tốc nón - trụ, trục vít bánh vít, bộ truyền xích con lăn, khớp nối bù, gối đỡ ổ lăn và bu lông vòng tiêu chuẩn.",
-    "shortDescription": "Thư viện 3D Inventor tham số hóa — HGT, bộ truyền, ổ lăn và phụ kiện máy.",
-    "highlights": ["Mô hình 3D tham số hóa có thể chỉnh sửa Parameters", "HGT nón-trụ, trục vít bánh vít, bộ truyền xích", "Khớp nối bù, gối đỡ ổ lăn và bu lông vòng", "Định dạng gốc Inventor IAM/IPT và STEP"],
-    "includedFiles": ["File lắp ráp Inventor (IAM)", "File chi tiết Inventor (IPT)", "File trung gian STEP"],
-    "price": 320000,
-    "accessType": "PAID",
-    "productType": "CAD_PROJECT",
-    "projectType": "CAD 3D",
-    "specialtyIds": [
-      "spec_manufacturing",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [
-      "soft_inventor"
-    ],
-    "fileTypes": [
-      "IAM",
-      "IPT",
-      "STEP",
-      "ZIP"
-    ],
-    "isPublished": true,
-    "isFeatured": true,
-    "metaTitle": "Thư viện 3D CAD Autodesk Inventor Hộp giảm tốc chi tiết máy tham số hóa",
-    "metaDescription": "Tải mô hình 3D Inventor IAM IPT cụm hộp giảm tốc nón trụ, bánh răng, trục và vỏ hộp tham số hóa.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-21T08:00:00Z",
-    "updatedAt": "2026-08-28T07:00:00Z",
-    "files": [
-      {
-        "id": "f_inv_ctm_001",
-        "productId": "prod_cad_inventor_do_an",
-        "fileName": "Inventor_3D_Gearbox_Machine_Elements_Library.zip",
-        "storagePath": "private/products/prod_cad_inventor_do_an/f_inv_ctm_001/Inventor_3D_Gearbox_Machine_Elements_Library.zip",
-        "fileType": "ZIP",
-        "fileSize": 68400000,
-        "contentType": "application/zip",
-        "version": "2026.1",
-        "checksum": "e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2",
-        "createdAt": "2026-08-21T08:00:00Z",
-        "updatedAt": "2026-08-28T07:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_cad_solidworks_do_an",
-    "title": "Bộ Thư viện 3D SOLIDWORKS Cơ cấu Máy & Cụm Chi tiết máy Chuẩn ISO",
-    "slug": "bo-thu-vien-3d-solidworks-co-cau-may-chi-tiet-may-iso",
-    "description": "Bộ mô hình 3D SOLIDWORKS (.SLDASM, .SLDPRT) đầy đủ cấu hình linh hoạt (Configurations): Cụm hộp giảm tốc 2 cấp, cơ cấu 4 khâu bản lề, cơ cấu tay quay con trượt, bộ truyền bánh răng nghiêng và ổ đỡ lăn tiêu chuẩn ISO.",
-    "price": 320000,
-    "accessType": "PAID",
-    "productType": "CAD_PROJECT",
-    "projectType": "CAD 3D",
-    "specialtyIds": [
-      "spec_manufacturing",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [
-      "soft_solidworks"
-    ],
-    "fileTypes": [
-      "SLDASM",
-      "SLDPRT",
-      "STEP",
-      "ZIP"
-    ],
-    "isPublished": true,
-    "isFeatured": true,
-    "metaTitle": "Thư viện 3D CAD SolidWorks cơ cấu máy và cụm chi tiết máy ISO",
-    "metaDescription": "Tải mô hình 3D SolidWorks SLDASM SLDPRT cơ cấu máy, hộp giảm tốc và cụm chi tiết máy tiêu chuẩn.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-21T08:00:00Z",
-    "updatedAt": "2026-08-28T07:00:00Z",
-    "files": [
-      {
-        "id": "f_sw_ctm_001",
-        "productId": "prod_cad_solidworks_do_an",
-        "fileName": "SolidWorks_3D_Mechanisms_Gearbox_Library.zip",
-        "storagePath": "private/products/prod_cad_solidworks_do_an/f_sw_ctm_001/SolidWorks_3D_Mechanisms_Gearbox_Library.zip",
-        "fileType": "ZIP",
-        "fileSize": 62100000,
-        "contentType": "application/zip",
-        "version": "2026.1",
-        "checksum": "f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
-        "createdAt": "2026-08-21T08:00:00Z",
-        "updatedAt": "2026-08-28T07:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_tool_tinh_chi_tiet_may",
-    "title": "Tool Script Hỗ trợ Tính toán Thiết kế Chi tiết máy & Tối ưu Bộ truyền Cơ khí",
-    "slug": "tool-script-tinh-toan-thiet-ke-chi-tiet-may-toi-uu-bo-truyen",
-    "description": "Bộ công cụ lập trình Python & Excel VBA chuyên dụng: Tự động tối ưu hóa góc nghiêng răng beta, tính toán khoảng cách trục tiêu chuẩn, kiểm tra điều kiện không chạm đáy răng và xuất tự động file thông số kích thước hình học sang bảng tính.",
-    "price": 150000,
-    "accessType": "PAID",
-    "productType": "TOOL",
-    "projectType": "Công cụ lập trình",
-    "specialtyIds": [
-      "spec_manufacturing",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [],
-    "fileTypes": [
-      "ZIP",
-      "XLSX",
-      "PDF"
-    ],
-    "isPublished": true,
-    "isFeatured": true,
-    "metaTitle": "Tool script tính toán thiết kế chi tiết máy và tối ưu hóa bộ truyền bánh răng",
-    "metaDescription": "Tải tool Python và Excel VBA tự động tính toán kích thước hình học bánh răng, tối ưu góc nghiêng và khoảng cách trục.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-20T08:00:00Z",
-    "updatedAt": "2026-08-28T07:00:00Z",
-    "files": [
-      {
-        "id": "f_tool_calc_001",
-        "productId": "prod_tool_tinh_chi_tiet_may",
-        "fileName": "Machine_Elements_Design_Optimization_Tools.zip",
-        "storagePath": "private/products/prod_tool_tinh_chi_tiet_may/f_tool_calc_001/Machine_Elements_Design_Optimization_Tools.zip",
-        "fileType": "ZIP",
-        "fileSize": 14200000,
-        "contentType": "application/zip",
-        "version": "1.2.0",
-        "checksum": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b",
-        "createdAt": "2026-08-20T08:00:00Z",
-        "updatedAt": "2026-08-28T07:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_template_thuyet_minh",
-    "title": "Template Thuyết minh Đồ án Chi tiết máy Chuẩn Bách Khoa (DOCX & PDF)",
-    "slug": "template-thuyet-minh-do-an-chi-tiet-may-chuan-bach-khoa",
-    "description": "Mẫu tài liệu Word (.DOCX) định dạng chuẩn học thuật: Đầy đủ bìa, mục lục tự động, danh mục bảng biểu và hình vẽ, cài sẵn font số công thức Mathtype / Equation, chia sẵn 7 chương tính toán từ chọn động cơ đến thiết kế vỏ hộp và bôi trơn.",
-    "price": 0,
-    "accessType": "FREE",
-    "productType": "TEMPLATE",
-    "projectType": "Template thuyết minh",
-    "specialtyIds": [
-      "spec_manufacturing",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [],
-    "fileTypes": [
-      "DOCX",
-      "PDF",
-      "ZIP"
-    ],
-    "isPublished": true,
-    "isFeatured": true,
-    "metaTitle": "Template mẫu thuyết minh đồ án Chi tiết máy chuẩn Đại học Bách Khoa Word DOCX",
-    "metaDescription": "Tải miễn phí template Word thuyết minh đồ án chi tiết máy chuẩn định dạng, mục lục và bảng biểu tự động.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-20T08:00:00Z",
-    "updatedAt": "2026-08-28T07:00:00Z",
-    "files": [
-      {
-        "id": "f_template_tm_001",
-        "productId": "prod_template_thuyet_minh",
-        "fileName": "Template_ThuyetMinh_DoAn_ChiTietMay_ChuanBK.zip",
-        "storagePath": "public/products/prod_template_thuyet_minh/f_template_tm_001/Template_ThuyetMinh_DoAn_ChiTietMay_ChuanBK.zip",
-        "fileType": "ZIP",
-        "fileSize": 5400000,
-        "contentType": "application/zip",
-        "version": "2026.1",
-        "checksum": "2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c",
-        "createdAt": "2026-08-20T08:00:00Z",
-        "updatedAt": "2026-08-28T07:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_mold_base_2026",
-    "title": "Bộ Thư viện Vỏ khuôn Tiêu chuẩn 3D CAD (Hasco / Futaba / DME)",
-    "slug": "thu-vien-vo-khuon-tieu-chuan-3d-cad",
-    "description": "Thư viện mô hình 3D vỏ khuôn mẫu tiêu chuẩn 2 tấm và 3 tấm đầy đủ chốt dẫn hướng, bạc định vị, lò xo và chốt đẩy cho Autodesk Inventor & SOLIDWORKS.",
-    "price": 0,
-    "accessType": "FREE",
-    "productType": "CAD_PROJECT",
-    "projectType": "Khuôn mẫu",
-    "specialtyIds": [
-      "spec_mold_design",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [
-      "soft_inventor",
-      "soft_mold_design",
-      "soft_solidworks"
-    ],
-    "fileTypes": [
-      "ZIP",
-      "CAD"
-    ],
-    "isPublished": true,
-    "isFeatured": true,
-    "metaTitle": "Thư viện vỏ khuôn ép nhựa Hasco Futaba DME 3D CAD miễn phí",
-    "metaDescription": "Tải trọn bộ 3D Mold Base tiêu chuẩn cho Autodesk Inventor và SolidWorks định dạng STEP, IPT, SLDPRT.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-20T08:00:00Z",
-    "updatedAt": "2026-08-27T18:00:00Z",
-    "files": [
-      {
-        "id": "f_mold_base_001",
-        "productId": "prod_mold_base_2026",
-        "fileName": "MoldBase_Standard_Library_2026.zip",
-        "storagePath": "public/products/prod_mold_base_2026/f_mold_base_001/MoldBase_Standard_Library_2026.zip",
-        "fileType": "ZIP",
-        "fileSize": 48500000,
-        "contentType": "application/zip",
-        "version": "2.1.0",
-        "checksum": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "createdAt": "2026-08-20T08:00:00Z",
-        "updatedAt": "2026-08-27T18:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_gcode_cnc_handbook",
-    "title": "Sổ tay Lập trình G-Code CNC & Bảng Tính Chế độ Cắt Fanuc",
-    "slug": "so-tay-lap-trinh-gcode-cnc-bang-tinh-che-do-cat",
-    "description": "Tài liệu kỹ thuật tổng hợp toàn bộ mã lệnh G-Code / M-Code cho máy phay 3 trục và tiện CNC Fanuc kèm công thức tính toán tốc độ quay trục chính (V), bước tiến dao (F) và chiều sâu cắt cho các loại vật liệu kim loại.",
-    "price": 0,
-    "accessType": "FREE",
-    "productType": "DOCUMENT",
-    "projectType": "Sổ tay kỹ thuật",
-    "specialtyIds": [
-      "spec_manufacturing"
-    ],
-    "softwareIds": [],
-    "fileTypes": [
-      "PDF"
-    ],
-    "isPublished": true,
-    "isFeatured": true,
-    "metaTitle": "Sổ tay tra cứu mã lệnh G-Code CNC và bảng tính chế độ cắt Fanuc PDF",
-    "metaDescription": "Tải cẩm nang lập trình tiện phay CNC Fanuc, tra cứu mã chu trình khoan taro phay ren chi tiết.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-15T08:00:00Z",
-    "updatedAt": "2026-08-27T18:00:00Z",
-    "files": [
-      {
-        "id": "f_cnc_001",
-        "productId": "prod_gcode_cnc_handbook",
-        "fileName": "Fanuc_CNC_GCode_Machining_Handbook.pdf",
-        "storagePath": "public/products/prod_gcode_cnc_handbook/f_cnc_001/Fanuc_CNC_GCode_Machining_Handbook.pdf",
-        "fileType": "PDF",
-        "fileSize": 12400000,
-        "contentType": "application/pdf",
-        "version": "1.3.0",
-        "checksum": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
-        "createdAt": "2026-08-15T08:00:00Z",
-        "updatedAt": "2026-08-27T18:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_defect_troubleshooting",
-    "title": "Cẩm nang Tra cứu & Sửa lỗi 24 Khuyết tật Đúc ép Nhựa CAE",
-    "slug": "cam-nang-tra-cuu-sua-loi-24-khuyet-tat-duc-ep-nhua",
-    "description": "Cẩm nang chuyên gia hướng dẫn tối ưu hóa khuôn nhựa và điều chỉnh thông số áp suất, nhiệt độ máy đúc ép phun dựa trên kết quả phân tích mô phỏng dòng chảy CAE để loại bỏ triệt để 24 khuyết tật đúc thường gặp.",
-    "price": 150000,
-    "accessType": "PAID",
-    "productType": "DOCUMENT",
-    "projectType": "Cẩm nang kỹ thuật",
-    "specialtyIds": [
-      "spec_mold_design",
-      "spec_polymer_composite",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [
-      "soft_xtimon"
-    ],
-    "fileTypes": [
-      "PDF"
-    ],
-    "isPublished": true,
-    "isFeatured": true,
-    "metaTitle": "Cẩm nang tra cứu và khắc phục lỗi ép phun nhựa Weldline Sinkmark PDF",
-    "metaDescription": "Hướng dẫn xử lý lỗi khuyết tật đúc ép phun nhựa: cong vênh, lõm bề mặt, thiếu liệu và bẫy khí.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-11T08:00:00Z",
-    "updatedAt": "2026-08-27T18:00:00Z",
-    "files": [
-      {
-        "id": "f_defect_001",
-        "productId": "prod_defect_troubleshooting",
-        "fileName": "Injection_Molding_Defects_Troubleshooting_Guide.pdf",
-        "storagePath": "private/products/prod_defect_troubleshooting/f_defect_001/Injection_Molding_Defects_Troubleshooting_Guide.pdf",
-        "fileType": "PDF",
-        "fileSize": 18600000,
-        "contentType": "application/pdf",
-        "version": "2.0.0",
-        "checksum": "7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b",
-        "createdAt": "2026-08-11T08:00:00Z",
-        "updatedAt": "2026-08-27T18:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_composite_lecture_slides",
-    "title": "Slide Giáo trình & Bài giảng Công nghệ Chế tạo Composite Polymer",
-    "slug": "slide-giao-trinh-bai-giang-cong-nghe-composite-polymer",
-    "description": "Bộ slide tài liệu lý thuyết giảng dạy môn chế tạo vật liệu composite cốt sợi thủy tinh, sợi carbon. Quy trình đắp khuôn thủ công (Hand Lay-up), đúc hút chân không (Vacuum Bagging) và phân tích ứng suất cơ học lớp dị hướng.",
-    "price": 0,
-    "accessType": "COURSE_ONLY",
-    "productType": "DOCUMENT",
-    "projectType": "Tài liệu giảng dạy",
-    "specialtyIds": [
-      "spec_polymer_composite"
-    ],
-    "softwareIds": [],
-    "fileTypes": [
-      "PDF"
-    ],
-    "isPublished": true,
-    "isFeatured": false,
-    "metaTitle": "Bài giảng công nghệ chế tạo vật liệu composite PDF",
-    "metaDescription": "Giáo trình Slide quy trình chế tạo composite nhựa cốt sợi thủy tinh, carbon và hút chân không.",
-    "lastEditorUid": "usr_admin_002",
-    "createdAt": "2026-07-08T08:00:00Z",
-    "updatedAt": "2026-08-27T18:00:00Z",
-    "files": [
-      {
-        "id": "f_comp_slide_001",
-        "productId": "prod_composite_lecture_slides",
-        "fileName": "Composite_Manufacturing_Lectures_Complete.pdf",
-        "storagePath": "private/products/prod_composite_lecture_slides/f_comp_slide_001/Composite_Manufacturing_Lectures_Complete.pdf",
-        "fileType": "PDF",
-        "fileSize": 24500000,
-        "contentType": "application/pdf",
-        "version": "1.2.0",
-        "checksum": "8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c",
-        "createdAt": "2026-07-08T08:00:00Z",
-        "updatedAt": "2026-08-27T18:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_forming_die_calc",
-    "title": "Bảng tính Excel & Bản vẽ CAD Khuôn Dập vuốt, Dập khối Kim loại",
-    "slug": "bang-tinh-excel-ban-ve-cad-khuon-dap-vuot-dap-khoi",
-    "description": "Bộ công cụ kỹ thuật bao gồm file Excel tự động tính toán lực dập, công biến dạng, kích thước phôi tròn phẳng cho dập vuốt sâu và bản vẽ lắp ráp cụm khuôn dập kim loại tấm 3D trên Inventor.",
-    "price": 220000,
-    "accessType": "PAID",
-    "productType": "CALCULATION",
-    "projectType": "Khuôn dập",
-    "specialtyIds": [
-      "spec_manufacturing",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [
-      "soft_inventor"
-    ],
-    "fileTypes": [
-      "ZIP",
-      "CAD"
-    ],
-    "isPublished": true,
-    "isFeatured": true,
-    "metaTitle": "Bảng tính lực dập vuốt dập khối và bộ bản vẽ CAD khuôn dập kim loại",
-    "metaDescription": "Tải file tính toán công nghệ gia công áp lực Excel và bộ khuôn dập tấm kim loại 3D CAD.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-19T08:00:00Z",
-    "updatedAt": "2026-08-27T18:00:00Z",
-    "files": [
-      {
-        "id": "f_forming_001",
-        "productId": "prod_forming_die_calc",
-        "fileName": "Metal_Forming_Die_Design_Calc_CAD.zip",
-        "storagePath": "private/products/prod_forming_die_calc/f_forming_001/Metal_Forming_Die_Design_Calc_CAD.zip",
-        "fileType": "ZIP",
-        "fileSize": 32800000,
-        "contentType": "application/zip",
-        "version": "1.1.0",
-        "checksum": "5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
-        "createdAt": "2026-08-19T08:00:00Z",
-        "updatedAt": "2026-08-27T18:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_extrusion_die_cad",
-    "title": "Bộ Bản vẽ 3D CAD Đầu đùn Định hình Ống nhựa PVC & Profile",
-    "slug": "bo-ban-ve-3d-cad-dau-dun-dinh-hinh-ong-nhua-pvc",
-    "description": "Bộ mô hình 3D tham số hóa đầu đùn ống nhựa PVC/HDPE đường kính phi 60 - phi 110 kèm bộ nẹp định hình làm mát chân không (Vacuum Calibrator) cho Autodesk Inventor và SOLIDWORKS.",
-    "price": 350000,
-    "accessType": "PAID",
-    "productType": "CAD_PROJECT",
-    "projectType": "Đầu đùn định hình",
-    "specialtyIds": [
-      "spec_polymer_composite",
-      "spec_manufacturing"
-    ],
-    "softwareIds": [
-      "soft_inventor",
-      "soft_solidworks"
-    ],
-    "fileTypes": [
-      "CAD",
-      "ZIP"
-    ],
-    "isPublished": true,
-    "isFeatured": false,
-    "metaTitle": "Bản vẽ 3D CAD đầu đùn định hình ống nhựa PVC HDPE",
-    "metaDescription": "Tải file 3D CAD đầu đùn nhựa trục vít, áo nhiệt và nẹp định hình làm mát chân không.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-07-28T08:00:00Z",
-    "updatedAt": "2026-08-27T18:00:00Z",
-    "files": [
-      {
-        "id": "f_ext_cad_001",
-        "productId": "prod_extrusion_die_cad",
-        "fileName": "PVC_Pipe_Extrusion_Die_CAD_Models.zip",
-        "storagePath": "private/products/prod_extrusion_die_cad/f_ext_cad_001/PVC_Pipe_Extrusion_Die_CAD_Models.zip",
-        "fileType": "ZIP",
-        "fileSize": 41200000,
-        "contentType": "application/zip",
-        "version": "1.0.0",
-        "checksum": "9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b",
-        "createdAt": "2026-07-28T08:00:00Z",
-        "updatedAt": "2026-08-27T18:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_xtimon_flow_samples",
-    "title": "Bộ Dữ liệu Mẫu & File Thực hành Mô phỏng Dòng chảy X-TIMON",
-    "slug": "bo-du-lieu-mau-file-thuc-hanh-mo-phong-dong-chay-xtimon",
-    "description": "Tập tin dự án mô phỏng thực hành phân tích điền đầy khuôn nắp hộp nhựa kỹ thuật, tối ưu vị trí miệng phun (Gate) và áp suất kẹp khuôn trên phần mềm CAE X-TIMON.",
-    "price": 0,
-    "accessType": "COURSE_ONLY",
-    "productType": "DOCUMENT",
-    "projectType": "Dữ liệu mô phỏng",
-    "specialtyIds": [
-      "spec_polymer_composite",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [
-      "soft_xtimon"
-    ],
-    "fileTypes": [
-      "ZIP"
-    ],
-    "isPublished": true,
-    "isFeatured": false,
-    "metaTitle": "File dữ liệu mẫu mô phỏng dòng chảy CAE X-TIMON",
-    "metaDescription": "Tài liệu đính kèm khóa học X-TIMON: file lưới 3D mesh và thông số nhựa nhiệt dẻo.",
-    "lastEditorUid": "usr_admin_002",
-    "createdAt": "2026-07-18T08:00:00Z",
-    "updatedAt": "2026-08-27T18:00:00Z",
-    "files": [
-      {
-        "id": "f_xtimon_001",
-        "productId": "prod_xtimon_flow_samples",
-        "fileName": "XTIMON_Injection_Simulation_Project_Files.zip",
-        "storagePath": "private/products/prod_xtimon_flow_samples/f_xtimon_001/XTIMON_Injection_Simulation_Project_Files.zip",
-        "fileType": "ZIP",
-        "fileSize": 56400000,
-        "contentType": "application/zip",
-        "version": "1.0.0",
-        "checksum": "3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f",
-        "createdAt": "2026-07-18T08:00:00Z",
-        "updatedAt": "2026-08-27T18:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_cutting_tools_cad",
-    "title": "Bộ Thư viện Bản vẽ 3D Dao tiện, Dao phay ngón Hợp kim Chuẩn ISO",
-    "slug": "bo-thu-vien-ban-ve-3d-dao-tien-dao-phay-ngon-hop-kim-iso",
-    "description": "Bộ mô hình 3D CAD chi tiết dao tiện ngoài gắn mảnh hợp kim, dao phay ngón 4 me cắt và dao chuốt lỗ tiêu chuẩn công nghiệp phục vụ thiết kế đồ gá, mô phỏng gia công CAM.",
-    "price": 0,
-    "accessType": "FREE",
-    "productType": "CAD_PROJECT",
-    "projectType": "Dụng cụ cắt",
-    "specialtyIds": [
-      "spec_manufacturing",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [
-      "soft_inventor",
-      "soft_solidworks"
-    ],
-    "fileTypes": [
-      "CAD"
-    ],
-    "isPublished": true,
-    "isFeatured": true,
-    "metaTitle": "Thư viện 3D CAD dao tiện dao phay ngón hợp kim tiêu chuẩn ISO",
-    "metaDescription": "Tải trọn bộ 3D Cutting Tools CAD cho Inventor và SolidWorks miễn phí.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-15T08:00:00Z",
-    "updatedAt": "2026-08-27T18:00:00Z",
-    "files": [
-      {
-        "id": "f_tool_001",
-        "productId": "prod_cutting_tools_cad",
-        "fileName": "ISO_Cutting_Tools_3D_Library.zip",
-        "storagePath": "public/products/prod_cutting_tools_cad/f_tool_001/ISO_Cutting_Tools_3D_Library.zip",
-        "fileType": "ZIP",
-        "fileSize": 29300000,
-        "contentType": "application/zip",
-        "version": "1.0.0",
-        "checksum": "2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a",
-        "createdAt": "2026-08-15T08:00:00Z",
-        "updatedAt": "2026-08-27T18:00:00Z"
-      }
-    ]
-  },
-  {
-    "id": "prod_shaft_design_automation_tool",
-    "title": "Engineering Paper XYZ — Tự Động Hóa Thiết Kế Trục Theo TCVN",
-    "slug": "shaft-design-automation-tool",
-    "description": "Công cụ tính toán và tự động hóa thiết kế trục cơ khí hoàn chỉnh trên định dạng Engineering Paper XYZ (.epxyz) theo tiêu chuẩn TCVN 1065:2004 và giáo trình Chi Tiết Máy (Trịnh Chất - Lê Văn Uyển). Hiển thị đầy đủ công thức toán học trực quan, calculation trace minh bạch, các bước kiểm nghiệm tĩnh và mỏi.",
-    "shortDescription": "File tính toán Engineering Paper XYZ (.epxyz) tự động hóa thiết kế trục, kiểm nghiệm bền mỏi chuẩn TCVN.",
-    "price": 350000,
-    "accessType": "PAID",
-    "productType": "EPXYZ_FILE",
-    "projectType": "Thiết kế trục",
-    "version": "1.0.0",
-    "changelog": "Phiên bản 1.0.0 phát hành chính thức: Tích hợp đầy đủ module tính toán trục, kiểm nghiệm tĩnh và mỏi trên định dạng Engineering Paper XYZ.",
-    "specialtyIds": [
-      "spec_machine_design",
-      "spec_cad_cae"
-    ],
-    "softwareIds": [],
-    "fileTypes": [
-      "EPXYZ"
-    ],
-    "isPublished": true,
-    "isFeatured": true,
-    "media": {
-      "thumbnailUrl": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
-      "gallery": [
-        "https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800&auto=format&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80"
-      ],
-      "youtubeVideoId": "dQw4w9WgXcQ"
-    },
-    "content": {
-      "highlights": [
-        "Tự động hóa tính toán thiết kế trục",
-        "Hiển thị đầy đủ công thức và các bước tính",
-        "Calculation trace minh bạch",
-        "Theo tiêu chuẩn và giáo trình kỹ thuật"
-      ],
-      "includedFiles": [
-        "MechanicalBKA_Shaft_Design_Tool_v1.0.0.epxyz",
-        "Tài liệu hướng dẫn sử dụng"
-      ]
-    },
-    "technical": {
-      "version": "1.0.0",
-      "systemRequirements": "Engineering Paper XYZ phiên bản tương thích",
-      "standards": [
-        "TCVN 1065:2004",
-        "Trịnh Chất & Lê Văn Uyển — Tập 1, Chương 10"
-      ],
-      "compatibility": [
-        "Engineering Paper XYZ"
-      ]
-    },
-    "metaTitle": "Engineering Paper XYZ — Tự Động Hóa Thiết Kế Trục TCVN",
-    "metaDescription": "Tải file Engineering Paper XYZ (.epxyz) tự động hóa tính toán thiết kế trục cơ khí theo tiêu chuẩn TCVN và giáo trình Chi Tiết Máy.",
-    "lastEditorUid": "usr_admin_001",
-    "createdAt": "2026-08-30T18:00:00Z",
-    "updatedAt": "2026-08-30T18:00:00Z",
-    "files": [
-      {
-        "id": "art_shaft_v1_0_0",
-        "productId": "prod_shaft_design_automation_tool",
-        "fileName": "MechanicalBKA_Shaft_Design_Tool_v1.0.0.epxyz",
-        "storagePath": "private/products/prod_shaft_design_automation_tool/art_shaft_v1_0_0/MechanicalBKA_Shaft_Design_Tool_v1.0.0.epxyz",
-        "fileType": "EPXYZ",
-        "fileSize": 1048576,
-        "contentType": "application/json",
-        "version": "1.0.0",
-        "checksum": "8f4b2c1e7a9d3e5f6b0a1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f",
-        "createdAt": "2026-08-30T18:00:00Z",
-        "updatedAt": "2026-08-30T18:00:00Z"
-      }
-    ]
+    "files": []
   }
 ];
 

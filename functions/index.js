@@ -1,6 +1,8 @@
-const { onRequest } = require('firebase-functions/v2/https');
+const { onRequest, onCall, HttpsError } = require('firebase-functions/v2/https');
 const admin = require('firebase-admin');
 const cors = require('cors');
+const { GoogleGenAI } = require('@google/genai');
+const { YoutubeTranscript } = require('youtube-transcript');
 
 // Initialize Firebase Admin SDK
 if (!admin.apps.length) {
@@ -204,4 +206,63 @@ exports.download = onRequest({ region: 'asia-southeast1', maxInstances: 10 }, (r
       return res.status(500).json({ error: 'Không thể tải tệp lúc này. Vui lòng thử lại.' });
     }
   });
+});
+
+/**
+ * AI Summarize Video Endpoint
+ */
+exports.summarizeVideo = onCall({ region: 'asia-southeast1', maxInstances: 10, cors: allowedOrigins }, async (request) => {
+  const { videoId } = request.data;
+  if (!videoId) {
+    throw new HttpsError('invalid-argument', 'Video ID is required.');
+  }
+
+  // Load API key from environment
+  const apiKey = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY; 
+  if (!apiKey) {
+    throw new HttpsError('internal', 'Missing GEMINI_API_KEY in backend environment.');
+  }
+
+  try {
+    const transcriptArray = await YoutubeTranscript.fetchTranscript(videoId);
+    const fullText = transcriptArray.map(item => item.text).join(' ');
+
+    if (!fullText) {
+      throw new HttpsError('not-found', 'Video không có phụ đề.');
+    }
+
+    const ai = new GoogleGenAI({ apiKey });
+    const prompt = `
+Bạn là một trợ lý AI phân tích nội dung học thuật và kỹ thuật.
+Hãy đọc phụ đề của một video hướng dẫn/giảng dạy sau đây và tóm tắt nó:
+
+NỘI DUNG PHỤ ĐỀ:
+"""
+${fullText}
+"""
+
+YÊU CẦU:
+1. Viết 1 đoạn tóm tắt ngắn (3-4 câu) về nội dung chính của video.
+2. Liệt kê 3-5 điểm nổi bật (bullet points) hoặc bài học quan trọng nhất.
+3. Nếu nội dung liên quan đến kỹ thuật cơ khí, hãy nhấn mạnh các kiến thức kỹ thuật đó.
+Dùng tiếng Việt tự nhiên, rõ ràng.
+`;
+
+    const response = await ai.models.generateContent({
+      model: 'gemini-3.8-flash',
+      contents: prompt,
+    });
+
+    return { summary: response.text };
+  } catch (error) {
+    console.error('[SummarizeAPI] Error:', error.message);
+    // Nếu lỗi do YoutubeTranscript ném ra khi video không có sub
+    if (error.message.includes('Transcript is disabled')) {
+      throw new HttpsError('not-found', 'Video này không có phụ đề trên YouTube, không thể tóm tắt nội dung.');
+    }
+    if (error instanceof HttpsError) {
+      throw error;
+    }
+    throw new HttpsError('internal', 'Không thể tóm tắt video. Lỗi hệ thống.');
+  }
 });

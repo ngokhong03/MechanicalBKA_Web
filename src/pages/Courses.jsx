@@ -139,39 +139,7 @@ const Courses = () => {
             </select>
           </div>
 
-          {/* Access Type Filter */}
-          <div className="filter-group">
-            <label className="filter-label font-mono">QUYỀN TRUY CẬP</label>
-            <div className="filter-radio-group">
-              <label className="filter-radio-label">
-                <input 
-                  type="radio" 
-                  name="accessType" 
-                  checked={selectedAccessType === ''} 
-                  onChange={() => setSelectedAccessType('')} 
-                />
-                <span>Tất cả</span>
-              </label>
-              <label className="filter-radio-label">
-                <input 
-                  type="radio" 
-                  name="accessType" 
-                  checked={selectedAccessType === 'FREE'} 
-                  onChange={() => setSelectedAccessType('FREE')} 
-                />
-                <span>Miễn phí</span>
-              </label>
-              <label className="filter-radio-label">
-                <input 
-                  type="radio" 
-                  name="accessType" 
-                  checked={selectedAccessType === 'PAID'} 
-                  onChange={() => setSelectedAccessType('PAID')} 
-                />
-                <span>Trả phí</span>
-              </label>
-            </div>
-          </div>
+
 
           {/* Level Filter */}
           <div className="filter-group">
@@ -197,8 +165,6 @@ const Courses = () => {
               className="filter-select"
             >
               <option value="newest">Mới nhất</option>
-              <option value="price-low">Giá: Thấp đến Cao</option>
-              <option value="price-high">Giá: Cao đến Thấp</option>
             </select>
           </div>
         </aside>

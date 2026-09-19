@@ -248,7 +248,6 @@ const ProductDetail = () => {
                 {getTypeIcon(product.productType)}
                 <span>{PRODUCT_TYPE_LABELS[product.productType] || product.productType}</span>
               </span>
-              <Badge text={product.accessType} />
               <span className="version-pill font-mono">v{product.version}</span>
               {product.projectType && (
                 <span className="detail-tag font-mono project-tag">
@@ -505,18 +504,7 @@ const ProductDetail = () => {
             </div>
 
             <div className="sidebar-info-body">
-              <div className="sidebar-price-container">
-                <span className="price-label font-mono">Giá sản phẩm</span>
-                <span className="sidebar-price font-mono">
-                  {hasAccess ? (
-                    <span style={{ color: '#10B981', display: 'flex', alignItems: 'center', fontSize: '18px' }}>
-                      <Check size={18} style={{ marginRight: '6px' }} /> ĐÃ SỞ HỮU
-                    </span>
-                  ) : (
-                    formatPrice(product.price)
-                  )}
-                </span>
-              </div>
+
 
               <div className="sidebar-cta-group">
                 {hasAccess ? (

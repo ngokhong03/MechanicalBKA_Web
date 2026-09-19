@@ -222,7 +222,7 @@ const CourseDetail = () => {
                     <Check size={18} style={{ marginRight: '6px' }} /> ĐÃ SỞ HỮU
                   </span>
                 ) : (
-                  formatPrice(course.price)
+                  <span style={{ color: '#10B981', display: 'flex', alignItems: 'center', fontSize: '18px' }}>Miễn phí</span>
                 )}
               </span>
             </div>

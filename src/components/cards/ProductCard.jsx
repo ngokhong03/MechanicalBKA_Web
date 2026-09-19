@@ -123,7 +123,6 @@ const ProductCard = ({ product: rawProduct }) => {
         </div>
         <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
           <span className="card-version-pill font-mono">v{product.version}</span>
-          <Badge text={product.accessType} />
         </div>
       </div>
 
@@ -165,11 +164,7 @@ const ProductCard = ({ product: rawProduct }) => {
       </div>
 
       <div className="product-card-footer">
-        <div className="product-card-price-block">
-          <span className="price-tag-label font-mono">Giá tải:</span>
-          <span className="product-card-price font-mono">{formatPrice(product.price)}</span>
-        </div>
-        
+
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
           {product.accessType === 'PAID' && (
             <button

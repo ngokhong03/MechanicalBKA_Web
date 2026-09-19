@@ -22,9 +22,6 @@ const CourseCard = ({ course, lessonCount }) => {
       <Link to={`/courses/${course.slug}`} className="course-thumb-link">
         <div className="course-thumb-container">
           <img src={course.thumbnailUrl} alt={course.title} className="course-thumbnail" />
-          <div className="course-badge-overlay">
-            <Badge text={course.accessType === 'FREE' ? 'FREE' : 'PAID'} />
-          </div>
         </div>
       </Link>
 
@@ -57,8 +54,7 @@ const CourseCard = ({ course, lessonCount }) => {
         </div>
 
         <div className="course-footer">
-          <span className="course-price">{formatPrice(course.price)}</span>
-          <Link to={`/courses/${course.slug}`} className="course-view-btn font-mono">
+          <Link to={`/courses/${course.slug}`} className="course-view-btn font-mono" style={{ width: '100%', textAlign: 'center' }}>
             CHI TIẾT
           </Link>
         </div>

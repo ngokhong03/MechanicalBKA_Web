@@ -200,48 +200,6 @@ const Store = () => {
             </select>
           </div>
 
-          {/* Price/Access Type Filter */}
-          <div className="filter-group">
-            <label className="filter-label font-mono">HÌNH THỨC SỞ HỮU</label>
-            <div className="filter-radio-group">
-              <label className="filter-radio-label">
-                <input 
-                  type="radio" 
-                  name="accessType" 
-                  checked={selectedAccessType === ''} 
-                  onChange={() => setSelectedAccessType('')} 
-                />
-                <span>Tất cả</span>
-              </label>
-              <label className="filter-radio-label">
-                <input 
-                  type="radio" 
-                  name="accessType" 
-                  checked={selectedAccessType === 'FREE'} 
-                  onChange={() => setSelectedAccessType('FREE')} 
-                />
-                <span>Tải miễn phí</span>
-              </label>
-              <label className="filter-radio-label">
-                <input 
-                  type="radio" 
-                  name="accessType" 
-                  checked={selectedAccessType === 'PAID'} 
-                  onChange={() => setSelectedAccessType('PAID')} 
-                />
-                <span>Mua lẻ (Paid)</span>
-              </label>
-              <label className="filter-radio-label">
-                <input 
-                  type="radio" 
-                  name="accessType" 
-                  checked={selectedAccessType === 'COURSE_ONLY'} 
-                  onChange={() => setSelectedAccessType('COURSE_ONLY')} 
-                />
-                <span>Chỉ kèm khóa học</span>
-              </label>
-            </div>
-          </div>
 
           {/* Featured Toggle */}
           <div className="filter-group">
