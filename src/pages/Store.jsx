@@ -21,7 +21,7 @@ const Store = () => {
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
   const [selectedSoftware, setSelectedSoftware] = useState('');
   const [selectedProductType, setSelectedProductType] = useState('');
-  const [selectedAccessType, setSelectedAccessType] = useState('');
+
   const [isFeaturedOnly, setIsFeaturedOnly] = useState(false);
   const [sortBy, setSortBy] = useState('newest');
 
@@ -55,10 +55,8 @@ const Store = () => {
   // Sync state with URL search params (e.g. from footer or home link)
   useEffect(() => {
     const spec = searchParams.get('specialty');
-    const priceParam = searchParams.get('price'); // 'free'
     const typeParam = searchParams.get('type');
     if (spec) setSelectedSpecialty(spec);
-    if (priceParam === 'free') setSelectedAccessType('FREE');
     if (typeParam) setSelectedProductType(typeParam);
   }, [searchParams]);
 
@@ -68,7 +66,6 @@ const Store = () => {
     setSelectedSpecialty('');
     setSelectedSoftware('');
     setSelectedProductType('');
-    setSelectedAccessType('');
     setIsFeaturedOnly(false);
     setSortBy('newest');
     setSearchParams({});
@@ -102,23 +99,11 @@ const Store = () => {
       return p.productType === selectedProductType;
     })
     .filter(p => {
-      // Access Type match (FREE / PAID / COURSE_ONLY)
-      if (!selectedAccessType) return true;
-      return p.accessType === selectedAccessType;
-    })
-    .filter(p => {
       // Featured filter
       if (!isFeaturedOnly) return true;
       return p.isFeatured === true;
     })
     .sort((a, b) => {
-      // Sort logic
-      if (sortBy === 'price-low') {
-        return (a.price || 0) - (b.price || 0);
-      }
-      if (sortBy === 'price-high') {
-        return (b.price || 0) - (a.price || 0);
-      }
       // 'newest' default
       return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
     });

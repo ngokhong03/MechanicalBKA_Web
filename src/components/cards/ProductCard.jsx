@@ -82,11 +82,7 @@ const ProductCard = ({ product: rawProduct }) => {
   const fileCount = product.files?.length || product.fileCount || 1;
   const totalSizeBytes = product.files?.reduce((acc, file) => acc + (file.fileSize || 0), 0) || product.totalFileSize || 0;
 
-  // Format price
-  const formatPrice = (price) => {
-    if (price === 0) return 'Miễn phí';
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
-  };
+
 
   const handleAddToCart = (e) => {
     e.preventDefault();
@@ -166,18 +162,6 @@ const ProductCard = ({ product: rawProduct }) => {
       <div className="product-card-footer">
 
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-          {product.accessType === 'PAID' && (
-            <button
-              type="button"
-              className={`product-cart-quick-btn ${inCart ? 'in-cart' : ''}`}
-              onClick={handleAddToCart}
-              disabled={inCart}
-              title={inCart ? 'Đã có trong giỏ hàng' : 'Thêm vào giỏ hàng'}
-            >
-              {inCart ? <Check size={14} /> : <ShoppingBag size={14} />}
-            </button>
-          )}
-
           <Link to={`/store/${product.slug}`} className="product-card-btn font-mono" title="Xem chi tiết bộ file">
             <Eye size={13} style={{ marginRight: '4px' }} />
             XEM CHI TIẾT

@@ -241,8 +241,8 @@ export const courses = [
       "soft_inventor",
       "soft_solidworks"
     ],
-    "price": 280000,
-    "accessType": "PAID",
+    "price": 0,
+    "accessType": "FREE",
     "level": "Cơ bản",
     "isPublished": true,
     "isFeatured": true,
@@ -267,8 +267,8 @@ export const courses = [
       "soft_mold_design",
       "soft_xtimon"
     ],
-    "price": 450000,
-    "accessType": "PAID",
+    "price": 0,
+    "accessType": "FREE",
     "level": "Nâng cao",
     "isPublished": true,
     "isFeatured": true,
@@ -291,8 +291,8 @@ export const courses = [
     "softwareIds": [
       "soft_inventor"
     ],
-    "price": 350000,
-    "accessType": "PAID",
+    "price": 0,
+    "accessType": "FREE",
     "level": "Trung cấp",
     "isPublished": true,
     "isFeatured": false,
@@ -339,8 +339,8 @@ export const courses = [
     "softwareIds": [
       "soft_solidworks"
     ],
-    "price": 390000,
-    "accessType": "PAID",
+    "price": 0,
+    "accessType": "FREE",
     "level": "Nâng cao",
     "isPublished": true,
     "isFeatured": true,

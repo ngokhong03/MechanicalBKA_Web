@@ -220,7 +220,7 @@ const Home = () => {
             </div>
             <div className="spec-item">
               <span className="spec-label">ARTIFACTS_READY:</span>
-              <span className="spec-val">{publishedProducts.length || 17}+ ITEMS</span>
+              <span className="spec-val">{publishedProducts.length || 3}+ ITEMS</span>
             </div>
           </div>
         </div>

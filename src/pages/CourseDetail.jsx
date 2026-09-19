@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Play, PlayCircle, Lock, BookOpen, AlertCircle, ShoppingBag, Check, Layers, Clock, Award } from 'lucide-react';
+import { Play, PlayCircle, Lock, BookOpen, AlertCircle, Layers, Clock, Award } from 'lucide-react';
 import { dataProvider } from '../services/dataProvider';
 import { accessService } from '../services/accessService';
 import { useAuth } from '../context/AuthContext';
-import { useCart } from '../context/CartContext';
 import Badge from '../components/common/Badge';
 import Button from '../components/common/Button';
 import './CourseDetail.css';
@@ -20,7 +19,7 @@ const CourseDetail = () => {
   const [hasAccess, setHasAccess] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const { addToCart, isInCart } = useCart();
+
 
   useEffect(() => {
     let isMounted = true;
@@ -94,32 +93,7 @@ const CourseDetail = () => {
   const courseSpecialties = allSpecialties.filter(spec => (course.specialtyIds || []).includes(spec.id));
   const courseSoftware = allSoftware.filter(soft => (course.softwareIds || []).includes(soft.id));
 
-  // Format price
-  const formatPrice = (price) => {
-    if (price === 0) return 'Miễn phí';
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
-  };
 
-  // Helper to find video duration if available
-  const getLessonDuration = (youtubeVideoId) => {
-    if (!youtubeVideoId) return null;
-    const vid = allVideos.find(v => v.youtubeVideoId === youtubeVideoId);
-    return vid?.duration || null;
-  };
-
-  const inCart = isInCart(course.id);
-
-  const handleAddToCart = () => {
-    addToCart({
-      id: course.id,
-      title: course.title,
-      slug: course.slug,
-      price: course.price,
-      accessType: course.accessType,
-      productType: 'KHÓA HỌC',
-      thumbnailUrl: course.thumbnailUrl
-    });
-  };
 
   return (
     <div className="course-detail-page container" style={{ padding: '40px 24px' }}>
@@ -136,7 +110,7 @@ const CourseDetail = () => {
           <h1 className="course-detail-title">{course.title}</h1>
           
           <div className="course-detail-tags">
-            <Badge text={course.accessType} />
+            <Badge text="Miễn phí" />
             {course.level && (
               <span className="detail-tag font-mono" style={{ background: 'rgba(59, 130, 246, 0.15)', color: '#60A5FA', border: '1px solid rgba(59, 130, 246, 0.3)' }}>
                 <Award size={12} style={{ marginRight: '4px' }} /> {course.level}
@@ -228,45 +202,12 @@ const CourseDetail = () => {
             </div>
 
             <div className="sidebar-cta-group" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {hasAccess ? (
-                firstLesson && (
-                  <Link to={`/courses/${course.slug}/lessons/${firstLesson.slug}`} style={{ width: '100%' }}>
-                    <Button variant="primary" icon={Play} className="w-100" style={{ justifyContent: 'center' }}>
-                      TIẾP TỤC HỌC →
-                    </Button>
-                  </Link>
-                )
-              ) : (
-                <>
-                  <Button 
-                    variant={inCart ? "secondary" : "primary"}
-                    className="w-100"
-                    onClick={handleAddToCart}
-                    disabled={inCart}
-                  >
-                    {inCart ? (
-                      <>
-                        <Check size={16} style={{ marginRight: '6px' }} /> Đã thêm vào giỏ
-                      </>
-                    ) : (
-                      <>
-                        <ShoppingBag size={16} style={{ marginRight: '6px' }} /> Thêm vào giỏ hàng
-                      </>
-                    )}
+              {firstLesson && (
+                <Link to={`/courses/${course.slug}/lessons/${firstLesson.slug}`} style={{ width: '100%' }}>
+                  <Button variant="primary" icon={Play} className="w-100" style={{ justifyContent: 'center' }}>
+                    BẮT ĐẦU HỌC →
                   </Button>
-
-                  <Link to={`/checkout?targetId=${course.id}&targetType=course`} style={{ width: '100%' }}>
-                    <Button variant="outline" className="w-100">Đăng ký mua ngay</Button>
-                  </Link>
-
-                  {firstFreeLesson && (
-                    <Link to={`/courses/${course.slug}/lessons/${firstFreeLesson.slug}`} style={{ width: '100%', display: 'block' }}>
-                      <Button variant="outline" icon={Play} className="w-100" style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
-                        Học thử bài giảng ({firstFreeLesson.title.substring(0, 20)}...)
-                      </Button>
-                    </Link>
-                  )}
-                </>
+                </Link>
               )}
             </div>
 

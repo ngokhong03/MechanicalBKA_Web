@@ -11,11 +11,6 @@ const CourseCard = ({ course, lessonCount }) => {
   // Resolve software names
   const courseSoftware = software.filter(soft => course.softwareIds.includes(soft.id));
 
-  // Format price
-  const formatPrice = (price) => {
-    if (price === 0) return 'Miễn phí';
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
-  };
 
   return (
     <div className={`course-card glass ${course.isFeatured ? 'featured-card' : ''}`}>
