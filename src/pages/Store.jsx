@@ -170,18 +170,9 @@ const Store = () => {
               className="filter-select"
             >
               <option value="">Tất cả loại</option>
-              <option value="EPXYZ_FILE">Engineering Paper XYZ</option>
               <option value="PROJECT">Đồ Án Chi Tiết Máy</option>
-              <option value="CAD_PROJECT">Bộ File CAD 3D</option>
-              <option value="CAD_PACKAGE">Bộ File CAD 3D Tham Số Hóa</option>
               <option value="DRAWING">Bản Vẽ Kỹ Thuật</option>
               <option value="CALCULATION">Bảng Tính Toán</option>
-              <option value="PYTHON_TOOL">Tool Tự Động Hóa Python</option>
-              <option value="EXCEL_TOOL">Bảng Tính Tự Động Hóa Excel</option>
-              <option value="TOOL">Tool Kỹ Thuật</option>
-              <option value="TEMPLATE">Template Đồ Án</option>
-              <option value="DOCUMENT">Tài Liệu Kỹ Thuật</option>
-              <option value="OTHER">Khác</option>
             </select>
           </div>
 
