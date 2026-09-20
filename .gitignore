@@ -30,3 +30,4 @@ functions/.npm-cache/
 functions/node_modules/
 .tmp.driveupload/
 .tmp.drivedownload/
+serviceAccountKey.json

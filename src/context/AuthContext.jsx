@@ -200,7 +200,7 @@ export const AuthProvider = ({ children }) => {
     } else {
       // Mock Login
       await new Promise(r => setTimeout(r, 300));
-      const isMockAdmin = email.toLowerCase().includes('admin');
+      const isMockAdmin = email.toLowerCase().includes('admin') || email.toLowerCase() === 'trongme2bka@gmail.com';
       const mockUserObj = {
         uid: isMockAdmin ? 'usr_admin_001' : `usr_${email.replace(/[^a-zA-Z0-9]/g, '_')}`,
         email,
