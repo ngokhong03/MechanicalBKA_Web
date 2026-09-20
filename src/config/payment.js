@@ -6,11 +6,12 @@
 export const paymentConfig = {
   bankId: import.meta.env.VITE_BANK_ID || 'MB', // Mã ngân hàng VietQR (MB, VCB, TCB, ICB, ACB...)
   bankName: import.meta.env.VITE_BANK_NAME || 'Ngân hàng Quân Đội (MB Bank)',
-  accountNumber: import.meta.env.VITE_BANK_ACCOUNT_NO || '0988888888',
-  accountName: import.meta.env.VITE_BANK_ACCOUNT_NAME || 'NGUYEN VAN TRONG',
+  accountNumber: import.meta.env.VITE_BANK_ACCOUNT_NO || '0862990403',
+  accountName: import.meta.env.VITE_BANK_ACCOUNT_NAME || 'NGUYEN NGOC TRONG',
   branch: import.meta.env.VITE_BANK_BRANCH || 'Chi nhánh Hà Nội',
   
   // Tiền tố nội dung chuyển khoản
+
   transferPrefix: 'MBKA'
 };
 

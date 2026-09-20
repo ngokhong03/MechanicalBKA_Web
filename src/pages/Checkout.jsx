@@ -179,10 +179,38 @@ const Checkout = () => {
         idempotencyKey
       });
 
-      setCreatedOrder(newOrder);
-      // Chỉ clear giỏ hàng nếu đặt từ giỏ hàng
+      // Xóa giỏ hàng nếu đặt từ giỏ hàng
       if (!directItem) {
         clearCart();
+      }
+
+      // Nếu đơn hàng 0đ, hiển thị luôn không cần cổng thanh toán
+      if (newOrder.totalAmount === 0) {
+        setCreatedOrder(newOrder);
+        return;
+      }
+
+      // Gọi API tạo link thanh toán PayOS
+      try {
+        const response = await fetch('/api/create-payment-link', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ orderId: newOrder.id })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success && data.checkoutUrl) {
+          // Chuyển hướng sang cổng thanh toán PayOS
+          window.location.href = data.checkoutUrl;
+          return;
+        } else {
+          console.error('PayOS API Error:', data.error);
+          setCreatedOrder(newOrder); // Fallback hiển thị mã QR tĩnh
+        }
+      } catch (payosErr) {
+         console.error('Lỗi khi gọi PayOS API:', payosErr);
+         setCreatedOrder(newOrder); // Fallback
       }
     } catch (err) {
       setErrorMsg(err.message || 'Đã có lỗi xảy ra khi tạo đơn hàng. Vui lòng thử lại.');
