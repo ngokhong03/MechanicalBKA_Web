@@ -1,0 +1,131 @@
+.zalo-widget {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zalo-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: #0068ff;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 104, 255, 0.4);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+}
+
+.zalo-link:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 104, 255, 0.6);
+}
+
+.zalo-icon-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zalo-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  z-index: 2;
+  /* Dùng ảnh SVG/PNG PNG có màu thật hoặc invert nếu cần. 
+     Vì ảnh gốc có nền xanh, icon trắng, nên khi bọc trong .zalo-link nền #0068ff sẽ rất hợp */
+}
+
+/* Hiệu ứng tỏa vòng quanh */
+.zalo-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #0068ff;
+  border-radius: 50%;
+  z-index: 1;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Tooltip hiển thị khi hover */
+.zalo-tooltip {
+  position: absolute;
+  left: calc(100% + 15px);
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  background: rgba(15, 23, 42, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.zalo-tooltip::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%; /* Mũi tên trỏ sang trái */
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgba(15, 23, 42, 0.9) transparent transparent;
+}
+
+.zalo-link:hover .zalo-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .zalo-widget {
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .zalo-link {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .zalo-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .zalo-tooltip {
+    display: none; /* Ẩn tooltip trên mobile */
+  }
+}
