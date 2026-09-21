@@ -1,42 +1,19 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, Sparkles, RotateCcw } from 'lucide-react';
-import { GoogleGenAI } from '@google/genai';
 import './ChatWidget.css';
-
-const SYSTEM_PROMPT = `Bạn là trợ lý ảo AI của MechanicalBKA — nền tảng cung cấp tài liệu, đồ án cơ khí, phần mềm và khóa học chuyên ngành cơ khí.
-
-Thông tin về website MechanicalBKA:
-- Trang chủ: mechanicalbka-web.vercel.app
-- Có các mục: Đồ Án (Hộp giảm tốc, bản vẽ, tính toán), Chuyên Ngành, Phần Mềm, Khóa Học, Kho File Kỹ Thuật (CAD, Excel, bản vẽ), Videos
-- Hỗ trợ thanh toán online cho file kỹ thuật
-- Dành cho sinh viên và kỹ sư cơ khí Việt Nam
-
-Quy tắc trả lời:
-1. Luôn trả lời bằng tiếng Việt
-2. Thái độ thân thiện, chuyên nghiệp, ngắn gọn súc tích
-3. Khi người dùng hỏi về sản phẩm/khóa học, hướng dẫn họ đến đúng trang
-4. Có thể giải đáp kiến thức cơ khí cơ bản (sức bền vật liệu, chi tiết máy, vẽ kỹ thuật...)
-5. Nếu không biết câu trả lời, hãy thành thật và gợi ý liên hệ admin`;
-
-// Fallback models ordered by preference
-const MODELS = ['gemini-3.5-flash', 'gemini-3.1-flash-lite', 'gemini-3.8-flash', 'gemini-3.6-flash'];
 
 // Quick suggestion chips
 const SUGGESTIONS = [
   '📚 Xem đồ án mẫu',
   '💻 Phần mềm cơ khí',
   '🛒 Hướng dẫn mua file',
-  '❓ Hỏi kiến thức cơ khí',
+  '📞 Liên hệ Admin',
 ];
-
-// Khởi tạo Gemini client
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { id: 1, role: 'bot', text: 'Chào bạn! 👋 Mình là trợ lý AI của **MechanicalBKA**. Mình có thể giúp bạn tìm tài liệu, đồ án, hoặc giải đáp kiến thức cơ khí. Hãy thử hỏi mình nhé!' }
+    { id: 1, role: 'bot', text: 'Chào bạn! 👋 Mình là trợ lý tự động của **MechanicalBKA**.\n\nVì hệ thống AI đang bảo trì, mình sẽ hỗ trợ bạn dựa trên các từ khóa (ví dụ: **đồ án**, **phần mềm**, **khóa học**, **thanh toán**...). Bạn cần mình giúp gì nào?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -51,119 +28,74 @@ const ChatWidget = () => {
   useEffect(() => {
     if (isOpen) {
       scrollToBottom();
-      // Auto-focus input when chat opens
       setTimeout(() => inputRef.current?.focus(), 300);
     }
   }, [messages, isOpen]);
 
-  // Try calling Gemini with fallback models
-  const callGemini = async (contents) => {
-    let lastError = null;
-    for (const model of MODELS) {
-      try {
-        const response = await ai.models.generateContent({
-          model,
-          contents,
-          config: {
-            systemInstruction: SYSTEM_PROMPT,
-            temperature: 0.7,
-          }
-        });
-        return response.text;
-      } catch (error) {
-        lastError = error;
-        // If it's a 503 (overloaded) or 404 (not found), try next model
-        if (error.message?.includes('503') || error.message?.includes('404') || error.message?.includes('UNAVAILABLE') || error.message?.includes('NOT_FOUND')) {
-          continue;
-        }
-        // For other errors (auth, etc.), throw immediately
-        throw error;
-      }
+  // Hàm xử lý logic Bot tự động (Rule-based)
+  const getBotResponse = (userInput) => {
+    const text = userInput.toLowerCase();
+    
+    if (text.includes('đồ án') || text.includes('bản vẽ') || text.includes('chi tiết máy')) {
+      return 'Bên mình cung cấp đa dạng các loại đồ án (Hộp giảm tốc, Truyền động cơ khí, Đồ án tốt nghiệp...). Bạn có thể bấm vào mục **ĐỒ ÁN CHI TIẾT MÁY** trên thanh menu để xem chi tiết nhé!';
     }
-    throw lastError;
+    if (text.includes('phần mềm') || text.includes('cad') || text.includes('solidworks') || text.includes('inventor') || text.includes('nx') || text.includes('autocad')) {
+      return 'Để tải các phần mềm chuyên ngành cơ khí (AutoCAD, SolidWorks, NX, Inventor...), bạn hãy vào mục **KHO FILE** > **Phần mềm** trên website nhé. Các link tải đều miễn phí và có hướng dẫn cài đặt.';
+    }
+    if (text.includes('khóa học') || text.includes('dạy') || text.includes('học')) {
+      return 'MechanicalBKA có các khóa học thực chiến về thiết kế cơ khí. Bạn truy cập vào tab **KHÓA HỌC** ở thanh menu để tham khảo lộ trình và học phí nha.';
+    }
+    if (text.includes('mua') || text.includes('thanh toán') || text.includes('nạp') || text.includes('giá')) {
+      return 'Để mua tài liệu hoặc bản vẽ VIP, bạn cần đăng nhập tài khoản, nạp xu vào ví (thanh toán qua chuyển khoản quét mã QR tự động) và sau đó click vào nút "Tải xuống" ở file tương ứng nhé.';
+    }
+    if (text.includes('liên hệ') || text.includes('admin') || text.includes('zalo') || text.includes('lỗi') || text.includes('support')) {
+      return 'Nếu gặp lỗi hoặc cần hỗ trợ trực tiếp từ con người, bạn vui lòng liên hệ Admin qua Zalo nhé!\n**Zalo Admin:** 03xx.xxx.xxx (Cập nhật số Zalo của bạn ở đây)';
+    }
+    if (text.includes('chào') || text.includes('hello') || text.includes('hi')) {
+      return 'Chào bạn! Chúc bạn một ngày học tập và làm việc hiệu quả. Bạn cần mình tư vấn về đồ án hay phần mềm?';
+    }
+    if (text.includes('cảm ơn') || text.includes('thanks') || text.includes('tuyệt')) {
+      return 'Không có gì đâu nè! MechanicalBKA luôn đồng hành cùng sinh viên cơ khí! ❤️';
+    }
+
+    // Câu trả lời mặc định nếu không khớp từ khóa nào
+    return 'Xin lỗi, mình là bot tự động nên hiện chỉ hiểu được một số từ khóa chính (như: **đồ án**, **phần mềm**, **khóa học**, **liên hệ**...). \n\nĐể được giải đáp chi tiết hơn câu hỏi này, bạn vui lòng nhắn tin trực tiếp qua Zalo cho admin nhé!';
   };
 
-  const handleSendMessage = async (e) => {
+  const processMessage = (userText) => {
+    // Thêm tin nhắn của User
+    setMessages(prev => [...prev, { id: Date.now(), role: 'user', text: userText }]);
+    setIsLoading(true);
+    setShowSuggestions(false);
+
+    // Giả lập độ trễ (typing) cho giống người thật (từ 0.5s đến 1.5s)
+    const delay = Math.random() * 1000 + 500;
+    
+    setTimeout(() => {
+      const botReply = getBotResponse(userText);
+      setMessages(prev => [...prev, { id: Date.now(), role: 'bot', text: botReply }]);
+      setIsLoading(false);
+    }, delay);
+  };
+
+  const handleSendMessage = (e) => {
     e?.preventDefault();
     if (!input.trim() || isLoading) return;
 
-    if (!ai) {
-      setMessages(prev => [...prev,
-        { id: Date.now(), role: 'user', text: input },
-        { id: Date.now() + 1, role: 'error', text: 'Chưa cấu hình API Key. Vui lòng liên hệ admin.' }
-      ]);
-      setInput('');
-      return;
-    }
-
     const userMessage = input.trim();
     setInput('');
-    setShowSuggestions(false);
-    setMessages(prev => [...prev, { id: Date.now(), role: 'user', text: userMessage }]);
-    setIsLoading(true);
-
-    try {
-      const contents = messages
-        .filter(m => m.role !== 'error')
-        .map(m => ({
-          role: m.role === 'bot' ? 'model' : 'user',
-          parts: [{ text: m.text }]
-        }));
-
-      contents.push({ role: 'user', parts: [{ text: userMessage }] });
-
-      const botReply = await callGemini(contents);
-      setMessages(prev => [...prev, { id: Date.now(), role: 'bot', text: botReply || 'Xin lỗi, mình không thể trả lời lúc này.' }]);
-    } catch (error) {
-      console.error('Gemini API Error:', error);
-      setMessages(prev => [...prev, {
-        id: Date.now(),
-        role: 'error',
-        text: 'Hệ thống AI đang bận. Vui lòng thử lại sau ít phút hoặc liên hệ admin qua Zalo nhé!'
-      }]);
-    } finally {
-      setIsLoading(false);
-    }
+    processMessage(userMessage);
   };
 
   const handleSuggestionClick = (suggestion) => {
     const text = suggestion.replace(/^[^\s]+\s/, ''); // Remove emoji prefix
-    setInput(text);
-    // Auto-send
-    setTimeout(() => {
-      setInput(text);
-      const fakeEvent = { preventDefault: () => {} };
-      setShowSuggestions(false);
-      setMessages(prev => [...prev, { id: Date.now(), role: 'user', text }]);
-      setIsLoading(true);
-
-      if (!ai) return;
-
-      const contents = messages
-        .filter(m => m.role !== 'error')
-        .map(m => ({
-          role: m.role === 'bot' ? 'model' : 'user',
-          parts: [{ text: m.text }]
-        }));
-      contents.push({ role: 'user', parts: [{ text }] });
-
-      callGemini(contents)
-        .then(botReply => {
-          setMessages(prev => [...prev, { id: Date.now(), role: 'bot', text: botReply || 'Xin lỗi, mình không thể trả lời lúc này.' }]);
-        })
-        .catch(() => {
-          setMessages(prev => [...prev, { id: Date.now(), role: 'error', text: 'Hệ thống AI đang bận. Vui lòng thử lại sau ít phút.' }]);
-        })
-        .finally(() => {
-          setIsLoading(false);
-          setInput('');
-        });
-    }, 50);
+    setInput('');
+    processMessage(text);
   };
 
   const handleReset = () => {
     setMessages([
-      { id: Date.now(), role: 'bot', text: 'Chào bạn! 👋 Mình là trợ lý AI của **MechanicalBKA**. Mình có thể giúp bạn tìm tài liệu, đồ án, hoặc giải đáp kiến thức cơ khí. Hãy thử hỏi mình nhé!' }
+      { id: Date.now(), role: 'bot', text: 'Chào bạn! 👋 Mình là trợ lý tự động của **MechanicalBKA**.\n\nVì hệ thống AI đang bảo trì, mình sẽ hỗ trợ bạn dựa trên các từ khóa (ví dụ: **đồ án**, **phần mềm**, **khóa học**, **thanh toán**...). Bạn cần mình giúp gì nào?' }
     ]);
     setShowSuggestions(true);
     setInput('');
@@ -171,12 +103,21 @@ const ChatWidget = () => {
 
   // Simple markdown-like rendering for bold text
   const renderText = (text) => {
-    const parts = text.split(/(\*\*[^*]+\*\*)/g);
-    return parts.map((part, i) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={i}>{part.slice(2, -2)}</strong>;
-      }
-      return part;
+    // Handle newlines
+    const lines = text.split('\n');
+    return lines.map((line, lineIndex) => {
+      const parts = line.split(/(\*\*[^*]+\*\*)/g);
+      return (
+        <React.Fragment key={lineIndex}>
+          {parts.map((part, i) => {
+            if (part.startsWith('**') && part.endsWith('**')) {
+              return <strong key={i}>{part.slice(2, -2)}</strong>;
+            }
+            return part;
+          })}
+          {lineIndex < lines.length - 1 && <br />}
+        </React.Fragment>
+      );
     });
   };
 
@@ -187,7 +128,7 @@ const ChatWidget = () => {
         <div className="chat-header">
           <div className="chat-title">
             <Sparkles size={18} />
-            <span>Trợ lý AI MechanicalBKA</span>
+            <span>Trợ lý MechanicalBKA</span>
           </div>
           <div className="chat-header-actions">
             <button className="header-action-btn" onClick={handleReset} aria-label="Làm mới cuộc trò chuyện" title="Làm mới">
@@ -244,7 +185,7 @@ const ChatWidget = () => {
             ref={inputRef}
             type="text"
             className="chat-input"
-            placeholder="Nhập câu hỏi của bạn..."
+            placeholder="Nhập từ khóa (đồ án, phần mềm)..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
             disabled={isLoading}
@@ -253,12 +194,12 @@ const ChatWidget = () => {
             <Send size={18} />
           </button>
         </form>
-        <div className="chat-powered">Powered by Gemini AI</div>
+        <div className="chat-powered">Hệ thống trả lời tự động</div>
       </div>
 
       {/* Floating Action Button */}
       {!isOpen && (
-        <button className="chat-fab" onClick={() => setIsOpen(true)} aria-label="Mở trợ lý AI">
+        <button className="chat-fab" onClick={() => setIsOpen(true)} aria-label="Mở trợ lý">
           <MessageCircle size={26} />
           <span className="fab-pulse"></span>
         </button>
