@@ -23,7 +23,7 @@ const YoutubeIcon = ({ size = 18, ...props }) => (
 
 const Footer = () => {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" id="contact-footer">
       <div className="container footer-grid">
         {/* Info Column */}
         <div className="footer-col brand-col">
@@ -41,6 +41,11 @@ const Footer = () => {
             <a href="mailto:contact@mechanicalbka.com" className="social-icon" title="Email Contact">
               <Mail size={18} />
             </a>
+          </div>
+          <div className="contact-info" style={{ marginTop: '16px', fontSize: '14px', color: '#9ca3af', lineHeight: '1.6' }}>
+            <div><strong style={{ color: '#fff' }}>Hotline / Zalo:</strong> 0333.xxx.xxx</div>
+            <div><strong style={{ color: '#fff' }}>Email:</strong> contact@mechanicalbka.com</div>
+            <div><strong style={{ color: '#fff' }}>Giờ làm việc:</strong> 8:00 - 22:00 (Thứ 2 - CN)</div>
           </div>
         </div>
 

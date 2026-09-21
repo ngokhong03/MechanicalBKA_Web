@@ -9,24 +9,37 @@ const Navigation = ({ vertical = false, onItemClick }) => {
     { name: 'Đồ Án Chi Tiết Máy', path: '/projects', isHighlight: true, badge: 'HOT' },
     { name: 'Kho File', path: '/store' },
     { name: 'Khóa Học', path: '/courses' },
-    { name: 'Video', path: '/videos' }
+    { name: 'Video', path: '/videos' },
+    { name: 'Liên Hệ', path: '#contact-footer' }
   ];
 
   return (
     <nav className={`main-nav ${vertical ? 'nav-vertical' : 'nav-horizontal'}`}>
       {navItems.map((item) => (
-        <NavLink 
-          key={item.path} 
-          to={item.path}
-          onClick={onItemClick}
-          className={({ isActive }) => 
-            `nav-link font-mono ${item.isHighlight ? 'nav-link-highlight' : ''} ${isActive ? 'nav-link-active' : ''}`
-          }
-          end={item.end || false}
-        >
-          {item.name}
-          {item.badge && <span className="nav-item-badge">{item.badge}</span>}
-        </NavLink>
+        item.path.startsWith('#') ? (
+          <a
+            key={item.path}
+            href={item.path}
+            onClick={onItemClick}
+            className={`nav-link font-mono ${item.isHighlight ? 'nav-link-highlight' : ''}`}
+          >
+            {item.name}
+            {item.badge && <span className="nav-item-badge">{item.badge}</span>}
+          </a>
+        ) : (
+          <NavLink 
+            key={item.path} 
+            to={item.path}
+            onClick={onItemClick}
+            className={({ isActive }) => 
+              `nav-link font-mono ${item.isHighlight ? 'nav-link-highlight' : ''} ${isActive ? 'nav-link-active' : ''}`
+            }
+            end={item.end || false}
+          >
+            {item.name}
+            {item.badge && <span className="nav-item-badge">{item.badge}</span>}
+          </NavLink>
+        )
       ))}
       <a 
         href="https://youtube.com/@trongbka" 
