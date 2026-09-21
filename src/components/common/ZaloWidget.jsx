@@ -5,7 +5,7 @@ const ZaloWidget = () => {
   return (
     <div className="zalo-widget">
       <a
-        href="https://zalo.me/0333xxxxxx" // Mặc định để placeholder
+        href="https://zalo.me/0862990403"
         target="_blank"
         rel="noopener noreferrer"
         className="zalo-link"
