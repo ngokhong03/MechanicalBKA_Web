@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import {
-  CreditCard,
   QrCode,
-  Copy,
-  CheckCircle2,
+  MapPin,
+  Phone,
   Clock,
-  ArrowRight,
   ArrowLeft,
-  AlertCircle,
+  CheckCircle,
   ShoppingBag,
-  ShieldCheck,
   Building,
-  User,
   Hash,
   RefreshCw
 } from 'lucide-react';
@@ -22,15 +18,13 @@ import { dataProvider } from '../services/dataProvider';
 import { orderService } from '../services/orderService';
 import { paymentConfig, generateVietQRUrl } from '../config/payment';
 import Button from '../components/common/Button';
-import Badge from '../components/common/Badge';
 import './Checkout.css';
 
 const Checkout = () => {
   const { user, isAuthenticated, loading: authLoading } = useAuth();
-  const { cartItems, cartTotal, clearCart, cartCount, addToCart } = useCart();
+  const { cartItems, cartTotal, clearCart, cartCount } = useCart();
   const [searchParams] = useSearchParams();
   const location = useLocation();
-  const navigate = useNavigate();
 
   const [directItem, setDirectItem] = useState(null);
   const [directLoading, setDirectLoading] = useState(false);

@@ -15,11 +15,8 @@ import {
   Image as ImageIcon, 
   Video, 
   CheckCircle, 
-  FileCode, 
   Layers, 
-  FileCheck, 
   RefreshCw,
-  Eye,
   Activity,
   ShieldCheck,
   ToggleLeft,
@@ -27,13 +24,10 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { adminService } from '../../services/adminService';
-import { storageService } from '../../services/storageService';
 import { 
   extractYouTubeVideoId, 
   formatFileSize, 
-  validateArtifactFile, 
-  validateThumbnailFile,
-  ALLOWED_ARTIFACT_EXTENSIONS 
+  validateThumbnailFile 
 } from '../../utils/mediaUtils';
 import Button from '../../components/common/Button';
 import './AdminCommon.css';
@@ -57,7 +51,6 @@ const AdminProducts = () => {
   const [products, setProducts] = useState([]);
   const [specialties, setSpecialties] = useState([]);
   const [software, setSoftware] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [filterAccess, setFilterAccess] = useState('ALL');
   const [filterType, setFilterType] = useState('ALL');
@@ -72,8 +65,6 @@ const AdminProducts = () => {
   const [isHealthModalOpen, setIsHealthModalOpen] = useState(false);
   const [storageHealth, setStorageHealth] = useState(null);
   const [healthLoading, setHealthLoading] = useState(false);
-  const [verifyingArtifactId, setVerifyingArtifactId] = useState(null);
-  const [verificationResults, setVerificationResults] = useState({});
 
   // Form State
   const [formData, setFormData] = useState({
@@ -113,7 +104,6 @@ const AdminProducts = () => {
   // File Upload State
   const [artifactUploading, setArtifactUploading] = useState(false);
   const [artifactProgress, setArtifactProgress] = useState(0);
-  const [artifactUploadStatus, setArtifactUploadStatus] = useState('');
   const [replacingFileId, setReplacingFileId] = useState(null);
   const [newHighlight, setNewHighlight] = useState('');
   const [newIncludedFile, setNewIncludedFile] = useState('');

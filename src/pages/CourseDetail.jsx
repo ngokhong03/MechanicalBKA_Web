@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Play, PlayCircle, Lock, BookOpen, AlertCircle, Layers, Clock, Award } from 'lucide-react';
+import { Play, PlayCircle, Lock, BookOpen, AlertCircle, Layers, Clock, Award, Check } from 'lucide-react';
 import { dataProvider } from '../services/dataProvider';
 import { accessService } from '../services/accessService';
 import { useAuth } from '../context/AuthContext';
@@ -142,7 +142,8 @@ const CourseDetail = () => {
 
             <div className="lessons-outline-list">
               {courseLessons.map((les, idx) => {
-                const duration = getLessonDuration(les.youtubeVideoId);
+                const associatedVideo = allVideos.find(v => v.youtubeVideoId === les.youtubeVideoId);
+                const duration = associatedVideo?.duration || null;
                 const isPreview = les.isFreePreview || course.accessType === 'FREE';
 
                 return (

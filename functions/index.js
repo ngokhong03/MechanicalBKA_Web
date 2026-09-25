@@ -266,3 +266,109 @@ Dùng tiếng Việt tự nhiên, rõ ràng.
     throw new HttpsError('internal', 'Không thể tóm tắt video. Lỗi hệ thống.');
   }
 });
+
+/**
+ * AI Chatbot Endpoint (Knowledge Base / RAG)
+ */
+function cosineSimilarity(vecA, vecB) {
+  let dotProduct = 0;
+  let normA = 0;
+  let normB = 0;
+  for (let i = 0; i < vecA.length; i++) {
+    dotProduct += vecA[i] * vecB[i];
+    normA += vecA[i] * vecA[i];
+    normB += vecB[i] * vecB[i];
+  }
+  return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+}
+
+// Fallback data in case Firestore is empty (dry-run mode)
+const FALLBACK_KNOWLEDGE = [
+  'Thông tin liên hệ của tác giả TrongBKA (MechanicalBKA): SĐT/Zalo: 0862990403. Email: trongme2bka@gmail.com',
+  'Kênh YouTube chính thức của MechanicalBKA (TrongBKA) là: https://youtube.com/@trongbka. Dữ liệu từ kênh này là nguồn chính thức (ưu tiên số 1).',
+  'Kênh YouTube tham khảo về giáo dục: Vertanux1 (https://youtube.com/@vertanux1). Nguồn ưu tiên 2.',
+  'Kênh YouTube tham khảo về kỹ thuật: EPXYZ (https://youtube.com/@epxyz). Nguồn ưu tiên 2.',
+  'Trang web tham khảo giáo dục: https://engineeringpaper.xyz và https://blog.engineeringpaper.xyz. Nguồn ưu tiên 2.',
+  'Mật khẩu giải nén file tài liệu (ZIP, RAR) trên MechanicalBKA là: 16042003',
+  'MechanicalBKA cung cấp khóa học: Chế tạo máy (Module 1), Khuôn dập (Module 2), Vật liệu Polymer và Composite, Khuôn ép phun (Module 5.1 - 5.7). Phần mềm: Autodesk Inventor, SOLIDWORKS, X-TIMON.',
+];
+
+exports.chatAPI = onCall({ region: 'asia-southeast1', maxInstances: 10, cors: allowedOrigins }, async (request) => {
+  const { message, history } = request.data;
+  if (!message) {
+    throw new HttpsError('invalid-argument', 'Message is required.');
+  }
+
+  const apiKey = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY; 
+  if (!apiKey) {
+    throw new HttpsError('internal', 'Missing GEMINI_API_KEY.');
+  }
+
+  try {
+    const ai = new GoogleGenAI({ apiKey });
+    
+    // 1. Get embedding for user message
+    const embedRes = await ai.models.embedContent({
+      model: 'gemini-embedding-001',
+      contents: message,
+    });
+    const queryVector = embedRes.embeddings[0].values;
+
+    // 2. Fetch Knowledge Base from Firestore
+    const kbSnapshot = await db.collection('knowledge_base').get();
+    let contexts = [];
+
+    if (kbSnapshot.empty) {
+      // Fallback
+      contexts = FALLBACK_KNOWLEDGE;
+    } else {
+      // RAG Search
+      const docs = [];
+      kbSnapshot.forEach(doc => {
+        const data = doc.data();
+        if (data.embedding && data.text) {
+          docs.push({ text: data.text, embedding: data.embedding });
+        }
+      });
+
+      // Score and sort
+      docs.forEach(doc => {
+        doc.score = cosineSimilarity(queryVector, doc.embedding);
+      });
+      docs.sort((a, b) => b.score - a.score);
+      
+      // Top 3 most relevant
+      contexts = docs.slice(0, 3).map(d => d.text);
+    }
+
+    // 3. Construct System Prompt
+    const systemInstruction = `
+Bạn là Trợ lý AI (Software Architect + Full-stack Engineer) của MechanicalBKA.
+Nhiệm vụ của bạn là giải đáp thắc mắc cho người dùng.
+
+QUY TẮC QUAN TRỌNG:
+1. KHÔNG tự bịa ra thông tin (No Hallucination).
+2. Dựa vào NGỮ CẢNH cung cấp dưới đây để trả lời.
+3. Nếu ngữ cảnh không có thông tin, hãy nói "Tôi không có thông tin về vấn đề này, vui lòng liên hệ tác giả (0862990403)."
+4. Ưu tiên số 1 là dữ liệu từ MechanicalBKA. Tham khảo là Vertanux1 và EPXYZ.
+5. Luôn vui vẻ, lịch sự và dùng tiếng Việt.
+
+NGỮ CẢNH TÌM ĐƯỢC:
+${contexts.map(c => '- ' + c).join('\n')}
+    `;
+
+    // 4. Generate Response
+    const response = await ai.models.generateContent({
+      model: 'gemini-1.5-flash',
+      contents: message,
+      config: {
+        systemInstruction: systemInstruction,
+      }
+    });
+
+    return { response: response.text };
+  } catch (error) {
+    console.error('[ChatAPI] Error:', error.message);
+    throw new HttpsError('internal', 'Lỗi hệ thống khi xử lý Chatbot RAG.');
+  }
+});

@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, Sparkles, RotateCcw } from 'lucide-react';
+import { getFunctions, httpsCallable } from 'firebase/functions';
+import { app, isFirebaseEnabled } from '../../firebase/config';
 import './ChatWidget.css';
 
 // Quick suggestion chips
@@ -48,13 +50,31 @@ const ChatWidget = () => {
     if (text.includes('mua') || text.includes('thanh toán') || text.includes('nạp') || text.includes('giá')) {
       return 'Để mua tài liệu hoặc bản vẽ VIP, bạn cần đăng nhập tài khoản, nạp xu vào ví (thanh toán qua chuyển khoản quét mã QR tự động) và sau đó click vào nút "Tải xuống" ở file tương ứng nhé.';
     }
-    if (text.includes('liên hệ') || text.includes('admin') || text.includes('zalo') || text.includes('lỗi') || text.includes('support')) {
-      return 'Nếu gặp lỗi hoặc cần hỗ trợ trực tiếp từ con người, bạn vui lòng liên hệ Admin qua Zalo nhé!\n**Zalo Admin:** 03xx.xxx.xxx (Cập nhật số Zalo của bạn ở đây)';
+    if (text.includes('liên hệ') || text.includes('admin') || text.includes('zalo') || text.includes('lỗi') || text.includes('support') || text.includes('sđt') || text.includes('số điện thoại') || text.includes('email')) {
+      return 'Nếu gặp lỗi hoặc cần hỗ trợ trực tiếp, bạn vui lòng liên hệ Admin nhé!\n📞 **SĐT/Zalo:** 0862990403\n📧 **Email:** trongme2bka@gmail.com';
+    }
+    if (text.includes('youtube') || text.includes('video') || text.includes('kênh')) {
+      return 'Bạn có thể xem các video hướng dẫn chi tiết về cơ khí trên kênh YouTube của mình nhé!\n👉 **Kênh YouTube:** [youtube.com/@trongbka](https://youtube.com/@trongbka)';
+    }
+    if (text.includes('tham khảo') || text.includes('nguồn') || text.includes('epxyz') || text.includes('vertanux')) {
+      return 'Đây là một số nguồn tài liệu và kênh YouTube tham khảo cực kỳ hữu ích:\n- **Vertanux1:** [youtube.com/@vertanux1](https://youtube.com/@vertanux1) | [vertanux1.com](http://www.vertanux1.com)\n- **Engineering Paper:** [youtube.com/@epxyz](https://youtube.com/@epxyz) | [engineeringpaper.xyz](https://engineeringpaper.xyz) | [blog](https://blog.engineeringpaper.xyz)';
+    }
+    if (text.includes('web cũ') || text.includes('bản cũ') || text.includes('website')) {
+      return 'Website cũ của dự án được host tại: [mechanicalbka-web.vercel.app](https://mechanicalbka-web.vercel.app/).\nBản hiện tại đang chạy ở: http://localhost:5173/';
+    }
+    if (text.includes('latex') || text.includes('overleaf')) {
+      return 'Để soạn thảo văn bản hoặc báo cáo bằng LaTeX, bạn có thể sử dụng [Overleaf](https://www.overleaf.com/login).';
+    }
+    if (text.includes('tài liệu') || text.includes('file') || text.includes('báo cáo')) {
+      return 'Bên mình có rất nhiều tài liệu, báo cáo, và file tính toán kỹ thuật định dạng **Engineering Paper (.epxyz)**. Bạn hãy truy cập mục **KHO FILE** để tìm kiếm tài liệu mình cần nha.';
+    }
+    if (text.includes('pass') || text.includes('mật khẩu') || text.includes('giải nén')) {
+      return 'Mật khẩu giải nén file (nếu có) thường mặc định là **16042003**. Nếu giải nén vẫn bị lỗi, bạn liên hệ qua Zalo (0862990403) để Admin hỗ trợ nhé.';
     }
     if (text.includes('chào') || text.includes('hello') || text.includes('hi')) {
       return 'Chào bạn! Chúc bạn một ngày học tập và làm việc hiệu quả. Bạn cần mình tư vấn về đồ án hay phần mềm?';
     }
-    if (text.includes('cảm ơn') || text.includes('thanks') || text.includes('tuyệt')) {
+    if (text.includes('cảm ơn') || text.includes('thanks') || text.includes('tuyệt') || text.includes('ok')) {
       return 'Không có gì đâu nè! MechanicalBKA luôn đồng hành cùng sinh viên cơ khí! ❤️';
     }
 
@@ -62,20 +82,37 @@ const ChatWidget = () => {
     return 'Xin lỗi, mình là bot tự động nên hiện chỉ hiểu được một số từ khóa chính (như: **đồ án**, **phần mềm**, **khóa học**, **liên hệ**...). \n\nĐể được giải đáp chi tiết hơn câu hỏi này, bạn vui lòng nhắn tin trực tiếp qua Zalo cho admin nhé!';
   };
 
-  const processMessage = (userText) => {
+  const processMessage = async (userText) => {
     // Thêm tin nhắn của User
     setMessages(prev => [...prev, { id: Date.now(), role: 'user', text: userText }]);
     setIsLoading(true);
     setShowSuggestions(false);
 
-    // Giả lập độ trễ (typing) cho giống người thật (từ 0.5s đến 1.5s)
-    const delay = Math.random() * 1000 + 500;
+    try {
+      if (isFirebaseEnabled && app) {
+        const functions = getFunctions(app, 'asia-southeast1');
+        const chatAPI = httpsCallable(functions, 'chatAPI');
+        // Map history safely
+        const history = messages.map(m => ({ role: m.role, text: m.text }));
+        const result = await chatAPI({ message: userText, history });
+        const botReply = result.data.response;
+        setMessages(prev => [...prev, { id: Date.now(), role: 'bot', text: botReply }]);
+      } else {
+        // Giả lập độ trễ (typing) cho giống người thật (từ 0.5s đến 1.5s)
+        const delay = Math.random() * 1000 + 500;
+        setTimeout(() => {
+          const botReply = getBotResponse(userText);
+          setMessages(prev => [...prev, { id: Date.now(), role: 'bot', text: botReply }]);
+          setIsLoading(false);
+        }, delay);
+        return;
+      }
+    } catch (error) {
+      console.error('[ChatWidget] Error calling chatAPI:', error);
+      setMessages(prev => [...prev, { id: Date.now(), role: 'bot', text: 'Xin lỗi, hệ thống RAG đang gặp sự cố. Bạn vui lòng liên hệ trực tiếp Admin (0862990403) để được hỗ trợ nhé.' }]);
+    }
     
-    setTimeout(() => {
-      const botReply = getBotResponse(userText);
-      setMessages(prev => [...prev, { id: Date.now(), role: 'bot', text: botReply }]);
-      setIsLoading(false);
-    }, delay);
+    setIsLoading(false);
   };
 
   const handleSendMessage = (e) => {
